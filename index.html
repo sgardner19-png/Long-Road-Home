@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>The Long Road Home — Story Bible</title>
+  <title>The Long Road Home — Story Bible &amp; Alpha Rules</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 :root{
@@ -116,17 +116,144 @@ figcaption{font-family:var(--font-head);font-size:.58rem;letter-spacing:.12em;te
 #mob-toggle{display:none;position:fixed;top:1rem;left:1rem;z-index:300;background:var(--nav-bg);color:var(--gold);border:1px solid var(--nav-border);padding:.4rem .65rem;font-size:1.1rem;cursor:pointer}
 @media(max-width:800px){:root{--sw:0px}#sidebar{transform:translateX(-260px);width:260px;transition:transform .28s}#sidebar.open{transform:translateX(0)}#mob-toggle{display:block}#content{margin-left:0}.content-inner{padding:3.5rem 1.1rem 5rem}.char-card{grid-template-columns:1fr}.nations-grid{grid-template-columns:1fr}.img-grid{grid-template-columns:1fr}.spoiler-seal{flex-direction:column;gap:.8rem}}
 @media print{#sidebar,#mob-toggle,.ann-trigger,#ann-modal,#ann-panel{display:none!important}#content{margin-left:0}.spoiler-seal{display:none}.spoiler-content{display:block!important}}
+
+/* ============================================
+   RULES & MECHANICS COMPONENTS
+   ============================================ */
+
+/* Concept badge for unfinished class entries */
+.concept-badge{display:inline-block;font-family:var(--font-head);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-pale);background:var(--ink-mid);padding:.18rem .55rem;margin-left:.6rem;vertical-align:middle;border:1px solid var(--gold-dk)}
+
+/* Step blocks for Quickstart */
+.steps-grid{display:grid;gap:1.1rem;margin:1.5rem 0 2rem}
+.step-block{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;padding:1.1rem 1.3rem;background:rgba(255,255,255,.3);border:1px solid var(--parchment-dk);border-left:3px solid var(--gold-dk);align-items:start}
+.step-num{font-family:var(--font-disp);font-size:1.8rem;color:var(--gold-dk);line-height:1;margin-top:.1rem}
+.step-body h4{font-family:var(--font-head);font-size:.82rem;letter-spacing:.06em;color:var(--ink);margin-bottom:.45rem;text-transform:uppercase;font-weight:600}
+.step-body p{font-size:.93rem;margin-bottom:.5rem}.step-body p:last-child{margin-bottom:0}
+.step-body ul{font-size:.92rem;padding-left:1.2rem;margin:.4rem 0 .6rem}
+.step-body ul li{margin-bottom:.3rem}
+
+/* Stat blocks for classes / origins */
+.stat-block{background:rgba(255,255,255,.32);border:1px solid var(--parchment-dk);border-top:3px solid var(--gold-dk);padding:1.1rem 1.3rem;margin:1.4rem 0}
+.stat-block-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap;border-bottom:1px solid var(--parchment-dk);padding-bottom:.55rem;margin-bottom:.85rem}
+.stat-block-name{font-family:var(--font-head);font-size:1.05rem;letter-spacing:.04em;color:var(--ink);margin:0}
+.stat-block-tag{font-family:var(--font-head);font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dk);padding:.15rem .5rem;border:1px solid var(--gold-dk)}
+.stat-grid{display:grid;grid-template-columns:max-content 1fr;gap:.3rem 1rem;font-size:.9rem;margin:.3rem 0 .9rem}
+.stat-grid dt{font-family:var(--font-head);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faded);align-self:baseline}
+.stat-grid dd{font-size:.92rem;color:var(--ink-mid);margin:0}
+.stat-grid dd b{color:var(--ink)}
+
+/* Ability cards */
+.ability-list{margin:.8rem 0 1.5rem}
+.ability{padding:.8rem 1rem;border-left:2px solid var(--parchment-dk);margin-bottom:.65rem;background:rgba(255,255,255,.18)}
+.ability:hover{border-left-color:var(--gold-dk)}
+.ability-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:.35rem}
+.ability-name{font-family:var(--font-head);font-size:.85rem;letter-spacing:.04em;color:var(--ink);font-weight:600}
+.ability-cost{font-family:var(--font-head);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dk);text-align:right;flex-shrink:0}
+.ability-desc{font-size:.9rem;color:var(--ink-mid);margin:0;line-height:1.65}
+.ability-desc b{color:var(--ink)}
+.ability + .designer-note{margin-top:-.3rem;margin-bottom:.65rem}
+
+/* Designer's note (true marginalia where space allows) */
+.designer-note{font-family:var(--font-body);font-size:.82rem;font-style:italic;color:var(--ink-faded);background:linear-gradient(to right,var(--gold-bg),transparent);border-left:2px solid var(--gold-dk);padding:.45rem .9rem;margin:.6rem 0 1.1rem;line-height:1.55}
+.designer-note::before{content:'Designer’s note — ';font-family:var(--font-head);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:var(--gold-dk);margin-right:.3rem}
+.designer-note.no-prefix::before{content:''}
+
+/* Inline rules term — links to detail */
+a.rules-link{color:var(--gold-dk);text-decoration:none;border-bottom:1px dotted var(--gold-dk)}
+a.rules-link:hover{color:var(--cinnabar);border-bottom-color:var(--cinnabar)}
+
+/* Tables (skills, weapons, armor, conditions reference) */
+.rules-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:.88rem;background:rgba(255,255,255,.22)}
+.rules-table th{font-family:var(--font-head);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mid);background:var(--parchment-mid);text-align:left;padding:.5rem .75rem;border-bottom:2px solid var(--gold-dk)}
+.rules-table td{padding:.5rem .75rem;border-bottom:1px solid var(--parchment-dk);color:var(--ink-mid);vertical-align:top}
+.rules-table tr:last-child td{border-bottom:none}
+.rules-table td b{color:var(--ink)}
+.rules-table td.r{text-align:right;font-variant-numeric:tabular-nums}
+.rules-table td.c{text-align:center;font-variant-numeric:tabular-nums}
+
+/* Collapsible details */
+details.collapse{margin:1rem 0;border:1px solid var(--parchment-dk);background:rgba(255,255,255,.2)}
+details.collapse > summary{padding:.7rem 1.1rem;cursor:pointer;font-family:var(--font-head);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mid);background:var(--parchment-mid);list-style:none;display:flex;justify-content:space-between;align-items:center}
+details.collapse > summary::-webkit-details-marker{display:none}
+details.collapse > summary::after{content:'▾';font-size:.55rem;color:var(--gold-dk);transition:transform .2s}
+details.collapse[open] > summary::after{transform:rotate(180deg)}
+details.collapse > summary:hover{color:var(--ink)}
+details.collapse[open] > summary{border-bottom:1px solid var(--parchment-dk)}
+details.collapse > .collapse-body{padding:1rem 1.2rem 1.2rem}
+details.collapse > .collapse-body > *:last-child{margin-bottom:0}
+
+/* Item entries (weapons/armor/codices) */
+.item-entry{padding:.7rem 1rem;border-left:2px solid var(--parchment-dk);margin-bottom:.6rem;background:rgba(255,255,255,.15)}
+.item-entry-head{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin-bottom:.3rem}
+.item-name{font-family:var(--font-head);font-size:.78rem;letter-spacing:.04em;color:var(--ink);font-weight:600}
+.item-tags{font-family:var(--font-head);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dk)}
+.item-stats{font-size:.85rem;color:var(--ink-mid);margin-bottom:.25rem;font-style:italic}
+.item-desc{font-size:.85rem;color:var(--ink-mid);margin:0}
+
+/* Two-column layout helper */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin:1rem 0}
+@media(max-width:800px){.two-col{grid-template-columns:1fr}}
+
+/* Callout box */
+.callout{background:var(--gold-bg);border:1px solid var(--gold-dk);border-left-width:3px;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.92rem}
+.callout-label{font-family:var(--font-head);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cinnabar);margin-bottom:.4rem;display:block}
+.callout p{margin-bottom:.5rem}.callout p:last-child{margin-bottom:0}
+
+/* Image lightbox */
+img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrait img,.class-portrait img,.stat-block .img-inline img{cursor:zoom-in}
+#lightbox{display:none;position:fixed;inset:0;z-index:600;background:rgba(17,14,9,.92);align-items:center;justify-content:center;padding:2rem;cursor:zoom-out}
+#lightbox.open{display:flex}
+#lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;box-shadow:0 12px 60px rgba(0,0,0,.6);object-fit:contain}
+#lightbox .lb-caption{position:absolute;bottom:1.2rem;left:0;right:0;text-align:center;font-family:var(--font-head);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-pale);padding:0 1rem}
+#lightbox .lb-close{position:absolute;top:1rem;right:1.4rem;background:none;border:1px solid var(--gold-pale);color:var(--gold-pale);font-size:1.2rem;width:2.2rem;height:2.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:var(--font-head)}
+#lightbox .lb-close:hover{background:var(--gold-pale);color:var(--ink)}
+
+/* Origin block */
+.origin-card{padding:1rem 1.2rem;background:rgba(255,255,255,.22);border-left:3px solid var(--parchment-dk);margin-bottom:1rem}
+.origin-card:hover{border-left-color:var(--gold-dk)}
+.origin-card h4{font-family:var(--font-head);font-size:.85rem;letter-spacing:.04em;color:var(--ink);margin-bottom:.2rem}
+.origin-card .origin-tags{font-family:var(--font-head);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:.5rem}
+.origin-card .origin-bonus{font-size:.88rem;color:var(--ink-mid);margin:.3rem 0}
+.origin-card .origin-bonus b{color:var(--ink)}
+
+/* Section separator with eyebrow */
+.handbook-eyebrow{font-family:var(--font-head);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cinnabar);text-align:center;display:block;padding:.3rem 0;margin:.6rem 0 .2rem}
+
+/* Mobile responsive tweaks for new components */
+@media(max-width:800px){
+  .step-block{grid-template-columns:1fr}
+  .step-num{font-size:1.4rem}
+  .ability-head{flex-direction:column;align-items:flex-start;gap:.2rem}
+  .ability-cost{text-align:left}
+  .stat-block-head{flex-direction:column;align-items:flex-start;gap:.3rem}
+  .rules-table{font-size:.82rem}
+  .rules-table th,.rules-table td{padding:.4rem .5rem}
+}
 </style>
 </head>
 <body>
 <button id="mob-toggle">☰</button>
 <nav id="sidebar"><div class="sidebar-brand">
   <span class="brand-title">The Long Road Home</span>
-  <span class="brand-sub">Story Bible — Working Draft</span>
+  <span class="brand-sub">Story Bible &amp; Alpha Rules</span>
 </div>
 <div class="nav-divider"></div>
 <button class="nav-group-btn" onclick="toggleGroup(this)">Overview <span class="nav-arrow">▾</span></button>
 <div class="nav-items"><a class="nav-link" href="#overview">Overview</a></div>
+<div class="nav-divider"></div>
+<button class="nav-group-btn" onclick="toggleGroup(this)">Get Started <span class="nav-arrow">▾</span></button>
+<div class="nav-items">
+  <a class="nav-link" href="#quickstart">Step-by-Step Character Creation</a>
+  <a class="nav-link" href="#core-mechanics">How the Game Works</a>
+  <a class="nav-sub" href="#action-economy">Action Economy</a>
+  <a class="nav-sub" href="#resolution">Resolution &amp; Crits</a>
+  <a class="nav-sub" href="#spellcasting">Spellcasting</a>
+  <a class="nav-sub" href="#positioning">Positioning</a>
+  <a class="nav-sub" href="#grit-and-body">Grit &amp; Body</a>
+  <a class="nav-sub" href="#abilities-and-readied">Abilities &amp; Readied</a>
+  <a class="nav-sub" href="#tiers">Tiers</a>
+</div>
 <div class="nav-divider"></div>
 <button class="nav-group-btn" onclick="toggleGroup(this)">Characters <span class="nav-arrow">▾</span></button>
 <div class="nav-items">
@@ -163,10 +290,43 @@ figcaption{font-family:var(--font-head);font-size:.58rem;letter-spacing:.12em;te
   <a class="nav-link" href="#turathi">The Turathi</a>
 </div>
 <div class="nav-divider"></div>
-<button class="nav-group-btn" onclick="toggleGroup(this)">Classes <span class="nav-arrow">▾</span></button>
+<button class="nav-group-btn" onclick="toggleGroup(this)">Statistics &amp; Origins <span class="nav-arrow">▾</span></button>
 <div class="nav-items">
-  <a class="nav-link" href="#basic-classes">Basic Classes</a>
-  <a class="nav-link" href="#advanced-classes">Advanced Classes</a>
+  <a class="nav-link" href="#statistics">Statistics</a>
+  <a class="nav-link" href="#origins">Origins</a>
+  <a class="nav-sub" href="#origins-imperial">Imperial</a>
+  <a class="nav-sub" href="#origins-dalimyri">Dalimyri</a>
+  <a class="nav-sub" href="#origins-shan">Shan</a>
+  <a class="nav-sub" href="#origins-other">Other</a>
+</div>
+<div class="nav-divider"></div>
+<button class="nav-group-btn" onclick="toggleGroup(this)">Class Mechanics <span class="nav-arrow">▾</span></button>
+<div class="nav-items">
+  <a class="nav-link" href="#base-class-rules">Base Classes (Alpha)</a>
+  <a class="nav-sub" href="#class-legionnaire">Legionnaire</a>
+  <a class="nav-sub" href="#class-scholar">Scholar</a>
+  <a class="nav-sub" href="#class-scout">Scout</a>
+  <a class="nav-sub" href="#class-chorister">Chorister</a>
+  <a class="nav-sub" href="#class-spiritbinder">Spiritbinder</a>
+</div>
+<div class="nav-divider"></div>
+<button class="nav-group-btn" onclick="toggleGroup(this)">Skills, Edges, Gear <span class="nav-arrow">▾</span></button>
+<div class="nav-items">
+  <a class="nav-link" href="#skills">Skills</a>
+  <a class="nav-link" href="#edges">General Edges</a>
+  <a class="nav-link" href="#equipment">Equipment</a>
+  <a class="nav-sub" href="#equipment-rules">Slots &amp; Readied</a>
+  <a class="nav-sub" href="#equipment-types">Item Types</a>
+  <a class="nav-sub" href="#codices">Codices</a>
+  <a class="nav-sub" href="#equipment-list-tier1">Tier 1 List</a>
+  <a class="nav-link" href="#conditions">Conditions Reference</a>
+</div>
+<div class="nav-divider"></div>
+<button class="nav-group-btn" onclick="toggleGroup(this)">Class Gallery <span class="nav-arrow">▾</span></button>
+<div class="nav-items">
+  <a class="nav-link" href="#classes">All Classes Overview</a>
+  <a class="nav-sub" href="#basic-classes">Basic Classes</a>
+  <a class="nav-sub" href="#advanced-classes">Advanced &amp; Epic</a>
   <a class="nav-sub" href="#neutral-advanced-classes">Neutral</a>
   <a class="nav-sub" href="#orthodox-advanced-classes">Orthodox</a>
   <a class="nav-sub" href="#dalimyri-advanced-classes">Dalimyri</a>
@@ -198,6 +358,158 @@ figcaption{font-family:var(--font-head);font-size:.58rem;letter-spacing:.12em;te
 <figure class="img-scene"><img src="Sixty_Thousand_Became_Sixty.png" alt="Sixty_Thousand_Became_Sixty.png" loading="lazy"><figcaption>Six thousand soldiers became sixty scattered souls by noon</figcaption></figure>
 
 </section>
+    <section class="section" id="quickstart" data-spy="quickstart">
+<span class="sec-eyebrow">For Players</span>
+<h2 class="sec-title">Step-by-Step Character Creation</h2>
+<p class="annotatable lede">A Long Road Home character is a soldier of the Eternal Empire’s Third Legion — a survivor of the Battle of the Drowning, marching home through hostile country with the Chorus silent overhead. The five steps below walk you through a complete Tier&nbsp;1 build (levels 1–6). Each step links to the detailed rules in the Player’s Handbook below — start with <a class="rules-link" href="#core-mechanics">How the Game Works</a> if you want the rules tour first.</p>
+
+<div class="callout">
+  <span class="callout-label">Alpha Scope</span>
+  <p>This alpha covers <b>levels 1–6 only</b>. At level 3 you take a <b>Dedication</b>, and for the alpha that Dedication must be a second base class (Legionnaire, Scholar, Scout, Chorister, or Spiritbinder) — advanced and epic dedications are still in design and appear elsewhere in this document tagged <span class="concept-badge" style="margin:0">Concept — Mechanics Pending</span>.</p>
+</div>
+
+<div class="steps-grid">
+
+  <div class="step-block">
+    <div class="step-num">I</div>
+    <div class="step-body">
+      <h4>Choose Your Origin</h4>
+      <p>Origin is who you were before you were a soldier. It supplies a tagged skill or two, a stat or secondary-stat bonus, and one Origin Ability you can ready in combat. Imperial origins are most common for a Third Legion character, but a <b>Foreign-blooded</b> citizen can take an Origin Ability from another culture.</p>
+      <p>See <a class="rules-link" href="#origins">Origins</a> for the full list.</p>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-num">II</div>
+    <div class="step-body">
+      <h4>Assign Core Statistics</h4>
+      <p>You have four core stats: <b>Might</b>, <b>Grace</b>, <b>Reason</b>, and <b>Will</b>. Each starts at 0. Spend <b>6 points</b> total, with no stat above +3 or below 0 at character creation.</p>
+      <ul>
+        <li><b>Might</b> — weapon damage, Grit, Body, PDR, carrying capacity</li>
+        <li><b>Grace</b> — weapon accuracy, Defense, Initiative, readied items</li>
+        <li><b>Reason</b> — magic accuracy, Initiative, readied abilities</li>
+        <li><b>Will</b> — magic damage, Ward, MDR, saving throws</li>
+      </ul>
+      <p>See <a class="rules-link" href="#statistics">Statistics</a> for how secondary stats (Grit, Body, Defense, Ward, Speed, Initiative) are calculated.</p>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-num">III</div>
+    <div class="step-body">
+      <h4>Choose Your Class</h4>
+      <p>Your base class determines your equipment proficiencies, your starting Grit and Body, your <b>Core Mechanic</b>, and your <b>Signature Ability</b>. The five base classes are <a class="rules-link" href="#class-legionnaire">Legionnaire</a>, <a class="rules-link" href="#class-scholar">Scholar</a>, <a class="rules-link" href="#class-scout">Scout</a>, <a class="rules-link" href="#class-chorister">Chorister</a>, and <a class="rules-link" href="#class-spiritbinder">Spiritbinder</a>.</p>
+      <p>At level 1 you also choose <b>one ability</b> from your class’s ability list (or your Origin’s list).</p>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-num">IV</div>
+    <div class="step-body">
+      <h4>Level Up to Six</h4>
+      <p>Walk your character through levels 2–6 in order. Each level adds an ability or an edge; some levels add both.</p>
+      <ul>
+        <li><b>Level 2:</b> choose 1 ability, choose 1 <a class="rules-link" href="#edges">edge</a></li>
+        <li><b>Level 3:</b> <b>take a Dedication</b> (a second base class — Legionnaire, Scholar, Scout, Chorister, or Spiritbinder; alpha rule). Gain that class’s Signature, Core Mechanic, equipment proficiencies, and stat bonuses. Choose 1 ability. Mastery rises to +2. Add +1 to two different core stats (no stat above +6).</li>
+        <li><b>Level 4:</b> choose 1 ability, choose 1 edge</li>
+        <li><b>Level 5:</b> choose 1 ability, choose 1 edge</li>
+        <li><b>Level 6:</b> choose 1 ability, choose 1 edge</li>
+      </ul>
+      <p>Abilities can be drawn from your class, your Dedication class, or your Origin. The number of abilities you can keep <b>readied</b> in combat is <b>3 + your Reason</b>; the rest are known but unavailable until you swap them in.</p>
+    </div>
+  </div>
+
+  <div class="step-block">
+    <div class="step-num">V</div>
+    <div class="step-body">
+      <h4>Pick Equipment</h4>
+      <p>You can carry <b>10 + Might</b> slots of gear, of which <b>3 + Grace</b> can be Readied — accessible mid-combat without spending actions to dig in your pack. A heavy weapon takes 1 slot; armor takes 4; shields take 2.</p>
+      <p>Choose your weapons, armor, shields, and utility items from the <a class="rules-link" href="#equipment">Equipment</a> list — but only types your class is <b>proficient</b> in. Many items grant their own abilities (like Shield Bash, or a Codex’s spells); equipping the item lets you ready the ability.</p>
+      <p>Choristers should also pick a <a class="rules-link" href="#codices">Codex</a> — these are the magical implements that contain Lexicon spells.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="annotatable">When you are done, your character has: an Origin (skills, ability), four core stats, two classes worth of Signatures and Core Mechanics, five chosen abilities, four edges, and a kit of equipment. You also have a Mastery bonus of +2 (added to attack rolls, damage, and any tagged skills), a Body score of 8 + Might, a Grit pool that grows each level, and a Defense and Ward calculated from Grace, Will, and equipment.</p>
+
+</section>
+
+    <section class="section" id="core-mechanics" data-spy="core-mechanics">
+<span class="sec-eyebrow">For Players</span>
+<h2 class="sec-title">How the Game Works</h2>
+<p class="annotatable lede">Long Road Home is a tactical role-playing game. Combat happens on a square grid; positioning is half the game. Resolution is <b>1d20 + modifier vs. a target number</b> — familiar territory for anyone who has played a d20 system. The texture comes from the action economy, the conditions, and the way Lexicon, spirit, and alchemical magic each generate distinct tactical pressure.</p>
+
+<h3 class="sub" id="action-economy">Action Economy</h3>
+<p>Each turn you have <b>three action points</b>. You spend them on actions:</p>
+<ul style="margin:.5rem 0 1rem 1.4rem;font-size:.95rem">
+  <li><b>Extended Action</b> — costs 3 action points; consumes the full turn.</li>
+  <li><b>Major Action</b> — costs 2 action points. Most attacks and powerful abilities.</li>
+  <li><b>Minor Action</b> — costs 1 action point. Movement, observation, item use, recovery.</li>
+  <li><b>Reactions</b> — triggered out of turn. Each character has one Reaction per round unless an ability says otherwise.</li>
+</ul>
+
+<h4 class="sub">Universal Actions</h4>
+<p>These do not need to be readied — every character can do them, and they can be used multiple times in a round.</p>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Basic Attack</span><span class="ability-cost">Major Action</span></div><p class="ability-desc">Roll 1d20 + Grace + weapon’s accuracy bonus + Mastery vs. target’s Defense. On a hit, deal weapon damage + Might + Mastery. <b>On a miss, you still deal damage equal to your Might + Mastery.</b> On a critical hit (beating Defense by 10+), maximize the weapon’s damage dice and roll them again before adding modifiers.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Move</span><span class="ability-cost">Minor Action</span></div><p class="ability-desc">Move up to your Speed in squares. You can move through allies but cannot end your turn in their square; you cannot move through enemies.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Use Item</span><span class="ability-cost">Major or Minor</span></div><p class="ability-desc">Cost depends on the item. Thrown weapons, munitions, and healer’s kits are typically Major; potions and elixirs are typically Minor.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Recover</span><span class="ability-cost">Minor Action</span></div><p class="ability-desc">Choose one condition affecting you. Make a Recovery check vs. DC 10. On success, decrease that condition by 1; on a critical success, decrease by 2. (When a condition reaches 0, it ends.)</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Sustain</span><span class="ability-cost">Minor Action</span></div><p class="ability-desc">Choose one Concentration condition or ability you have active; it persists until the end of your next round. Each Concentration effect requires its own Sustain.</p></div>
+</div>
+
+<h3 class="sub" id="resolution">Resolution &amp; Degrees of Success</h3>
+<p>Almost every check is <b>1d20 + modifiers vs. target number</b>. Three outcomes matter:</p>
+<ul style="margin:.5rem 0 1rem 1.4rem;font-size:.95rem">
+  <li><b>Critical Success</b> — beating the target number by 10 or more. Maximize damage dice, then roll again before adding modifiers.</li>
+  <li><b>Success</b> — meeting or exceeding the target number.</li>
+  <li><b>Failure</b> — below the target number. Even on a failure, attacks still deal damage equal to the attacker’s Might (or Will, for spells), plus Mastery. <b>No turn is wasted.</b></li>
+</ul>
+<p>A natural 1 increments the failure side; a natural 20 increments the success side. (A natural 20 turns a Success into a Critical Success.)</p>
+
+<div class="designer-note">Crit failures aren’t that interesting in practice — they punish luck rather than choice. So the system uses three degrees of success rather than four: Critical Success, Success, Failure. The “damage on a miss” rule is meant to keep every action meaningful, especially for low-Grace characters who would otherwise feel useless against high-Defense enemies.</div>
+
+<h3 class="sub" id="spellcasting">Spellcasting</h3>
+<p>Spells follow the same shape as attacks but use different stats. A <b>Spellcasting roll</b> is 1d20 + Reason + Mastery (if applicable). If the spell targets an enemy (a <b>Spellcasting attack</b>), compare to the target’s <b>Ward</b>; otherwise, compare to a static DC. On a critical spellcasting attack, maximize damage dice and roll again. On a failure, the spell still deals damage equal to the caster’s Will + Mastery.</p>
+
+<h3 class="sub" id="saving-throws">Saving Throws &amp; Conditions</h3>
+<p>Many conditions decrement on their own at the end of the affected creature’s turn. Some, like Burning, you can attempt to shake off with a <b>Saving Throw</b>: choose one condition currently affecting you, roll 1d20 + Recovery, and on 10+ decrement the condition by 1. A Critical Success decrements by 2. When a condition reaches 0, it ends.</p>
+<p>The most important conditions to know in early play are <a class="rules-link" href="#cond-formation">Formation</a>, <a class="rules-link" href="#cond-identified">Identified</a>, <a class="rules-link" href="#cond-analyzed">Analyzed</a>, <a class="rules-link" href="#cond-fear">Fear</a>, <a class="rules-link" href="#cond-inspired">Inspired</a>, <a class="rules-link" href="#cond-burning">Burning</a>, and <a class="rules-link" href="#cond-bloodied">Bloodied</a>. The full reference is at <a class="rules-link" href="#conditions">Conditions</a>.</p>
+
+<h3 class="sub" id="positioning">Positioning</h3>
+<p>The grid matters. Several rules turn position into mechanical advantage:</p>
+<ul style="margin:.5rem 0 1rem 1.4rem;font-size:.95rem">
+  <li><b>Flanking</b> — Attacking an enemy adjacent to your ally grants +1 accuracy. Attacking an enemy with an ally on the opposite side grants +2 accuracy.</li>
+  <li><b>High Ground</b> — +2 accuracy for ranged attacks from above; +2 Defense against melee from below.</li>
+  <li><b>Forced Movement</b> — Push moves a target away from the source; Pull moves them toward it. If a creature would be forced into an ineligible square (occupied, impassable), it instead takes damage equal to roughly 10% of average tier health per square it could not move.</li>
+  <li><b>Difficult Terrain</b> — Each square costs 2 movement to enter.</li>
+  <li><b>Hazardous Terrain</b> — Damages or applies a condition on entry or turn-end.</li>
+  <li><b>Concealing Terrain</b> — Ranged attacks suffer −2 against creatures within. Concealing terrain enables Hide checks (Grace vs. opponent’s Reason) to enter Stealth.</li>
+  <li><b>Burning Terrain</b> — A subtype of Hazardous; deals 1d6 fire damage per tier on entry or turn-end. Also Difficult.</li>
+</ul>
+
+<h3 class="sub" id="grit-and-body">Grit, Body, &amp; Damage</h3>
+<p>Damage reduces your <b>Grit</b> first. Grit returns generously: each minute out of danger, you heal Grit equal to your Recovery. When damage would reduce Grit below 0, the spillover hits <b>Body</b>. Body damage is serious — at 50%, 75%, and 100% Body damage, you roll on the permanent injury table. When Body reaches 0 you are <a class="rules-link" href="#cond-dying">Dying</a> and unable to act; while dying you make a Saving Throw vs. DC 15 each turn. Three successes and you stabilize; three failures and your character dies. Body heals at only 1 point per day by default.</p>
+<p><b>Bloodied</b> is the half-Grit threshold; some abilities trigger from being Bloodied or attacking a Bloodied target.</p>
+
+<h3 class="sub" id="damage-reduction">Damage Reduction, Resistance, &amp; Vulnerability</h3>
+<p><b>Physical Damage Reduction (PDR)</b> applies to Blunt, Bleeding, Piercing, and Slashing damage; subtract from each instance of damage taken (minimum 1). Equal to half your Might (round up), plus armor and other bonuses.</p>
+<p><b>Magical Damage Reduction (MDR)</b> applies to all other damage types — fire, psychic, thunder, magical force, etc. Subtract from each instance (minimum 1). Equal to half your Will (round up), plus equipment.</p>
+<p><b>Resistance</b> halves a damage type before reduction is applied. <b>Vulnerability</b> increases damage of a type by 50% before reduction. Resistances and Vulnerabilities apply <em>before</em> PDR/MDR.</p>
+
+<h3 class="sub" id="abilities-and-readied">Abilities, Mastery, &amp; Readied Slots</h3>
+<p>You learn many abilities — from your Origin, your Class, your Dedication, and your equipment. In the heat of combat, only your <b>Readied</b> abilities are available: <b>3 + Reason</b> abilities at any one time. You can swap one Readied ability mid-battle by spending 3 actions clearing your mind, or freely between battles.</p>
+<p>You also can’t use the same ability twice in the same round (Universal actions are exempt).</p>
+<p><b>Mastery</b> is a flat bonus to attack rolls, damage, and tagged skill checks. It begins at +1 at level 1 and increases by 1 at each Dedication (so +2 at level 3, +3 at level 7, and so on). Mastery is added even on a miss.</p>
+
+<h3 class="sub" id="tiers">Tiers &amp; Progression</h3>
+<p>The game is organized in <b>Tiers</b>, each marked by a Dedication. Levels 1–2 are <b>Tier&nbsp;1</b>; 3–6 are <b>Tier&nbsp;2</b>; 7–10 are <b>Tier&nbsp;3</b>; 11–14 are <b>Tier&nbsp;4</b>; 15–18 are <b>Tier&nbsp;5</b>; and 19–20 are the <b>Epic Tier</b>. Power scales meaningfully across tiers but stays bounded — a Tier&nbsp;3 hero is genuinely stronger than a Tier&nbsp;1, but a swarm of Tier&nbsp;1 enemies remains threatening to a Tier&nbsp;3 character.</p>
+
+<div class="designer-note">The alpha rules in this document cover Tier 1 and the start of Tier 2 — character levels 1 through 6. By level 6, players should have a clear sense of their build’s identity (one base class, one second-base-class dedication, five chosen abilities, four edges) and should be ready to take their first <em>real</em> dedication into an advanced or cross-cultural class — which the full rules will cover when they’re finished.</div>
+
+</section>
+
     <section class="section" id="characters" data-spy="characters">
 <span class="sec-eyebrow">Dramatis Personae</span>
 <h2 class="sec-title">Characters</h2>
@@ -936,12 +1248,979 @@ figcaption{font-family:var(--font-head);font-size:.58rem;letter-spacing:.12em;te
 <p class="annotatable entry-root">Aesthetic: Polynesian, Norse, with a touch of Gothic stained glass and wrought iron; a seaborne culture (almost) equally happy to raid or trade with all comers. Centered on tropical volcanic islands. A land of rainbow-plumed serpents haunting lush jungles dappled in deep shadows, dotted with cities of iron and basalt, stained-glass-towers rising like blades in the shadows of the volcanos.  </p>
 </div>
 </section>
-    <section class="section" id="classes" data-spy="classes">
-<span class="sec-eyebrow">Mechanical Systems</span>
+<section class="section" id="statistics" data-spy="statistics">
+<span class="sec-eyebrow">For Players</span>
+<h2 class="sec-title">Statistics</h2>
+<p class="annotatable lede">Four core stats — Might, Grace, Reason, Will — anchor everything else. Six secondary stats are derived from them. Together they describe what your character can do in nine numbers, and they are the spine of the character sheet.</p>
+
+<h3 class="sub">Core Statistics</h3>
+<p>You start with all four core stats at 0 and spend <b>6 points</b> at character creation to raise them. No stat may exceed +3 at character creation, and no stat may exceed +6 over the entire campaign (excepting the Epic Dedication at level 19, which lets you push one stat above +6).</p>
+
+<table class="rules-table">
+  <thead><tr><th>Stat</th><th>What it does</th></tr></thead>
+  <tbody>
+    <tr><td><b>Might</b></td><td>Adds to weapon damage, Grit, Body, PDR, and carrying capacity. The stat for hitting hard and absorbing punishment.</td></tr>
+    <tr><td><b>Grace</b></td><td>Adds to weapon accuracy, Defense, Initiative, and the number of items you can keep Readied. The stat for going first and not getting hit.</td></tr>
+    <tr><td><b>Reason</b></td><td>Adds to magical accuracy, Initiative, and the number of abilities you can keep Readied. The stat for casting and for tactical flexibility.</td></tr>
+    <tr><td><b>Will</b></td><td>Adds to magical damage, Ward, MDR, and saving throws. The stat for resisting magic and for spell power.</td></tr>
+  </tbody>
+</table>
+
+<div class="designer-note">A typical pre-Epic build will end up looking like one of these stat lines: 6/4/2/2, 6/3/3/2, or 4/4/3/3. Outliers might push 6/6/1/1 for extreme specialization. The intent is that almost every character has at least one stat at +5 or +6 (a real strength) and at least one stat at +1 or +2 (a real weakness), with interesting choices at every Dedication.</div>
+
+<h3 class="sub">Secondary Statistics</h3>
+<table class="rules-table">
+  <thead><tr><th>Stat</th><th>How it’s calculated</th></tr></thead>
+  <tbody>
+    <tr><td><b>Grit</b></td><td>Class-dependent base + Might. Grows each level by class’s per-level amount + Might. Damage hits Grit first; recovers fully out of combat.</td></tr>
+    <tr><td><b>Body</b></td><td>8 + Might. Damage that exceeds Grit reduces Body. Heals 1 per day. At 0 Body you are Dying.</td></tr>
+    <tr><td><b>Defense</b></td><td>8 + Grace + equipment + miscellaneous. The target number for physical attacks against you.</td></tr>
+    <tr><td><b>Ward</b></td><td>8 + Will + equipment + miscellaneous. The target number for spell attacks against you.</td></tr>
+    <tr><td><b>Initiative</b></td><td>Grace + Reason + equipment. Determines turn order.</td></tr>
+    <tr><td><b>Speed</b></td><td>Class-dependent base, modified by armor weight and conditions. The number of squares you can move on a Move action.</td></tr>
+    <tr><td><b>PDR</b></td><td>Half Might (round up) + armor. Subtracted from each instance of physical damage taken (minimum 1).</td></tr>
+    <tr><td><b>MDR</b></td><td>Half Will (round up) + equipment. Subtracted from each instance of magical damage taken (minimum 1).</td></tr>
+    <tr><td><b>Recovery</b></td><td>Origin- and class-dependent. Bonus to Saving Throws and to Grit recovered between combats.</td></tr>
+    <tr><td><b>Mastery</b></td><td>+1 at level 1; +1 at each Dedication. Added to attacks (incl. damage on a miss), spell attacks, and tagged skill checks.</td></tr>
+  </tbody>
+</table>
+
+<h3 class="sub">Carrying &amp; Readied Items</h3>
+<p>You can carry <b>10 + Might</b> slots of equipment. Of those, <b>3 + Grace</b> can be <b>Readied</b> — accessible without spending in-combat actions to dig through your pack. Heavy armor is 4 slots, a shield is 2, a weapon is 1, a single small item is typically 0–1.</p>
+<p>You can swap which items are Readied freely between battles (one minute of repacking). In combat, swapping a Readied item for a stowed one costs 3 actions of fishing through your pack.</p>
+
+<h3 class="sub">Concentration</h3>
+<p>Some abilities — sustained spells, martial stances, Stealth — require <b>Concentration</b>. Each turn you must spend a Sustain (Minor Action) for each Concentration effect you maintain; a character who is sustaining two effects must Sustain twice in the same turn.</p>
+<p>If you take damage while Concentrating, you make a Recovery check. The DC is whichever is greater: <b>5 or half the damage</b> if it was Grit damage; <b>15 or half the damage</b> if it reached Body. Failure ends all your Concentration effects.</p>
+
+</section>
+
+    <section class="section" id="origins" data-spy="origins">
+<span class="sec-eyebrow">For Players · Player’s Handbook</span>
+<h2 class="sec-title">Origins</h2>
+<p class="annotatable lede">Origin is who you were before you were a soldier. Each Origin gives you a stat or secondary-stat bonus, one or more tagged skills, sometimes a language, and an Origin Ability you can ready in combat. Your Origin can also be invoked in skill checks where its background would matter — “I’m a child of the Third Legion, so I have advantage on this Military Strategy roll.”</p>
+
+<h3 class="sub" id="origins-imperial">Imperial Origins</h3>
+<p class="annotatable">Imperial characters gain <b>one tagged skill</b> and <b>+1 Recovery</b> in addition to anything specific to their Origin. The peace and wealth of the Empire created a healthy, broadly-talented population.</p>
+
+<div class="origin-card" id="origin-child-of-the-legion">
+  <h4>Child of the Legion</h4>
+  <div class="origin-tags">Imperial</div>
+  <p>Grew up in military camps, born to a legionnaire and a camp follower. The Empire’s standard professional-soldier upbringing — your mother’s songs were marching cadences and your earliest games were with wooden gladii.</p>
+  <p class="origin-bonus"><b>Bonus:</b> +2 Grit. (Plus the standard Imperial tagged skill and +1 Recovery.)</p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">I Can Do This All Day</span><span class="ability-cost">Reaction · Encounter</span></div><p class="ability-desc">When you take damage, you may use your Reaction to roll 1d6, add your Might, and reduce the damage taken by that amount.</p></div>
+</div>
+
+<div class="origin-card" id="origin-syndicate-trader">
+  <h4>10,000 League Syndicate Trader</h4>
+  <div class="origin-tags">Imperial</div>
+  <p>Grew up on the road; spent your youth running cargo from the Auric ports through the Empire’s heartland to the Taltasquan elixir markets. Familiar with foreign ways, foreign tongues, and foreign customs duties.</p>
+  <p class="origin-bonus"><b>Bonus:</b> Tag one skill of your choice; gain fluency in one language. (Plus the standard Imperial tagged skill and +1 Recovery.)</p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Rituals of Purification</span><span class="ability-cost">Minor Action · Encounter</span></div><p class="ability-desc">These are drilled into you each time you re-enter Imperial lands. Gain +2 Ward until the beginning of your next turn, and immediately make a Recovery check against one condition of your choice.</p></div>
+</div>
+
+<div class="origin-card" id="origin-golden-zenith">
+  <h4>Golden Zenith</h4>
+  <div class="origin-tags">Imperial · Aristocrat</div>
+  <p>Child of the Imperial aristocracy. You have not slept on bare ground until this campaign, and most of what you know about military life came from polished tutors and a few dinner-table veterans willing to talk in front of children. You can give an order, though, and people listen.</p>
+  <p class="origin-bonus"><b>Bonus:</b> +1 tagged skill (in addition to the standard Imperial one) and one additional Readied Item slot.</p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Born to Lead</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">Choose one ally per two tiers (round up). Each gains <a class="rules-link" href="#cond-hastened">Hastened 1</a>.</p></div>
+</div>
+
+<div class="origin-card" id="origin-scriptorium">
+  <h4>Scriptorium</h4>
+  <div class="origin-tags">Imperial · Scholar</div>
+  <p>You spent time in a scholar-monastery — one of the great cloistered universities where boys are taught to copy the Words of the God-King by hand and girls (rarely, in the older houses) to read between them. You did not become a Chorister, but you saw the work being done.</p>
+  <p class="origin-bonus"><b>Bonus:</b> Gain one language and 2 tagged Lore skills (in addition to the standard Imperial tagged skill and +1 Recovery).</p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Minor Word of Power</span><span class="ability-cost">Reaction · Encounter · Lexicon</span></div><p class="ability-desc">You may not be a full Chorister, but years immersed in study have afforded you the faintest inkling of the Lexicon. When a creature within 6 squares rolls a die, you may use this power to roll that die again, and add half the current Resonance as a bonus or penalty (your choice).</p></div>
+</div>
+
+<div class="origin-card" id="origin-red-hand">
+  <h4>Red Hand Guildmember</h4>
+  <div class="origin-tags">Imperial · Artisan</div>
+  <p>You were apprenticed in the Red Hand Guild — the artisans who labor with the sacred (and magically reactive) clay used for Imperial terra cotta automatons and fortified walls. The Guild’s tools are heirlooms; their hands carry small, persistent burns.</p>
+  <p class="origin-bonus"><b>Bonus:</b> +2 Body, +1 Recovery (in addition to the standard Imperial tagged skill).</p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Sacred Tools</span><span class="ability-cost">Minor Action · Encounter</span></div><p class="ability-desc">Choose a weapon, implement, or shield you have Readied. Until the end of this turn, attacks or spell attacks with that weapon or implement gain +2 accuracy, or that shield provides an additional +2 Defense.</p></div>
+</div>
+
+<div class="origin-card" id="origin-censorate-foundling">
+  <h4>Censorate Foundling</h4>
+  <div class="origin-tags">Imperial · Censorate</div>
+  <p>Raised by the Censorate itself from a very young age. Your parents were probably executed. The Censorate schools are not gentle places — you have learned to be always aware of possible threats, and to be useful to your handlers.</p>
+  <p class="origin-bonus"><b>Bonus:</b> +1 Initiative, +2 Grit (in addition to the standard Imperial tagged skill and +1 Recovery).</p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Censorate Schooling</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Those raised by the Censorate are trained to perform the dirty work of empire to atone for the treasons of their parents. The first time you are reduced to 0 or fewer Grit in an encounter, any spillover damage to Body is ignored and your Grit is set to 1 instead.</p></div>
+</div>
+
+<div class="origin-card" id="origin-foreign-blooded">
+  <h4>Foreign-blooded</h4>
+  <div class="origin-tags">Imperial Citizen · Suspect</div>
+  <p>You could be Shan, Dalimyri, Turathi, even Auric or Taltasquan in heritage — and therefore suspicious — but you grew up a citizen of the Eternal Empire. The Empire’s officers will speak to your face about loyalty and behind your back about parentage.</p>
+  <p class="origin-bonus"><b>Bonus:</b> Gain 1 tagged skill and a language (in addition to the standard Imperial tagged skill and +1 Recovery).</p>
+  <p class="origin-bonus"><b>Origin Ability:</b> Choose one Origin Ability from the appropriate culture’s <em>general</em> ability list (not court- or sub-origin-specific). For example, a Dalimyri-blooded character may choose <a class="rules-link" href="#dalimyri-abilities">Awaken Spirit</a> from the Dalimyri general list, but not Inspiring Touch from the Spring Court.</p>
+</div>
+
+<h4 class="sub">Imperial Origin Abilities (General)</h4>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Litany of the God-King</span><span class="ability-cost">Minor Action · Encounter</span></div><p class="ability-desc">Every Imperial citizen knows this prayer by heart. While not a lexical incantation as such, its words carry a flicker of power, especially in times of crisis. Gain +1 Ward and +1 MDR until the beginning of your next turn.</p></div>
+</div>
+
+<h4 class="sub">Imperial Edges</h4>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">People of the Word</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Gain a +1 bonus to Accuracy and Damage rolls for every 4 points of Resonance on the battlefield (round down).</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Hold Tight Your Blessings</span><span class="ability-cost">Passive</span></div><p class="ability-desc">The first time in an encounter when you would decrement a positive condition affecting you, don’t.</p></div>
+</div>
+
+<hr class="rule">
+
+<h3 class="sub" id="origins-dalimyri">Dalimyri Origins</h3>
+<p class="annotatable">The Dalimyri are the wardens of the Labyrinth — the Barrowlands’ ancient spirit-knot. They are organized into Four Courts (Spring, Summer, Autumn, Winter), each with its own temperament, magic, and obligations. A Dalimyri Origin gives you the temperament of one Court and access to the Dalimyri general ability list. Foreign-blooded Imperial characters may take a general Dalimyri ability without committing to a Court.</p>
+
+<div class="designer-note">Most Dalimyri Origin abilities below are still being ported from earlier edition mechanics — phrases like “proficiency bonus” and “Wisdom saving throw” will become Mastery and Recovery checks in the final v3 text. Treat the descriptions as the design intent and use the closest v3 equivalent at the table for now.</div>
+
+<div class="origin-card" id="origin-spring-court">
+  <h4>Spring Court — Born Diplomat</h4>
+  <div class="origin-tags">Dalimyri · Spring</div>
+  <p>The Court of healing, nurturing, and hope-that-springs-eternal. Where wounds are bound and quarrels mediated. Spring Court Dalimyri tend to be the diplomats and healers, the negotiators between the harder Courts.</p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Inspiring Touch</span><span class="ability-cost">Action · Long-rest recharge</span></div><p class="ability-desc">You know the guidance cantrip. Additionally, as an action, you can touch a willing creature and cause them to recover Grit equal to your level.</p></div>
+</div>
+
+<div class="origin-card" id="origin-summer-court">
+  <h4>Summer Court — Always Defiant</h4>
+  <div class="origin-tags">Dalimyri · Summer</div>
+  <p>The Court of passion, idealism, and warfare. Some things — kin, oath, the land — are more important than living. Summer Court Dalimyri are the warriors and the partisans.</p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Always Defiant</span><span class="ability-cost">Passive · 1/Encounter trigger</span></div><p class="ability-desc">Resistance springs eternal. Any time you successfully save against a Charm or Fear effect, gain temporary Grit equal to double your tier. Once per encounter, when you fail a save against a Charm or Fear effect, you may choose to succeed at that save instead.</p></div>
+</div>
+
+<div class="origin-card" id="origin-autumn-court">
+  <h4>Autumn Court — Heir to Terror</h4>
+  <div class="origin-tags">Dalimyri · Autumn</div>
+  <p>The Court of fear, sorcery, mystery, the uncanny and unknowable. Faerie glamour is your birthright. Autumn Court Dalimyri are the illusionists, the hexers, the ones who walk the Labyrinth at strange hours.</p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Natural Illusionist</span><span class="ability-cost">Concept — Mechanics Pending</span></div><p class="ability-desc">A small native illusion talent. Final mechanics still in design.</p></div>
+</div>
+
+<div class="origin-card" id="origin-winter-court">
+  <h4>Winter Court — Forsaken / Never Say Die</h4>
+  <div class="origin-tags">Dalimyri · Winter</div>
+  <p>The Court of necessity, hard choices, will to survive, pragmatism, withstanding danger, hunting the hidden. Winter Court Dalimyri are often Forsaken — refused entry to a Court or banished from one — and they wear that exile as armor.</p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Never Say Die</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Humans are no strangers to pain, and their resolve is near depthless. While Bloodied, increase your PDR and MDR by 3.</p></div>
+</div>
+
+<h4 class="sub" id="dalimyri-abilities">Dalimyri General Abilities</h4>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Maze Step</span><span class="ability-cost">Action · Encounter</span></div><p class="ability-desc">You may step sideways into the Labyrinth to cheat space. Teleport up to 6 squares to an unoccupied square you can see. Additionally, one creature you can see within 1 square of you (before or after the teleport) must succeed on a Saving Throw or be Feared 2 of you until the end of your next turn. <em>(Mechanics being finalized.)</em></p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Child of the Earth</span><span class="ability-cost">Passive · 1/day ritual</span></div><p class="ability-desc">Through lineage or simply talent, you have a rapport with the spirits of the earth. You ignore Difficult Terrain caused by any form of earth or soil — mud, mountainous ground, scree. Once per day, you may attempt to divine the earth’s wisdom (as the augury spell) by submerging your feet or hands into mud or soil.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Awaken Spirit</span><span class="ability-cost">Ritual (1 minute, out of combat)</span></div><p class="ability-desc">Rouse the spirit of an object no more than eight feet on any side — a sword, a goldpiece, a boulder, an arrow, a door (yes); a ship, a cottage, a catapult, a castle (no) — to wakefulness. The spirit becomes an NPC until it chooses to return to slumber. It does not owe you anything (including thanks), but can be charmed, negotiated with, or propitiated like any other sapient creature. A recently-awakened spirit can act within its nature (a door can lock or refuse to open; a sword can cling to its sheath or strike silently). It may also provide a maximum of +1d4 to a single roll before exhausting itself — a friendly sword speeding a blow, a spyglass sharpening a perception check.</p></div>
+</div>
+
+<hr class="rule">
+
+<h3 class="sub" id="origins-shan">Shan Origins</h3>
+<p class="annotatable">Shan is the Inverted Kingdom — once a sovereign matriarchy of psychic-magic mystics, now an Imperial prefecture under occupation. A Shan Origin character has either survived the occupation or grown up under it. The Shan general abilities reflect a thousand years of resisting the elven Dominion that ruled them before the Empire arrived; their psychic resilience runs in the bone.</p>
+
+<div class="designer-note">As with Dalimyri, several Shan abilities below are still being ported from earlier-edition mechanics. Treat the descriptions as design intent.</div>
+
+<div class="origin-card" id="origin-dhar">
+  <h4>Descendant of the Dhar</h4>
+  <div class="origin-tags">Shan</div>
+  <p>You descend from the Dhar — the old Shan matriarchal line. Some pride attaches; some danger does too, since Imperial assessors keep careful records of who claims that blood.</p>
+  <p class="origin-bonus"><span class="concept-badge" style="margin:0">Concept — Mechanics Pending</span></p>
+</div>
+<div class="origin-card" id="origin-shan-war-orphan"><h4>War Orphan</h4><div class="origin-tags">Shan</div><p>Lost your parents in the long, slow grinding-down of Shan independence. Raised by relatives, by wartime collectives, or by no one in particular.</p><p class="origin-bonus"><span class="concept-badge" style="margin:0">Concept — Mechanics Pending</span></p></div>
+<div class="origin-card" id="origin-shan-resistance"><h4>Child of the Resistance</h4><div class="origin-tags">Shan</div><p>Your family hides Shan partisans — or hid them, until the Censors came. You learned to keep secrets younger than most children learn to read.</p><p class="origin-bonus"><span class="concept-badge" style="margin:0">Concept — Mechanics Pending</span></p></div>
+<div class="origin-card" id="origin-shan-subsistence"><h4>Subsistence Worker</h4><div class="origin-tags">Shan</div><p>Born to a tenant family, working Imperial-administered land for a sliver of the harvest. You know what hungry winters look like.</p><p class="origin-bonus"><span class="concept-badge" style="margin:0">Concept — Mechanics Pending</span></p></div>
+<div class="origin-card" id="origin-shan-profiteer"><h4>War Profiteer</h4><div class="origin-tags">Shan</div><p>Your family did rather well off the occupation, supplying Imperial garrisons or buying up confiscated land. Other Shan know your name and remember it.</p><p class="origin-bonus"><span class="concept-badge" style="margin:0">Concept — Mechanics Pending</span></p></div>
+
+<h4 class="sub" id="shan-abilities">Shan General Abilities</h4>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Unbreakable Will</span><span class="ability-cost">Passive</span></div><p class="ability-desc">A thousand years of resisting the Elven Dominion has bred a fearsome will into those humans who survived. Gain Resistance to psychic damage equal to your level. <em>(Mechanics being finalized.)</em></p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Elusive Grace</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Elven quickness borders on the uncanny. Increase your Speed by 2. When you take the Move action, you may move 2 squares without provoking attacks of opportunity. You have advantage on checks to escape from being grappled. <em>(Mechanics being finalized.)</em></p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Resilient</span><span class="ability-cost">Passive</span></div><p class="ability-desc">When you recover Grit between encounters, add your Mastery in addition to your Recovery to the amount healed. <em>(Mechanics being finalized.)</em></p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Diehard Survivor</span><span class="ability-cost">Passive · 1/Encounter</span></div><p class="ability-desc">A Shan is never so dangerous as when nearest death. You die after four failed Saving Throws while Dying, rather than three. While Bloodied, you may use an action to gain a +5 bonus to your next attack roll, skill check, or Saving Throw before the end of your turn (1/Encounter).</p></div>
+</div>
+
+<hr class="rule">
+
+<h3 class="sub" id="origins-other">Other Origins</h3>
+<p class="annotatable">Auric, Taltasquan, and Turathi origins are outside the alpha’s scope — Foreign-blooded Imperial characters of those heritages can lean into their cultural backgrounds for skill purposes, but the dedicated Origin entries are still in design.</p>
+<div class="origin-card">
+  <h4>Turathi · The Long-Eye <span class="concept-badge" style="margin:0">Concept — Mechanics Pending</span></h4>
+  <div class="origin-tags">Turathi (preview)</div>
+  <p>Your eyes can see a few moments into the future, and your mind apprehends the divergent possibilities. Each morning, roll a d20 and record the result. When a creature you can see within 60 feet rolls a d20, you can use your reaction to replace their roll with your recorded result. <em>(Mechanics being finalized.)</em></p>
+</div>
+
+</section>
+
+    <section class="section" id="base-class-rules" data-spy="base-class-rules">
+<span class="sec-eyebrow">For Players · Player’s Handbook</span>
+<h2 class="sec-title">Base Class Mechanics</h2>
+<p class="annotatable lede">The five base classes — <a class="rules-link" href="#class-legionnaire">Legionnaire</a>, <a class="rules-link" href="#class-scholar">Scholar</a>, <a class="rules-link" href="#class-scout">Scout</a>, <a class="rules-link" href="#class-chorister">Chorister</a>, and <a class="rules-link" href="#class-spiritbinder">Spiritbinder</a> — are the structural backbone of every character. Each establishes a Core Mechanic that becomes a vocabulary the rest of the game builds on (Formation, Identified/Analyzed, Momentum, Resonance, Favor). Every full class entry below shows the starting proficiencies, starting statistics, Grit progression, Core Mechanic, Signature Ability, the full menu of Class Abilities you choose from as you level, and the Class Edges available as Edge picks at levels 2/4/5/6.</p>
+
+<div class="callout">
+  <span class="callout-label">Cross-Class Dedication (Alpha Rule)</span>
+  <p>At level 3, every character takes a Dedication. In the alpha, that Dedication must be a <b>second base class</b> — Legionnaire, Scholar, Scout, Chorister, or Spiritbinder (and not the same one you started with). Each base class entry below ends with a “<b>If you Dedicate Into This Class</b>” block that summarizes what you gain. Once dedicated, you may choose abilities and edges from that second class’s menus on subsequent levels, in addition to your original class’s menus and your Origin’s.</p>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- LEGIONNAIRE -->
+<div class="stat-block" id="class-legionnaire">
+<figure class="img-inline"><img src="Legionnaires.png" alt="Legionnaire" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Legionnaire</h3><span class="stat-block-tag">Base Class · Imperial Foundation</span></div>
+<p>The backbone of the Eternal Empire’s shattered legion. Legionnaires are trained to hold ground and protect their comrades — a walking fortress whose power comes from refusing to move. Other cultures call this a Soldier or a Warrior; the Empire calls it a Legionnaire and means it as a compliment.</p>
+
+<dl class="stat-grid">
+  <dt>Proficiencies</dt><dd>All armor, all shields, all weapons, medicine, munitions</dd>
+  <dt>Starting Stats</dt><dd>+4 Body, +1 Recovery</dd>
+  <dt>Grit</dt><dd>10 + Might at level 1; +4 + Might per level thereafter</dd>
+</dl>
+
+<h4 class="sub">Core Mechanic — Formation</h4>
+<p>If a Legionnaire does not move during their turn, they gain the <a class="rules-link" href="#cond-formation">Formation</a> status until they move (or are moved by forced movement). Formation provides <b>+2 to your Defense</b> and <b>+1 to the Defense of every adjacent ally</b>. Many Legionnaire abilities require Formation; some grant extra power if used on the turn you break Formation; some put you back into Formation even if you have moved.</p>
+
+<h4 class="sub">Signature Ability — Defender’s Mark</h4>
+<div class="ability-list"><div class="ability"><div class="ability-head"><span class="ability-name">Defender’s Mark</span><span class="ability-cost">Minor Action · Signature</span></div><p class="ability-desc">Mark a target within 6 squares. Until the beginning of your next turn, the target takes a <b>−2 penalty</b> to attacks against any character except you. If it moves out of a square adjacent to you, or attacks an ally while adjacent to that ally, you may make a Basic Attack against it as an interrupt (resolved before the trigger). On a hit, the target is <a class="rules-link" href="#cond-immobilized">Immobilized</a> until the beginning of your next turn. <em>Reactions are limited to 1 per round.</em></p></div></div>
+
+<h4 class="sub">Class Abilities</h4>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Advance!</span><span class="ability-cost">Major Action · At-Will · Requires Formation</span></div><p class="ability-desc">Move 2 squares without losing Formation, and make a Basic Attack.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Get Back</span><span class="ability-cost">Major Action · At-Will</span></div><p class="ability-desc">Make a Basic Attack. On a hit, in addition to damage, Push the target 2 squares (plus 1 square per tier above Tier 1).</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Tactical Positioning</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Move 1 square. You do not lose Formation if you currently have it.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Sudden Strike</span><span class="ability-cost">Minor Action · At-Will · Requires Formation</span></div><p class="ability-desc">Break Formation; you cannot regain it this turn. Your next attack this turn deals +50% damage.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Intercept</span><span class="ability-cost">Reaction · At-Will · Requires Formation</span></div><p class="ability-desc">When an enemy attacks an ally adjacent to you, move to the nearest empty square adjacent to the attacker and make a Basic Attack against it.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Stay Put</span><span class="ability-cost">Major Action · Recharge 1</span></div><p class="ability-desc">Make an attack. On a hit, the enemy is <a class="rules-link" href="#cond-immobilized">Immobilized</a> until the end of your next turn. On a miss, the enemy is <a class="rules-link" href="#cond-slowed">Slowed</a> until the end of your next turn.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Bulwark</span><span class="ability-cost">Major Action · Recharge 1</span></div><p class="ability-desc">Until the beginning of your next turn, gain Resistance (halve damage) to all weapon attacks.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Get Down!</span><span class="ability-cost">Reaction · Recharge 2</span></div><p class="ability-desc">When an adjacent ally is damaged, split the damage evenly between you and them. Your armor’s damage reduction is applied to each share separately — perfect for defending lightly-armored allies.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Emergency Redeploy</span><span class="ability-cost">Minor Action · Recharge 3</span></div><p class="ability-desc">Until the end of your turn, your Speed increases by 1 square. When you finish moving this turn, enter Formation.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Hold the Line</span><span class="ability-cost">Major Action · Encounter</span></div><p class="ability-desc">Until the end of your next turn, you and adjacent allies <b>double</b> the bonus to Defense from Formation and the Physical Damage Reduction from armor. You also double the damage of any attacks made as part of a Reaction.</p></div>
+</div>
+<div class="designer-note">Aiming for ~12 abilities per base class — enough that a player who dedicates back into the same class twice (in the full game) can still find new picks. Two stances are still being designed for the Legionnaire’s final list; expect them by full release.</div>
+
+<h4 class="sub">Class Edges</h4>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Anchor</span><span class="ability-cost">Passive</span></div><p class="ability-desc">While in Formation, you reduce the distance of any forced movement against you by 2 squares (minimum 0), and adjacent allies reduce forced movement against them by 1 square (minimum 0). This can prevent the loss of Formation if forced movement is reduced to 0.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Second Skin</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Reduce the Initiative and Speed penalty of Heavy Armor by 1.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Brutal Training</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Increase your Grit total by an amount equal to your Might.</p></div>
+  <div class="ability + designer-note designer-note no-prefix" style="margin-top:-.25rem">Designer’s note: This is a one-time edge pick, but stat-derived bonuses are retroactive — if your Might rises later, the Grit bonus from this edge rises with it.</div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Weapon Drill</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Choose one weapon. It is always Readied and does not count against your normal limit of Readied items.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Know Your Moment</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Attacks you make as part of a Reaction deal additional damage equal to your Grace on a hit.</p></div>
+</div>
+
+<h4 class="sub">If You Dedicate Into Legionnaire</h4>
+<p>Gain one proficiency from the Legionnaire list you don’t already have (medium armor, heavy armor, shields, etc.) and gain <b>+2 Body</b>. Gain Legionnaire’s Core Mechanic (Formation) and Signature Ability (Defender’s Mark). Gain access to Legionnaire abilities and edges for level-up picks.</p>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- SCHOLAR -->
+<div class="stat-block" id="class-scholar">
+<figure class="img-inline"><img src="Scholar.png" alt="Scholar" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Scholar</h3><span class="stat-block-tag">Base Class · Imperial Foundation</span></div>
+<p>Certainty in a world of fog. The Scholar’s Observe ability is the player’s gateway to the game’s information layer — before Observe, you attack blind; after it, you see exact hit percentages, damage projections, and enemy abilities. Observe and Report extends this to the whole party, stacking Analyzed debuffs that make enemies progressively more vulnerable. The Scholar fights by making everyone else fight better, turning chaos into predictability.</p>
+
+<dl class="stat-grid">
+  <dt>Proficiencies</dt><dd>Light and medium armor, shields, knives, swords, spears, maces, crossbows, medicine, munitions, Auric staves, Implements (no codices, no spiritmasks)</dd>
+  <dt>Starting Stats</dt><dd>Tag an additional 3 skills, +2 Initiative</dd>
+  <dt>Grit</dt><dd>8 + Might at level 1; +3 + Might per level thereafter</dd>
+</dl>
+
+<h4 class="sub">Core Mechanic — Observe</h4>
+<p>If an enemy is the target of one of your abilities (including Basic Attacks), it gains the <a class="rules-link" href="#cond-identified">Identified</a> status. Identified targets have their Defense, Ward, damage reductions, and any damage resistances and vulnerabilities displayed. Some abilities can only be used against an Identified enemy, including the powerful Analyzed debuff.</p>
+
+<h4 class="sub">Signature Ability — Battlefield Analysis</h4>
+<div class="ability-list"><div class="ability"><div class="ability-head"><span class="ability-name">Battlefield Analysis</span><span class="ability-cost">Major Action · Signature</span></div><p class="ability-desc">Choose an enemy that is Identified or an ally in your line of sight. Enemies become <a class="rules-link" href="#cond-analyzed">Analyzed</a>; allies become Advised (gain Advantage on their next attack roll — roll twice, keep higher). Analyzed enemies take an additional 1d4 damage from attacks per stack of Analyzed.</p></div></div>
+<div class="designer-note">Analyzed stacks affect every friendly attack that hits — not just yours. The Scholar is the party’s anti-boss support, but they can struggle against swarms of weaker varied foes (where the stacks don’t accumulate on any one target). Analyzed cannot be resisted and does not trigger a Saving Throw, but stacks reduce to 0 if the Scholar is Incapacitated (Dead, Dying, Sleeping).</div>
+
+<h4 class="sub">Class Abilities</h4>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Identify Weakpoint</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Choose an enemy within 10 squares. Your next attack this turn ignores half of the target’s Damage Reduction.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Mystic Countermeasures</span><span class="ability-cost">Major Action · At-Will · Concentration · Stance</span></div><p class="ability-desc">Enter the Mystic Countermeasures stance. While active, you and adjacent allies gain +2 Ward and +1 MDR. (Only one stance can be active at a time.)</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Dangerous Ground</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Choose one square within 6 squares of you that contains a trap or hazardous terrain. Damage dealt by that terrain or trap is halved until the beginning of your next turn.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Surgical Strike</span><span class="ability-cost">Major Action · At-Will</span></div><p class="ability-desc">Make an attack against an enemy within range of your equipped weapon, using <b>Reason</b> instead of Grace for the attack roll. If successful, the target takes twice as much damage from Analyzed stacks as it normally would from this attack.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Saw It Coming</span><span class="ability-cost">Major Action · At-Will</span></div><p class="ability-desc">You or an ally within 6 squares double their Damage Reduction against all attacks from Identified enemies until the beginning of your next round.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Knowledge Is Power</span><span class="ability-cost">Major Action · At-Will</span></div><p class="ability-desc">Choose an Identified enemy within 6 squares. Until the end of the encounter, that enemy takes 1d6 extra damage per stack of Analyzed (rather than 1d4).</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Coordinated Strike</span><span class="ability-cost">Minor Action · Recharge 2</span></div><p class="ability-desc">Choose an Identified enemy. The next ally to attack that enemy before the start of your next turn deals +1d6 bonus damage and their attack cannot miss.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Emergency Measures</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">Use one Utility item that normally requires a Major Action.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Pattern-Matching</span><span class="ability-cost">Major Action · Recharge 2</span></div><p class="ability-desc">Choose an Identified enemy within 10 squares. Every enemy with the same statistics as the target and within your line of sight gains one stack of Analyzed.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Probing Attack</span><span class="ability-cost">Major Action · Recharge 2</span></div><p class="ability-desc">Choose an enemy within 6 squares. That enemy becomes Identified, if it is not already. Give that enemy a stack of Analyzed, then make a Basic Attack against it if it is within weapon range.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Perfect Strike</span><span class="ability-cost">Major Action · Recharge 3</span></div><p class="ability-desc">Make an attack against an Analyzed enemy. The attack cannot miss and is automatically a critical hit.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Quick Study</span><span class="ability-cost">Major Action · At-Will · Concentration · Stance</span></div><p class="ability-desc">Enter the Quick Study stance. While active, if you end your turn adjacent to an unidentified enemy, they become Identified. (Only one stance at a time.)</p></div>
+</div>
+
+<h4 class="sub">Class Edges</h4>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Low Profile</span><span class="ability-cost">Passive</span></div><p class="ability-desc">At the start of each battle and again whenever you use a Utility Item, gain a stack of Elusive.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Battlefield Medicine</span><span class="ability-cost">Passive</span></div><p class="ability-desc">When you use a Medicine utility item (bandages, healer’s kits, etc.), the target heals 33% more than they otherwise would (round up).</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Always Prepared</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Gain an extra Readied Item slot.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Synchronized Assault</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Increase the accuracy bonus from flanking by 1 against an enemy with one of your allies adjacent to it, and by 2 against an enemy with your ally directly opposite you.</p></div>
+</div>
+
+<h4 class="sub">If You Dedicate Into Scholar</h4>
+<p>Gain two tagged skills and gain <b>+1 Initiative</b>. Gain Scholar’s Core Mechanic (Observe) and Signature Ability (Battlefield Analysis). Gain access to Scholar abilities and edges.</p>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- SCOUT -->
+<div class="stat-block" id="class-scout">
+<figure class="img-inline"><img src="Scout.png" alt="Scout" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Scout</h3><span class="stat-block-tag">Base Class · Neutral Foundation</span></div>
+<p>The Scout converts movement into damage through Momentum — every square moved adds to the next hit, rewarding constant repositioning and aggressive flanking. Skirmish lets them dart in and out of danger, gaining Elusive status that makes the first attack against them likely to miss. Stealth abilities let them vanish mid-combat for devastating ambushes. Fragile but slippery; a well-played Scout controls the tempo of an engagement by threatening every part of the battlefield.</p>
+
+<dl class="stat-grid">
+  <dt>Proficiencies</dt><dd>Light and medium armor, all weapons, healer’s kits, traps</dd>
+  <dt>Starting Stats</dt><dd>+2 Initiative, +1 Speed, tag an additional skill</dd>
+  <dt>Grit</dt><dd>8 + Might at level 1; +3 + Might per level thereafter</dd>
+</dl>
+
+<h4 class="sub">Core Mechanic — Running Battle</h4>
+<p>A Scout gains <b>1 Momentum</b> for every square moved on their turn. Momentum is halved (round down) after making an attack. <em>Momentum itself is a stackable universal currency</em> — other classes can provide or affect it. When a character with Momentum damages an enemy, they deal one extra point of damage for every point of Momentum they had at the time of the attack. If a Scout goes an entire turn without generating Momentum, their Momentum drops to 0.</p>
+
+<h4 class="sub">Signature Ability — Skirmish</h4>
+<div class="ability-list"><div class="ability"><div class="ability-head"><span class="ability-name">Skirmish</span><span class="ability-cost">Minor Action · Signature</span></div><p class="ability-desc">Move half your Speed and gain one stack of <a class="rules-link" href="#cond-elusive">Elusive</a> until the beginning of your next turn.</p></div></div>
+
+<h4 class="sub">Class Abilities</h4>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Mobile</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Double your Speed this turn. (Competes with Skirmish — doesn’t grant Elusive, but covers ground and builds Momentum.)</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Disappear</span><span class="ability-cost">Major Action · At-Will · Concentration</span></div><p class="ability-desc">Only usable in Concealing terrain. Gain Stealth (Stance): drop to bottom of target priority list, cannot be targeted by single-target abilities (still affected by AOEs normally), and your Speed drops by half. You lose Stealth after taking a Major Action, or if you lose Concentration or fail to Sustain on your turn.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Flurry of Attacks</span><span class="ability-cost">Major Action · At-Will</span></div><p class="ability-desc">Make a Basic Attack against two enemies adjacent to you.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Relentless Pursuit</span><span class="ability-cost">Major Action · Recharge 1</span></div><p class="ability-desc">Make a Basic Attack against an adjacent enemy. On a hit, move up to 2 squares (this movement generates Momentum) and make a second melee attack against a different adjacent target.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Sneak Attack</span><span class="ability-cost">Major Action · Recharge 1 · Requires Stealth</span></div><p class="ability-desc">Make an attack with +5 accuracy. If the damage from this attack kills the enemy, you remain in Stealth.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Scatter</span><span class="ability-cost">Reaction · Recharge 2</span></div><p class="ability-desc">When targeted by an AOE, Push adjacent allies 2 squares each, then move half your Speed.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Feint</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">Choose an adjacent enemy. Your next attack against that enemy this turn gains Advantage.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Trip</span><span class="ability-cost">Concept — Mechanics Pending</span></div><p class="ability-desc">A reactive prone-knock; final mechanics still being designed.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Pocket Sand</span><span class="ability-cost">Concept — Mechanics Pending</span></div><p class="ability-desc">A short-range disruption / Blinded inflict; final mechanics still being designed.</p></div>
+</div>
+
+<h4 class="sub">Class Edges</h4>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Always Ready</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Get one free action point in each of the first two turns of combat.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Danger Sense</span><span class="ability-cost">Passive</span></div><p class="ability-desc">You do not trigger trapped squares.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Ghost</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Gain a stack of Elusive whenever you enter Concealing Terrain.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Lightning Reflexes</span><span class="ability-cost">Passive</span></div><p class="ability-desc">You can take two reactions every round, rather than one.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Evasive Instinct</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Gain +1 Defense for every four points of Momentum you have, to a maximum of your Mastery. The faster you’re moving, the harder you are to hit.</p></div>
+</div>
+
+<h4 class="sub">If You Dedicate Into Scout</h4>
+<p>Gain <b>+1 Speed</b> and 1 tagged skill. Gain Scout’s Core Mechanic (Running Battle) and Signature Ability (Skirmish). Gain access to Scout abilities and edges.</p>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- CHORISTER -->
+<div class="stat-block" id="class-chorister">
+<figure class="img-inline"><img src="Chorister.png" alt="Chorister" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Chorister</h3><span class="stat-block-tag">Base Class · Imperial Foundation · Lexicon</span></div>
+<p>Voice of the God-King. The Chorister channels the Eternal Empire’s lexical magic — word-based sorcery that grows more powerful the more it is used. Resonance is a battlefield-wide pool that builds as any caster uses Lexicon abilities, making each new power more effective than the last; let it rise too high and the feedback will hurt or kill the caster. The Chorister’s Crescendo lets them spend accumulated Resonance for free-action spellcasting. Effective as a force-multiplier for friendly Legionnaires, and absolutely lethal in groups.</p>
+
+<dl class="stat-grid">
+  <dt>Proficiencies</dt><dd>Light armor, implements, codices</dd>
+  <dt>Starting Stats</dt><dd>+2 Ward, +1 MDR</dd>
+  <dt>Grit</dt><dd>6 + Might at level 1; +2 + Might per level thereafter</dd>
+</dl>
+
+<div class="callout">
+  <span class="callout-label">Resonance — Battlefield-Wide Resource</span>
+  <p>Resonance is generated whenever any character uses a <b>Lexicon</b> ability — Chorister abilities, codex spells, certain Orthodox advanced classes. By default it generates <b>1 Resonance per action point</b> the ability cost (a Minor Action Lexicon ability adds 1; a Major Action adds 2). Lexicon abilities that deal damage or heal add the current Resonance value to that damage or healing.</p>
+  <p><b>Resonance is dangerous.</b> If Resonance is at 5 or above, every Lexicon ability used inflicts <b>Feedback</b>: 1d4 + current Resonance magical damage to the caster (subject to MDR). Imperial-vs-Imperial battles get spicy because Resonance is shared across the battlefield — generate too much and your enemy’s choristers can use it against you.</p>
+</div>
+
+<h4 class="sub">Core Mechanic — Crescendo</h4>
+<p>A Chorister can reduce battlefield Resonance by 10 to <b>Crescendo</b>: their next Lexicon ability this turn does not require any actions, and Resonance drops by 10 after the spell resolves.</p>
+<div class="designer-note">Because high Resonance can damage the caster, it is possible for a Chorister to Crescendo a powerful spell and then die in the backlash. In that case, Resonance still drops by 10 after Feedback damage is resolved — your sacrifice clears the air for the next caster.</div>
+
+<h4 class="sub">Signature Ability — Inspire Awe</h4>
+<div class="ability-list"><div class="ability"><div class="ability-head"><span class="ability-name">Inspire Awe</span><span class="ability-cost">Major Action · At-Will · Lexicon · Signature</span></div><p class="ability-desc">Choose a 2×2 area whose center is within 10 squares. Make a DC 10 Spellcasting roll. <b>On a failure</b>, allies in that area gain one stack of <a class="rules-link" href="#cond-inspired">Inspired</a>. <b>On a success</b>, allies in the area heal 1d4 Grit and gain one stack of Inspired. <b>On a critical success</b>, allies heal 2d4 Grit and gain two stacks of Inspired.</p></div></div>
+
+<h4 class="sub">Class Abilities</h4>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Hushed Stillness</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Reduce Resonance by 1.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Steady Chant</span><span class="ability-cost">Minor Action · At-Will · Lexicon</span></div><p class="ability-desc">Choose an ally within 6 squares. Make a DC 10 Spellcasting check. On a failure, they gain a +2 bonus to their next Recovery check before your next turn. On a success, choose one negative condition and decrease it by 1. On a critical success, decrease it by 2.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Destructive Resonance</span><span class="ability-cost">Minor Action · At-Will · Lexicon · Concentration</span></div><p class="ability-desc">Choose an enemy within 10 squares that was the target of a successful Lexicon attack this turn. They take 1d4 thunder damage.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Resonant Thrumming</span><span class="ability-cost">Major Action · At-Will · Lexicon · Concentration</span></div><p class="ability-desc">At the end of each of your turns, deal damage equal to the current battlefield Resonance to all creatures within 3 squares.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Dreadful Word</span><span class="ability-cost">Major Action · At-Will · Lexicon</span></div><p class="ability-desc">Choose a 2×2 area within 10 squares. Make a Spellcasting attack against enemies in the area. On a success, they take 1d4 + Will psychic damage and gain one stack of <a class="rules-link" href="#cond-fear">Fear</a>.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Hymn of Protection</span><span class="ability-cost">Major Action · At-Will · Lexicon</span></div><p class="ability-desc">Choose an ally within 10 squares. Make a DC 10 Spellcasting check. On a failure, increase the ally’s Ward by 1. On a success, increase Ward by your Will. On a critical success, also increase MDR by half your Will (round up).</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Haunting Refrain</span><span class="ability-cost">Major Action · Recharge 1 · Lexicon · Concentration</span></div><p class="ability-desc">Choose an enemy within 10 squares; make a Spellcasting attack. On success, the target takes 1d4 + Will psychic damage and, while you Concentrate, takes an additional 2d4 psychic damage each time it takes psychic damage. On a critical success, the target takes 2d4 + Will psychic damage and, until the end of the encounter, takes an additional 3d4 psychic damage each time it takes psychic damage.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Thunderous Cry</span><span class="ability-cost">Major Action · Recharge 2 · Lexicon</span></div><p class="ability-desc">Choose a 3×3 area with an edge or corner adjacent to you. Make a Spellcasting attack against all creatures in the area. On a success, they take 1d6 + Will thunder damage and are Pushed 1 square. On a critical success, they take critical damage and are Pushed a number of squares equal to your Will.</p></div>
+</div>
+
+<h4 class="sub">Class Edges</h4>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Field Codex</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Each morning choose one codex. You can use abilities from that codex as long as it is in your inventory, even if it is not Readied or equipped. (This does not apply to the codex’s passive bonuses, only its abilities.)</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Grandeur of the God-King</span><span class="ability-cost">Passive</span></div><p class="ability-desc">When you target an enemy with a Lexicon ability, they gain 1 stack of Fear (this stacks with any Fear from the attack itself).</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Will to Live</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Your Grit increases by an amount equal to your Will.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Resonance Baffle</span><span class="ability-cost">Passive</span></div><p class="ability-desc">You treat Resonance as being 2 points lower for purposes of bonus damage, healing, and Feedback. Crescendo is not affected.</p></div>
+  <div class="ability + designer-note designer-note no-prefix" style="margin-top:-.25rem">Designer’s note: Feedback kicks in later and deals less damage to you, but you also gain less bonus damage and healing from Resonance. A trade-off, not a strict upgrade.</div>
+</div>
+
+<h4 class="sub">If You Dedicate Into Chorister</h4>
+<p>Gain proficiency with Codices and Implements. Gain <b>+1 Ward</b>. Gain Chorister’s Core Mechanic (Crescendo) and Signature Ability (Inspire Awe). Gain access to Chorister abilities and edges. <em>Note: Codices come with their own readied spells; see <a class="rules-link" href="#codices">Codices</a> in the Equipment section.</em></p>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- SPIRITBINDER -->
+<div class="stat-block" id="class-spiritbinder">
+<figure class="img-inline"><img src="Spiritbinder.png" alt="Spiritbinder" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Spiritbinder</h3><span class="stat-block-tag">Base Class · Heterodox · Requires Dalimyri Alliance</span></div>
+<p>At the core of Dalimyri shamanism is the <b>Spiritmask</b> — a sacred artifact linked to specific spirits. The spirits associate identity with the masks, not the wearers; each mask is a unique identity built up over decades or centuries, and comes with its own particular spirit allies and enemies. One mask might give you a spirit of blood and a spirit of steel; equip the same Spiritbinder with a different mask and they suddenly have access to entirely different spirits. Each spirit has unique <b>Desires</b> (positional, kill, or environmental triggers); indulge them to generate <b>Favor</b>, which can be spent to <b>Invoke</b> the spirits to devastating effect.</p>
+
+<div class="designer-note">The Spiritbinder is heterodox by Imperial standards — equipping a Spiritmask is, strictly speaking, an act of pollution under Imperial doctrine. In the alpha, Spiritbinder is available from level 1 by Dalimyri alliance (a story choice the GM negotiates). The full mask catalog and the Court-specific Invocations are still in design; treat the abilities below as the class’s general toolkit.</div>
+
+<dl class="stat-grid">
+  <dt>Proficiencies</dt><dd>Light armor, knives, spears, bows, medicine, spirit-masks</dd>
+  <dt>Starting Stats</dt><dd>+2 Ward, +2 Recovery</dd>
+  <dt>Grit</dt><dd>6 + Might at level 1; +2 + Might per level thereafter</dd>
+</dl>
+
+<h4 class="sub">Core Mechanic — Propitiation</h4>
+<p>Using an ability with the <b>Propitiation</b> tag generates 1 Favor. Favor is spent to Invoke spirits bound to your Spiritmask (the catalog of mask-specific Invocations is in design — for alpha, your Spiritmask grants one general spirit-Invocation determined by your GM). Favor does not expire between rounds within an encounter, but it does reset between encounters.</p>
+
+<h4 class="sub">Signature Ability — Spirit Guardians</h4>
+<div class="ability-list"><div class="ability"><div class="ability-head"><span class="ability-name">Spirit Guardians</span><span class="ability-cost">Major Action · At-Will · Propitiation · Signature</span></div><p class="ability-desc">Choose a 2×2 area within 10 squares. Allies within the area gain a +2 bonus to Ward and MDR.</p></div></div>
+
+<h4 class="sub">Class Abilities</h4>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Conduct Rites</span><span class="ability-cost">Major Action · At-Will · Propitiation</span></div><p class="ability-desc">Increase your Ward by an amount equal to your Reason until the beginning of your next turn. Gain 1d2 Favor (plus the +1 from the Propitiation tag, for an effective gain of 1d2+1).</p></div>
+  <div class="ability + designer-note designer-note no-prefix" style="margin-top:-.25rem">Designer’s note: This is a potentially huge bonus to Ward, but it competes against Spirit Guardians, which is AOE. The fantasy is conducting a ritual as an island of calm amidst a hurricane of violence — wants playtesting.</div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Spirit Knot</span><span class="ability-cost">Major Action · At-Will · Propitiation</span></div><p class="ability-desc">Choose a 2×2 area within 10 squares. Make a Spellcasting attack against all creatures in the area. On a failure they are Slowed 1; on a success Immobilized 1; on a critical success Immobilized 1 and Slowed 2.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Ride the Spirit</span><span class="ability-cost">Reaction · At-Will</span></div><p class="ability-desc">When a creature you can see within 10 squares dies, teleport to a square adjacent to them and make a DC 10 Spellcasting roll. On a failure, regain Grit equal to your Will. On a success, regain 1d6 + Will Grit. On a critical success, regain 2d6 + Will Grit.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Quell Spirits</span><span class="ability-cost">Major Action · Recharge 1 · Propitiation</span></div><p class="ability-desc">Choose a supernatural enemy (spirits, unwrought, constructs, Labyrinth-born, and others at GM discretion) within 10 squares. Make a Spell Attack. On a success, the enemy takes 1d6 magical damage per two tiers (round up) and is <a class="rules-link" href="#cond-stunned">Stunned</a> 1. On a critical success, the enemy takes critical damage and gains stacks of Stunned equal to your Will.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Part the Veil</span><span class="ability-cost">Major Action · Recharge 1 · Propitiation</span></div><p class="ability-desc">Make a Spell Attack against every creature within 3 squares. On failure, they are Exposed until the beginning of your next turn. On success, Exposed and gain 1 stack of Fear. On critical success, Exposed and gain 3 stacks of Fear.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Ghostwalk</span><span class="ability-cost">Minor Action · Recharge 1 · Concentration · Stance</span></div><p class="ability-desc">While in this stance, your Speed is reduced by half but becomes Phasing — you ignore difficult and hazardous terrain and can move through occupied spaces freely.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Uncanny Insight</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">Choose a creature within 6 squares; they become Identified.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Ghost Blade</span><span class="ability-cost">Minor Action · Recharge 2 · Concentration</span></div><p class="ability-desc">Choose one weapon you have Readied. When you attack a supernatural enemy with that weapon, you can make an additional Spell Attack as part of the same action. On failure, the creature takes arcane damage equal to your Will. On success, 1d6 arcane damage per two tiers (round up) and Fear 1. On critical success, critical damage and Fear 3.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Three Seals Technique</span><span class="ability-cost">Major Action · Recharge 2 · Propitiation</span></div><p class="ability-desc">Choose a 2×2 area within 10 squares. Make a Spell Attack against all creatures. On a failure they are Slowed 3; on a success Immobilized 3; on a critical success Stunned 3 and Immobilized 3.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Soulhowl</span><span class="ability-cost">Major Action · Recharge 3 · Propitiation</span></div><p class="ability-desc">Make a Spell Attack against every creature within 3 squares. On a failure they are Stunned 1. On a success, Stunned 2. On a critical success, Stunned 3 and gain a stack of Fear.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Third Eye Blinding</span><span class="ability-cost">Concept — Mechanics Pending</span></div><p class="ability-desc">A blinding/identify-disrupt ability; final mechanics still being designed.</p></div>
+</div>
+
+<h4 class="sub">Class Edges</h4>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Living Vessel</span><span class="ability-cost">Passive</span></div><p class="ability-desc">When you have a spirit actively Invoked, gain one stack of Inspired at the beginning of your turn.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Nothing Left to Lose</span><span class="ability-cost">Passive</span></div><p class="ability-desc">When you are at 0 Grit, your Spell Attack rolls gain a bonus equal to your Will.</p></div>
+</div>
+
+<h4 class="sub">If You Dedicate Into Spiritbinder</h4>
+<p>Gain proficiency with Spiritmasks. Gain Spiritbinder’s Core Mechanic (Propitiation) and Signature Ability (Spirit Guardians). Gain access to Spiritbinder abilities and edges. <em>Note: Dedicating into Spiritbinder is a heterodox choice and may have narrative consequences with Imperial NPCs.</em></p>
+</div>
+
+</section>
+
+    <section class="section" id="skills" data-spy="skills">
+<span class="sec-eyebrow">For Players · Player’s Handbook</span>
+<h2 class="sec-title">Skills</h2>
+<p class="annotatable lede">Every skill check is, at base, an ability check — 1d20 + the relevant core stat (Reason for knowledge, Grace for delicate physical work, Might for force, Will for resistance) vs. a target number. Your Origin, Class, and Dedications let you <b>tag</b> certain skills for a +2 bonus. Tagged skills also receive your Mastery bonus, which begins at +1 and grows by 1 per Dedication.</p>
+
+<div class="callout">
+  <span class="callout-label">Example</span>
+  <p>“What can I tell from the Dalimyri line of battle?” — “Roll a Reason check.” — “Well, I’m a Child of the Legion — does that help?” — “Yeah, you’re very familiar with reading a battlefield.” — “Great, and my Legionnaire class lets me tag Military Strategy, so I roll 1d20 + Reason + 2 (tag) + 1 (Mastery), with advantage from my Origin.”</p>
+</div>
+
+<h3 class="sub" id="skill-list">Skill List</h3>
+<table class="rules-table">
+  <thead><tr><th>Skill</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td><b>Stealth</b></td><td>Hiding, moving silently, evading observation. Often Grace-based.</td></tr>
+    <tr><td><b>Athletics</b></td><td>Climbing, swimming, jumping, raw physical effort. Might- or Grace-based depending on the task.</td></tr>
+    <tr><td><b>Charm</b></td><td>Persuasion, social grace, bargaining. Note: applications of Charm to specific subjects (e.g. lying about politics, lying about spiritualism) may use a more specialized skill.</td></tr>
+    <tr><td><b>Command</b></td><td>Issuing orders to soldiers, projecting authority. Reason- or Will-based.</td></tr>
+    <tr><td><b>Medicine</b></td><td>Dedicated medical knowledge — herbal medicines, acupuncture, delivering babies, identifying and treating a plague. <em>Not</em> battlefield first aid (that is a tool proficiency: Healer’s Kits).</td></tr>
+    <tr><td><b>Strategy</b></td><td>Reading a battlefield, planning maneuvers, anticipating enemy moves.</td></tr>
+    <tr><td><b>Bureaucracy</b></td><td>Navigating Imperial administrative systems, finding the right forms, knowing the right protocols.</td></tr>
+    <tr><td><b>Tracking</b></td><td>Following spoor, reading sign, judging the age of a trail.</td></tr>
+    <tr><td><b>Politics</b></td><td>Court intrigue, faction reading, recognizing allegiances.</td></tr>
+    <tr><td><b>Magic — Lexicon</b></td><td>Academic familiarity with lexical magic. Each magical tradition is a separate skill.</td></tr>
+    <tr><td><b>Magic — Spirit Lore</b></td><td>Knowledge of spirits and Dalimyri shamanism.</td></tr>
+    <tr><td><b>Magic — Auric Wizardry</b></td><td>Auric scholarly magic.</td></tr>
+    <tr><td><b>Magic — Alchemy</b></td><td>Taltasquan alchemical principles.</td></tr>
+    <tr><td><b>Lore — Dalimyri / Imperial / Auric / Taltasquan / Shan</b></td><td>Cultural knowledge of each people. Each is a separate Lore skill.</td></tr>
+    <tr><td><b>Investigation</b></td><td>The Sherlock Holmes thing — “there are scratches on the back-left corner of the cupboard, suggesting a sliding panel.”</td></tr>
+    <tr><td><b>Discern Intentions</b></td><td>Not a lie detector but a less specialized, more broadly useful “how does this person feel right now” detector.</td></tr>
+  </tbody>
+</table>
+<div class="designer-note">Magic skills represent academic familiarity with the principles and characteristics of these traditions, not your ability to perform them — that comes from being a Chorister, Spiritbinder, etc. A scholarly Imperial character can be expert at Lexicon theory without being able to cast a single Word.</div>
+
+</section>
+
+<section class="section" id="edges" data-spy="edges">
+<span class="sec-eyebrow">For Players · Player’s Handbook</span>
+<h2 class="sec-title">General Edges</h2>
+<p class="annotatable lede">Edges are small passive abilities — character-sheet updates you can largely forget about. You pick one at levels 2, 4, 5, and 6 (in addition to those granted by your class’s Edge list). Each edge can be taken only once.</p>
+
+<h3 class="sub">General Edges</h3>
+<div class="ability-list">
+  <div class="ability"><div class="ability-head"><span class="ability-name">Large Frame</span><span class="ability-cost">Passive</span></div><p class="ability-desc">You are built to a different scale than your kin, and loom large even among your own. Your Body score increases by 3, plus 1 per tier. You gain Advantage on Athletics checks to push, pull, or carry. You can carry an additional amount of slots equal to your Might without becoming encumbered.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Mighty Attacks</span><span class="ability-cost">Passive</span></div><p class="ability-desc">When you score a critical hit with a weapon attack, roll one of the weapon’s damage dice an additional time and add it to the total damage.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Dual Wield</span><span class="ability-cost">Passive</span></div><p class="ability-desc">When you have a different weapon in each hand, gain +1 Defense. If you make a weapon attack with two different weapons in the same round, the second strike deals additional damage equal to your Grace.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Equipment Proficiency</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Gain proficiency with one type of weapon, armor, or shield. Cannot be used to gain proficiency with codices or spiritmasks.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Extra Grit I</span><span class="ability-cost">Passive</span></div><p class="ability-desc">+3 Grit.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Extra Grit II</span><span class="ability-cost">Passive · Requires Level 3+</span></div><p class="ability-desc">+6 Grit.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Extra Grit III</span><span class="ability-cost">Passive · Requires Level 7+</span></div><p class="ability-desc">+9 Grit.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Extra Grit IV</span><span class="ability-cost">Passive · Requires Level 11+</span></div><p class="ability-desc">+12 Grit.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Extra Grit V</span><span class="ability-cost">Passive · Requires Level 15+</span></div><p class="ability-desc">+15 Grit.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Epic Grit</span><span class="ability-cost">Passive · Requires Level 19+</span></div><p class="ability-desc">+20 Grit. The first time you would be reduced to 0 Grit in an encounter, ignore any spillover Body damage and set your Grit to 20 instead.</p></div>
+</div>
+
+</section>
+
+    <section class="section" id="equipment" data-spy="equipment">
+<span class="sec-eyebrow">For Players · Player’s Handbook</span>
+<h2 class="sec-title">Equipment</h2>
+<p class="annotatable lede">Items in Long Road Home tend to carry few statistics — a weapon has a damage value, an accuracy modifier, perhaps a range — and instead distinguish themselves through <b>item abilities</b>. A heavy Scutum imposes a Speed penalty but provides high Defense and access to a Formation-granting Minor Action. A Dalimyri Flametotem Shield offers less Defense but no Speed penalty, plus a Ward bonus and a fire-damage shield-bash. Many items have flavor that does work the rules can’t — items are an avenue for worldbuilding, and the Tier 1 starting kit reflects what was salvaged from the Drowning.</p>
+
+<h3 class="sub" id="equipment-rules">Carrying, Slots, &amp; Readied Items</h3>
+<p>You can carry <b>10 + Might</b> slots of equipment. Of those, <b>3 + Grace</b> can be <b>Readied</b> — accessible mid-combat. Heavy armor takes 4 slots; shields take 2; weapons take 1; small items take 0–1.</p>
+<p>You can swap which items are Readied freely between battles — one minute of unpacking. In combat, swapping a Readied item for a stowed one costs 3 actions (you’re digging through your pack). Swapping <em>between</em> Readied items — putting your sword away to draw your crossbow — is part of the action that uses the new item.</p>
+<p>Items grant abilities only while <b>equipped</b> (in hand for weapons, implements, shields, codices). An equipped codex’s spells must still be Readied in your normal ability slots.</p>
+
+<h3 class="sub" id="equipment-tiers">Item Tiers</h3>
+<p>Items are organized into six tiers paralleling the character tiers:</p>
+<ul style="margin:.4rem 0 1rem 1.4rem;font-size:.95rem">
+  <li><b>Tier I</b> — poor quality, salvaged gear, ad hoc tools (the kit the Third has after the Drowning).</li>
+  <li><b>Tier II</b> — standard issue from a working garrison.</li>
+  <li><b>Tier III</b> — excellent quality, well-crafted, minor heirloom.</li>
+  <li><b>Tier IV</b> — masterpiece creations.</li>
+  <li><b>Tier V</b> — unique artifacts, named items.</li>
+  <li><b>Epic Tier</b> — mythic items.</li>
+</ul>
+<p class="annotatable">Baseline weapons deal an additional die of damage per two tiers (round up): one die at Tiers 1–2, two at Tiers 3–4, three at Tier 5. Epic-tier weapons get an additional die above that.</p>
+
+<h3 class="sub" id="equipment-types">Equipment Types</h3>
+
+<h4 class="sub">Weapons</h4>
+<table class="rules-table">
+  <thead><tr><th>Weapon</th><th>Hands</th><th>Baseline (Tier 1)</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td><b>Knives / Daggers</b></td><td>1H</td><td>+3 accuracy, 1d6 damage</td><td>Best accuracy of the one-handers; favored by close-in fighters and assassins.</td></tr>
+    <tr><td><b>Swords</b></td><td>1H</td><td>+2 accuracy, 1d6 slashing, +1 Defense</td><td>Two-handed swords add 1d6 damage. Defensive sidearm.</td></tr>
+    <tr><td><b>Maces</b></td><td>1H</td><td>+2 accuracy, 1d6 blunt, ignore 2 PDR (+1/tier)</td><td>Two-handers add 1d6 and 50% more PDR-ignore. Anti-armor.</td></tr>
+    <tr><td><b>Axes</b></td><td>1H</td><td>+2 accuracy, 1d8 slashing</td><td>Two-handers deal 2d8. Highest base damage die.</td></tr>
+    <tr><td><b>Spears</b></td><td>1H</td><td>+2 accuracy, 1d6 piercing, reach 2</td><td>Two-handers add 1d6. Reach: melee attacks can target 2 squares away (does not extend Reactions).</td></tr>
+    <tr><td><b>Bows</b></td><td>2H</td><td>+0–2 accuracy, 1d6, range 10/20 (long Disadv.)</td><td>Always two-handed. Reliable medium-range fire.</td></tr>
+    <tr><td><b>Crossbows</b></td><td>1H or 2H</td><td>+2 accuracy, 1d6 piercing, ignore 1 PDR (+1/tier)</td><td>Two-handers deal 2d6 and ignore 2 PDR (+1/tier). 1-turn cooldown after an attack.</td></tr>
+    <tr><td><b>Auric Staves</b></td><td>2H</td><td>Variable</td><td>Rapid-fire magical rifles. Less range than a bow, but exotic damage types and a Heat mechanic. Auric League purchase only. <span class="concept-badge" style="margin:0">Concept — Mechanics Pending</span></td></tr>
+    <tr><td><b>Implements</b></td><td>1H or 2H</td><td>Spellcasting bonuses</td><td>Orbs, athames, fetishes, magical bells, mirrors. Improve spellcasting; not weapons in the conventional sense.</td></tr>
+    <tr><td><b>Codices</b></td><td>1H</td><td>Lexicon spells</td><td>Books of lexical magic. Provide a passive bonus while equipped, plus 1–3 spells that must be Readied in your ability slots. Chorister proficiency only (others must take the Equipment Proficiency edge or dedicate Chorister).</td></tr>
+    <tr><td><b>Spiritmasks</b></td><td>—</td><td>Spirit Invocations</td><td>Sacred Dalimyri masks bound to specific spirits. Each mask provides 1–3 spirits with their own Desires (Favor-generation conditions) and Invocations. Spiritbinder proficiency only.</td></tr>
+  </tbody>
+</table>
+
+<div class="designer-note">Dual wielding has no special rule. Equipping two weapons lets you ready item abilities from each — that is the bonus. Some weapons (like the gladius) have abilities tuned for an off-hand role. The Dual Wield edge provides an additional defensive bonus.</div>
+
+<h4 class="sub">Armor</h4>
+<table class="rules-table">
+  <thead><tr><th>Type</th><th>Baseline (Tier 1)</th><th>Penalties</th></tr></thead>
+  <tbody>
+    <tr><td><b>Light Armor</b></td><td>+1 Defense (+1/tier above 1)</td><td>None</td></tr>
+    <tr><td><b>Medium Armor</b></td><td>+3 Defense (+1/tier above 1)</td><td>−1 Initiative</td></tr>
+    <tr><td><b>Heavy Armor</b></td><td>+4 Defense (+1/tier above 1), +1 PDR (+1 per 2 tiers)</td><td>−1 Speed, −2 Initiative</td></tr>
+  </tbody>
+</table>
+<p>Armor takes inventory slots but does not need to be Readied — what you’re wearing is always “on.”</p>
+
+<h4 class="sub">Shields</h4>
+<table class="rules-table">
+  <thead><tr><th>Type</th><th>Baseline</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td><b>Light Shield</b></td><td>+2 Defense, −1 Initiative</td><td>Targes, kite shields, ward-bucklers. Many feature shield-bash attacks.</td></tr>
+    <tr><td><b>Heavy Shield</b></td><td>+2 Defense, −2 Reaction, −1 Speed</td><td>Scutums, tower shields, pavises. Often grant Phalanx-type abilities that protect adjacent allies.</td></tr>
+  </tbody>
+</table>
+
+<hr class="rule">
+
+<h3 class="sub" id="codices">Codices</h3>
+<p class="annotatable lede">A Codex is a literal book of power — the accumulated lexical research of generations of Imperial scholars, compressed into a single volume. Each Codex contains specific Words and phrases that, when spoken or sung by a trained Chorister, impose the God-King’s will upon reality. Codices require a Hand or Utility slot to equip, and among base classes only the Chorister has proficiency with them.</p>
+<p>Each Codex provides a <b>passive bonus</b> (always active while equipped, no ability-slot cost) and <b>1–3 spells</b> (each of which must be Readied in a normal ability slot to use). All Codex spells have the <b>Lexicon</b> tag, meaning they generate Resonance and benefit from it.</p>
+<div class="callout">
+  <span class="callout-label">Resonance Reminder</span>
+  <p>Lexicon abilities generate Resonance equal to the action points spent (Minor = 1, Major = 2). Lexicon abilities that deal damage or heal add the current Resonance value to that damage or healing. If Resonance is 5 or above, every Lexicon ability used inflicts <b>Feedback</b>: 1d4 + current Resonance magical damage to the caster.</p>
+</div>
+
+<details class="collapse" open>
+<summary>Codex of the Prefect’s Seal — Tier 1 Authority</summary>
+<div class="collapse-body">
+<p><em>Standard issue for the prefects of the Imperial civil service — the bureaucrats who kept order in the provinces. A slim volume, barely a hundred pages, bound in oxblood leather with the Prefect’s seal embossed in gold. Inside, the Words are written in the formal liturgical hand, each one annotated with pronunciation guides and cautionary notes about overuse. The annotations are in a different hand than the Words themselves, and are considerably more recent. The Words are very, very old.</em></p>
+<p><b>Requires:</b> Codex proficiency. <b>Traits:</b> Imperial, Orthodox, Authority.</p>
+<div class="ability"><div class="ability-head"><span class="ability-name">Passive — Weight of Law</span><span class="ability-cost">Passive · While Equipped</span></div><p class="ability-desc">When you inflict <a class="rules-link" href="#cond-immobilized">Immobilized</a> or <a class="rules-link" href="#cond-slowed">Slowed</a> on an enemy using a Lexicon ability, the condition lasts 1 additional turn before it can be decremented.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Halt</span><span class="ability-cost">Minor Action · At-Will · Lexicon</span></div><p class="ability-desc">Choose an enemy within 8 squares. Make a Spellcasting attack against the target’s Ward. On a hit, the target is Slowed 2 until the end of their next turn. On a miss, the target is Slowed 1 until the end of their next turn. On a critical hit, the target is Immobilized until the end of their next turn.</p></div>
+<div class="ability + designer-note designer-note no-prefix" style="margin-top:-.25rem">The simplest and most ancient of the Words of Command. The God-King spoke it first to halt a charging cavalry line at the Battle of Ten Rivers. Four centuries later, every chorister learns it within their first month of study. One syllable. Absolute.</div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Edict of Binding</span><span class="ability-cost">Major Action · Recharge 1 · Lexicon</span></div><p class="ability-desc">Choose an enemy within 8 squares. Make a Spellcasting attack against the target’s Ward. On a hit, the target takes 1d6 + Will psychic damage and is Immobilized until the end of your next turn. On a miss, the target takes damage equal to your Will and is Slowed 2 until the end of your next turn. On a critical hit, 2d6 + Will psychic damage, Immobilized, and Stunned 1.</p></div>
+<div class="ability + designer-note designer-note no-prefix" style="margin-top:-.25rem">A formal declaration that the target shall not move. Golden glyphs spiral outward from the caster’s mouth and wrap around the target’s limbs like luminous chains. The Word doesn’t care about the target’s strength — it rewrites the local rules of motion.</div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Kneel</span><span class="ability-cost">Major Action · Recharge 2 · Lexicon</span></div><p class="ability-desc">Choose a 2×2 area within 8 squares. Make a Spellcasting attack against the Ward of each enemy in the area. On a hit, targets take 1d6 + Will psychic damage and are knocked Prone. On a miss, targets take damage equal to your Will. On a critical hit, 2d6 + Will psychic damage, Prone, Stunned 1.</p></div>
+<div class="ability + designer-note designer-note no-prefix" style="margin-top:-.25rem">The Word of Submission. The air thickens with golden pressure and the targets’ legs buckle — not from force, but from the sudden, terrible certainty that they are in the presence of something that has the right to command them. The most psychologically disturbing of the Authority words, because the targets briefly believe it. Some never entirely stop.</div>
+<div class="designer-note">This is the control codex. All three spells impose movement restrictions; Weight of Law makes them last longer. The Chorister carrying this codex is the party’s lockdown specialist — pinning enemies in place so the Legionnaire can hold them and the Scout can flank them. Halt as a Minor Action means the Chorister can also use a Major Action for Inspire Awe, Dreadful Word, or a second codex spell. Halt + Edict of Binding is a full three-action turn that locks down two different enemies.</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Canticle of the Shieldwall — Tier 1 Accord</summary>
+<div class="collapse-body">
+<p><em>A military hymnal carried by every chorus attached to an Imperial legion. The Canticle contains the standard battlefield prayers — verses of mending, songs of unity, the marching cadences that hold a formation together over a hundred miles of bad road. This copy bears the stamp of the Third Legion’s chorus-master, and the margins are filled with annotations: which verses work best in rain, which cadences match the Third’s preferred marching pace, which prayers are most effective when the men are frightened. In a different hand, someone has written on the inside cover: “Sing them home.” It is unclear whether this was a prayer or an order.</em></p>
+<p><b>Requires:</b> Codex proficiency. <b>Traits:</b> Imperial, Orthodox, Accord.</p>
+<div class="ability"><div class="ability-head"><span class="ability-name">Passive — Resonant Bond</span><span class="ability-cost">Passive · While Equipped</span></div><p class="ability-desc">When you heal an ally using a Lexicon ability, you also heal yourself for an amount equal to your Will. <em>(Does not trigger on self-targeted heals.)</em></p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Mending Verse</span><span class="ability-cost">Minor Action · At-Will · Lexicon</span></div><p class="ability-desc">Choose an ally within 8 squares. Make a Spellcasting check vs. DC 10. On success, the target heals 1d6 + Will Grit. On a failure, the target heals Grit equal to your Will. On a critical success, 2d6 + Will Grit and +1 Ward until the beginning of your next turn.</p></div>
+<div class="ability + designer-note designer-note no-prefix" style="margin-top:-.25rem">The Verse of Mending is among the first prayers taught to military choristers — a simple, hummed phrase that encourages the body to hold itself together a little longer. It doesn’t truly heal; it convinces the flesh that it isn’t as badly hurt as it thinks. The distinction matters to scholars. It does not matter to the soldier who can stand up again.</div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Stand Together</span><span class="ability-cost">Major Action · At-Will · Lexicon · Sustained</span></div><p class="ability-desc">Choose a 2×2 area within 8 squares. While you sustain this ability, allies who begin their turn in the area gain +1 Defense and +1 Ward. If an ally in the area would be reduced to 0 Grit, they instead remain at 1 Grit (once per ally per encounter).</p></div>
+<div class="ability + designer-note designer-note no-prefix" style="margin-top:-.25rem">A low, steady chant that weaves the fates of nearby soldiers together. While the song holds, each warrior draws strength from the presence of the others — not metaphorically, but literally. Choristers who sustain this hymn under enemy fire describe the sensation as holding a thread that connects the hearts of every soldier nearby — a thread that pulls taut with every blow and frays with every wound.</div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Voice of the Legion</span><span class="ability-cost">Major Action · Recharge 2 · Lexicon</span></div><p class="ability-desc">Choose up to 3 allies within 8 squares. Each gains 1 stack of Inspired and may immediately move 2 squares as a free action (this movement does not provoke reactions). Allies in Formation do not lose Formation from this movement.</p></div>
+<div class="ability + designer-note designer-note no-prefix" style="margin-top:-.25rem">The God-King’s voice once moved armies. This is a faint echo of that power — a commanding phrase that fills allies with sudden, absolute certainty about where they need to be. The Chorister who speaks it feels, for a moment, what it must have been like to be the God-King: to see the whole battlefield as a single organism. The feeling is intoxicating. The old choristers warn against enjoying it too much.</div>
+<div class="designer-note">The support codex. Mending Verse is the basic heal — cheap (Minor), reliable, and never wasted (the failure clause heals Will). Resonant Bond keeps the Chorister’s own Grit topped off. Stand Together creates a zone of mutual protection; the “remain at 1 Grit” clause is the real power, buying a Legionnaire one more turn of Formation. Voice of the Legion repositions three allies for free — at Tier 1, probably the strongest tactical ability in any codex.</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Other Codex Lines (concept — mechanics pending)</summary>
+<div class="collapse-body">
+<p>The full Codex catalog includes Words drawn from the Empire’s great theological schools. The two Tier 1 codices above are alpha-ready; the lines below are concepts:</p>
+<ul style="margin:.4rem 0 .8rem 1.4rem;font-size:.92rem">
+  <li><b>Codex of Revelation</b> — reduce Ward, reduce DR, reveal hidden/Elusive, Identify enemies. <span class="concept-badge" style="margin:0">Concept</span></li>
+  <li><b>Codex of Exaltation</b> — enhancement, transformation, transcendence. <span class="concept-badge" style="margin:0">Concept</span></li>
+  <li><b>Codex of Dread</b> — Fear, psychic damage. <span class="concept-badge" style="margin:0">Concept</span></li>
+  <li><b>Book of Silence</b> (Censor only) — countermagic, direct damage to supernatural threats, raise Ward. <span class="concept-badge" style="margin:0">Concept</span></li>
+</ul>
+<div class="designer-note">The thematic distinction between Lexicon and spirit magic is important. The Codex of Authority <em>imposes rules on reality</em>: Halt doesn’t physically stop the target — it declares that movement is forbidden in this space, and reality complies. Bureaucratic, institutional, impersonal magic. A Spiritmask’s ability, by contrast, works through <em>relationship</em>: the Flame-Brother heals because fire is mankind’s second-oldest friend; the Gale-Dancer pushes enemies because the wind knows you. A Chorister saying Halt and a Spiritbinder invoking Gale-Dancer might both result in “enemy can’t move,” but the Chorister rewrote the rules and the Spiritbinder asked a friend for help. That difference should be felt at the table — in flavor, in description, in edge cases. The Chorister’s Halt works on anything (rules are universal); the Spiritbinder’s wind might refuse to blow in a sealed tomb. Reliable but sterile vs. unreliable but alive.</div>
+</div>
+</details>
+
+<hr class="rule">
+
+<h3 class="sub" id="equipment-list-tier1">Tier 1 Equipment List</h3>
+<p class="annotatable">Whatever can be scavenged after the disastrous battle. Poor quality items, salvaged gear, ad hoc tools — the kit the Third assembled in the chaos after the Drowning. Damage and accuracy values follow the baselines in the table above unless an item modifies them.</p>
+
+<details class="collapse" open>
+<summary>Knives</summary>
+<div class="collapse-body">
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Battered Gladius</span><span class="item-tags">Imperial · Salvage</span></div>
+  <div class="item-stats">Tier 1 Knife · +3 accuracy · 1d6 damage</div>
+  <p class="item-desc"><em>Other cultures may choose to employ larger blades, but the Imperial legions are masters of close-in fighting and have long preferred the speed and superior handling of shorter blades.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Quick Cut</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Make a Basic Attack with this weapon. On a hit, this attack deals half damage; on a miss, no damage.</p></div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Scavenged Spirit Knife</span><span class="item-tags">Dalimyri · Awakened</span></div>
+  <div class="item-stats">Tier 1 Knife · +2 accuracy · 1d6 damage</div>
+  <p class="item-desc"><em>This simple flint knife was once a Spiritbinder’s implement. A desperate legionnaire wrestled it away from its wielder and ended him with it — now the spirit of the blade actively resists any wielder. But the blade’s hatred and grief make for potent weapons nonetheless.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Baneful Strike</span><span class="ability-cost">Major Action · Recharge 1</span></div><p class="ability-desc">Make a Basic Attack with this weapon. On a hit, deal an additional 1d6 psychic damage. If the target is a Supernatural creature, deal an additional 2d6 psychic damage on a hit instead.</p></div>
+</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Swords</summary>
+<div class="collapse-body">
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Notched Falcata</span><span class="item-tags">Imperial · Third Legion · Salvage</span></div>
+  <div class="item-stats">Tier 1 Sword (1H) · +2 accuracy · 1d6 slashing · +1 Defense while in hand</div>
+  <p class="item-desc"><em>An officer’s sidearm, chipped and stained. The Third’s falcatas were famous — heavier than a gladius, curved for the draw-cut, perfectly weighted for the lunge. This one has seen better days, but then again so have you.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Desperate Lunge</span><span class="ability-cost">Major Action · Recharge 1</span></div><p class="ability-desc">Move 2 squares and make a Basic Attack with this weapon. If the attack hits, deal an additional 1d6 damage. If it misses, you are Slowed until the beginning of your next turn.</p></div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Scorched Jian</span><span class="item-tags">Imperial · Salvage</span></div>
+  <div class="item-stats">Tier 1 Sword (1H) · +2 accuracy · 1d6 slashing · +1 Defense while in hand</div>
+  <p class="item-desc"><em>A duelist’s straight sword, warped slightly by the heat of the fires that consumed the baggage train. Still sharp. Still balanced. A weapon for someone who believes that the best defense is making the enemy regret ever attacking you.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Riposte</span><span class="ability-cost">Reaction · At-Will</span></div><p class="ability-desc">When an adjacent enemy misses you with a melee attack, make a Basic Attack against them with this weapon. This attack deals half damage.</p></div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Dalimyri Claymore</span><span class="item-tags">Dalimyri · Salvage</span></div>
+  <div class="item-stats">Tier 1 Sword (2H) · +2 accuracy · 2d6 slashing · +1 Defense while in hand</div>
+  <p class="item-desc"><em>Dalimyri longswords are simple, brutal instruments — three feet of straight steel, heavy enough to split a shield. This one was taken from someone who no longer needed it.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Cleave</span><span class="ability-cost">Major Action · At-Will</span></div><p class="ability-desc">Make a Basic Attack with this weapon. If it hits and deals damage, choose one enemy adjacent to the target; that enemy takes damage equal to your Might.</p></div>
+</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Maces</summary>
+<div class="collapse-body">
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Legionnaire’s Flanged Mace</span><span class="item-tags">Imperial · Armor-Piercing</span></div>
+  <div class="item-stats">Tier 1 Mace (1H) · +2 accuracy · 1d6 blunt · ignore 2 PDR</div>
+  <p class="item-desc"><em>Standard legionnaire sidearm for close-quarters work — the flanged head concentrates force through the heaviest plate. Dented, bloodstained, reliable. Ask any legionnaire: when the spears break and the shields lock, this is what wins the scrum.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Concussive Blow</span><span class="ability-cost">Major Action · Recharge 1</span></div><p class="ability-desc">Make a Basic Attack with this weapon. On a hit, the target is Stunned 1.</p></div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Cracked Tetsubo</span><span class="item-tags">Shan · Armor-Piercing · Salvage</span></div>
+  <div class="item-stats">Tier 1 Mace (2H) · +2 accuracy · 2d6 blunt · ignore 3 PDR</div>
+  <p class="item-desc"><em>A heavy iron-studded club of Shan make, cracked along its length but still murderously effective. The Shan use these to break ice, break stone, and — when the Empire’s collectors came calling — break bones.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Shatter Ground</span><span class="ability-cost">Major Action · Recharge 2</span></div><p class="ability-desc">Make a Basic Attack with this weapon against an adjacent enemy. Whether it hits or misses, all squares adjacent to the target become Difficult Terrain until the end of the encounter.</p></div>
+</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Axes</summary>
+<div class="collapse-body">
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Camp Hatchet</span><span class="item-tags">Imperial · Improvised</span></div>
+  <div class="item-stats">Tier 1 Axe (1H) · +2 accuracy · 1d6 slashing · +1 damage per damage die rolled</div>
+  <p class="item-desc"><em>Not a weapon. A tool. But a tool designed for splitting wood splits other things just as well, and when the armory burned, pragmatism won out over pride. Half the Third is fighting with hatchets and cleavers now. No one is laughing.</em></p>
+  <div class="designer-note no-prefix">No item ability — strictly a stat stick. Reliable damage, no frills. Good for a character who wants their ability slots for class and origin abilities, not weapon tricks.</div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Dalimyri Raider’s Axe</span><span class="item-tags">Dalimyri</span></div>
+  <div class="item-stats">Tier 1 Axe (1H) · +2 accuracy · 1d6 slashing · +1 damage per damage die rolled</div>
+  <p class="item-desc"><em>The Dalimyri forge axes with a slightly hooked blade — not enough to catch on a shield, but enough to open a wound that won’t close cleanly. Functional, unpretentious, and deeply unpleasant to be on the receiving end of.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Rending Strike</span><span class="ability-cost">Major Action · At-Will</span></div><p class="ability-desc">Make a Basic Attack with this weapon. On a hit, the target gains Bleeding 1.</p></div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Woodsman’s Greataxe</span><span class="item-tags">Improvised</span></div>
+  <div class="item-stats">Tier 1 Axe (2H) · +2 accuracy · 2d6 slashing · +1 damage per damage die rolled</div>
+  <p class="item-desc"><em>Borrowed from a lumber camp somewhere in the Shan foothills. The balance is wrong for fighting — too far forward, too heavy in the head — but that weight is the whole point. What it hits, it breaks.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Overhead Chop</span><span class="ability-cost">Major Action · At-Will</span></div><p class="ability-desc">Make a Basic Attack with this weapon. This attack cannot critically hit, but deals +3 damage on a hit.</p></div>
+</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Spears</summary>
+<div class="collapse-body">
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Legionnaire’s Pilum</span><span class="item-tags">Imperial · Reach</span></div>
+  <div class="item-stats">Tier 1 Spear (1H) · +2 accuracy · 1d6 piercing · reach 2</div>
+  <p class="item-desc"><em>The pilum is the workhorse of the Imperial line — the weighted javelin of the imperial infantry, designed to bend on impact so it cannot be thrown back. Legionnaires carry two into battle and hurl them in volley before closing to sword range.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Hurl Pilum</span><span class="ability-cost">Major Action · Recharge 1</span></div><p class="ability-desc">Make a ranged Basic Attack against an enemy within 6 squares, using this weapon’s normal accuracy and damage. On a hit, the target is Slowed until the end of their next turn. The spear lands in the target’s square or the nearest unoccupied square; you must retrieve it (Minor Action when adjacent) before using it again.</p></div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Dalimyri Hunting Spear</span><span class="item-tags">Dalimyri · Thrown</span></div>
+  <div class="item-stats">Tier 1 Spear (1H) · +2 accuracy · 1d6 piercing · reach 2</div>
+  <p class="item-desc"><em>Lighter than the Imperial pilum, with a leaf-shaped head and a leather loop for throwing. The Dalimyri hunt everything from rabbits to barrow-wights with these — they say a hunter who can’t throw hasn’t earned the right to eat.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Hurl Spear</span><span class="ability-cost">Major Action · Recharge 1</span></div><p class="ability-desc">Make a ranged Basic Attack against an enemy within 10 squares, using this weapon’s normal accuracy and damage. The spear lands in the target’s square or the nearest unoccupied square; retrieve it as a Minor Action when adjacent.</p></div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Shan Mountain Pike</span><span class="item-tags">Shan · Reach</span></div>
+  <div class="item-stats">Tier 1 Spear (2H) · +2 accuracy · 2d6 piercing · reach 2</div>
+  <p class="item-desc"><em>The Shan passes are narrow. This pike is not. Eight feet of mountain oak tipped with a broad iron head, designed to hold a chokepoint against anything coming up the trail — beast, bandit, or tax collector.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Hold the Pass</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Choose a square within 2 squares of you. Until the beginning of your next turn, any enemy that enters that square provokes a free Basic Attack from you with this weapon.</p></div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Signifer’s Spear</span><span class="item-tags">Imperial · Third Legion · Salvage</span></div>
+  <div class="item-stats">Tier 1 Spear · stats per baseline</div>
+  <p class="item-desc"><em>The signifer carries the century’s standard into battle — the lacquered banner bearing the God-King’s word of authority, mounted on a crossbar atop an iron-shod spear. This one was found without its banner. A signifer would sooner die than abandon the standard, and the implications of finding the spear without it are left unspoken by the soldiers who recovered it.</em></p>
+  <div class="designer-note no-prefix">Item ability still in design. <span class="concept-badge" style="margin:0">Concept</span></div>
+</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Bows</summary>
+<div class="collapse-body">
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Legionnaire’s Shortbow</span><span class="item-tags">Imperial</span></div>
+  <div class="item-stats">Tier 1 Bow (2H) · +2 accuracy · 1d6 piercing · range 10/20 (long Disadv.)</div>
+  <p class="item-desc"><em>Imperial doctrine considers archery a support arm — not glamorous, but a rain of arrows softens up the enemy line before the formation hits. This recurved shortbow is compact enough to fire from behind a shield wall.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Suppressing Shot</span><span class="ability-cost">Major Action · At-Will</span></div><p class="ability-desc">Make a Basic Attack with this weapon against an enemy within range. Whether it hits or misses, the target takes a −1 penalty to accuracy until the beginning of your next turn.</p></div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Dalimyri Hunting Bow</span><span class="item-tags">Dalimyri</span></div>
+  <div class="item-stats">Tier 1 Bow (2H) · +2 accuracy · 1d6 piercing · range 10/20 (long Disadv.)</div>
+  <p class="item-desc"><em>The Dalimyri hunt in the deep forests and open moors — long shots through cover at wary game. Their bows are horn-and-sinew composites, quieter than Imperial shortbows and just as deadly. This one still smells of lanolin and woodsmoke.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Aimed Shot</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Gain +2 accuracy on your next ranged attack this turn. You cannot move on the same turn you use this ability.</p></div>
+</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Crossbows</summary>
+<div class="collapse-body">
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Scavenged Hand Crossbow</span><span class="item-tags">Imperial · Salvage</span></div>
+  <div class="item-stats">Tier 1 Crossbow (1H) · +2 accuracy · 1d6 piercing · ignore 1 PDR · range 6/12 (long Disadv.) · 1-turn cooldown after firing</div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Standard Crossbow</span><span class="item-tags">Imperial</span></div>
+  <div class="item-stats">Tier 1 Crossbow (2H) · +2 accuracy · 1d6 piercing · ignore 1 PDR · range 8/16 (long Disadv.) · 1-turn cooldown</div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Heavy Arbalest</span><span class="item-tags">Imperial</span></div>
+  <div class="item-stats">Tier 1 Crossbow (2H) · +2 accuracy · 2d6 piercing · ignore 2 PDR · range 12/24 (long Disadv.) · 1-turn cooldown</div>
+</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Implements</summary>
+<div class="collapse-body">
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Chorister’s Tuning Rod</span><span class="item-tags">Imperial · Lexicon</span></div>
+  <div class="item-stats">Tier 1 Implement (1H)</div>
+  <p class="item-desc"><em>A slender bronze rod, about a forearm’s length, engraved with a spiral of characters in the sacred script. When struck against a hard surface, it produces a clear, sustained tone that a trained Chorister can use to calibrate their voice before joining the Chorus. Without the Chorus to join, it is merely a tool for finding pitch. The Chorister who once carried this one kept it tucked into her sash at all times, and the bronze is dark with the patina of years of handling.</em></p>
+  <p class="item-desc"><b>Equipped:</b> +1 accuracy bonus to spell attacks for Lexicon abilities.</p>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Dalimyri Spirit-Shield</span><span class="item-tags">Dalimyri · Awakened</span></div>
+  <div class="item-stats">Tier 1 Implement (1H)</div>
+  <p class="item-desc"><em>A woven circle of cord and wood — totally ineffective at stopping a physical blow, but which partially dissipates concentrations of magical energy near it.</em></p>
+  <p class="item-desc"><b>Equipped:</b> +2 Ward.</p>
+</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Light Armor</summary>
+<div class="collapse-body">
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Traveling Robes</span><span class="item-tags">Imperial</span></div>
+  <div class="item-stats">Tier 1 Light Armor · +1 Defense</div>
+  <p class="item-desc"><em>The standard garment of imperial scholars, choristers, and bureaucrats on campaign — layered cotton over a padded linen underlayer. Several pockets inside the lining hold writing implements, small codices, or personal effects.</em></p>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Shan Quilted Jacket</span><span class="item-tags">Shan</span></div>
+  <div class="item-stats">Tier 1 Light Armor · +1 MDR</div>
+  <p class="item-desc"><em>Mountain clothing designed for the brutal cold of the high passes — quilted cotton stuffed with raw wool, surprisingly effective against both the elements and the kind of spiritual interference common at high altitudes. The Shan dye theirs with mountain lichen, producing a mottled grey-brown that disappears against stone.</em></p>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Scout’s Leathers</span><span class="item-tags">Imperial · Third Legion</span></div>
+  <div class="item-stats">Tier 1 Light Armor · +1 Defense · +2 to Hide attempts</div>
+  <p class="item-desc"><em>Supple leather, cut close to the body, dyed matte black. No buckles that rattle, no loose straps that catch on branches. This is what the Third’s scouts wore on long-range patrol. The smell of saddle oil and woodsmoke never quite comes out. This set was stripped from a scout who no longer needs it. His name has been scratched into the inside of the left bracer in small, careful characters: “Yun Bao, Seventh Scout Company, who saw everything coming and was not believed.”</em></p>
+</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Medium Armor</summary>
+<div class="collapse-body">
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Battered Chainmail</span><span class="item-tags">Imperial · Salvage</span></div>
+  <div class="item-stats">Tier 1 Medium Armor · +3 Defense · −1 Initiative</div>
+  <p class="item-desc"><em>Imperial-issue riveted mail, standard for officers, specialists, and anyone who can afford to replace a few links. Several rings are copper replacements where iron originals were cut through, but it still does the job. The weight is a constant, familiar ache across the shoulders.</em></p>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Dalimyri Warcladding</span><span class="item-tags">Dalimyri · Awakened</span></div>
+  <div class="item-stats">Tier 1 Medium Armor · +2 Defense · +1 Ward · −1 Initiative</div>
+  <p class="item-desc"><em>Dalimyri armor is built from whatever is to hand — boiled leather, carved bone plates, strips of hardwood riveted over wool padding. Every piece is hand-crafted and unique. What makes it distinctive is the glyphs carved into the bone plates — protective marks negotiated with local spirits, offering modest but real resistance to magical assault.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Spirit-Marked</span><span class="ability-cost">Edge · Passive</span></div><p class="ability-desc">While wearing this armor, the first time you take magical damage each encounter, reduce that damage by 3.</p></div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Shan Lamellar</span><span class="item-tags">Shan</span></div>
+  <div class="item-stats">Tier 1 Medium Armor · +3 Defense · −1 Initiative · ignore Speed penalty from first square of Difficult Terrain entered each turn</div>
+  <p class="item-desc"><em>Lacquered iron plates laced with leather cord over a padded jacket. The Shan compensate for the weight by using smaller, lighter plates than Imperial lamellar — sacrificing coverage for flexibility in the high passes. The lacquer is mountain-berry red, chipped and faded from hard use.</em></p>
+</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Heavy Armor</summary>
+<div class="collapse-body">
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Damaged Imperial Lamellar</span><span class="item-tags">Imperial · Salvage</span></div>
+  <div class="item-stats">Tier 1 Heavy Armor · +4 Defense · +1 PDR · −1 Speed · −2 Initiative</div>
+  <p class="item-desc"><em>Standard issue for the front rank — overlapping iron scales riveted to a leather backing, worn over a heavy padded gambeson. This set is missing half the scales on the left side and the straps have been re-tied with rope. You can see where a spear went through the abdomen. The previous owner didn’t survive. You intend to.</em></p>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Looted Musculata</span><span class="item-tags">Imperial · Officer</span></div>
+  <div class="item-stats">Tier 1 Heavy Armor · +4 Defense · +1 PDR · −1 Speed · −2 Initiative</div>
+  <p class="item-desc"><em>An officer’s cuirass — molded bronze over iron scales, shaped to suggest idealized musculature in the classical style. Too ornate for a ranker, too damaged for a general. The eagle crest has been sheared off, either by a blade or deliberately filed away. Whoever wore this was someone important. Whoever killed them didn’t care.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Imposing Presence</span><span class="ability-cost">Edge · Passive</span></div><p class="ability-desc">While wearing this armor, your Defender’s Mark range increases by 2 squares.</p></div>
+</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Shields</summary>
+<div class="collapse-body">
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Splintered Scutum</span><span class="item-tags">Imperial · Third Legion · Salvage</span></div>
+  <div class="item-stats">Tier 1 Heavy Shield (1H) · +2 Defense · −1 Initiative</div>
+  <p class="item-desc"><em>The tower shield of the Imperial line — four feet of laminated wood faced with iron, curved to deflect missiles and designed to interlock with the shields of the soldiers on either side. The Imperial scutum is not designed to protect its wielder. It is designed to protect the man beside you. This one spent three days in the river before it was recovered. The lacquer is peeling and the wood beneath has begun to swell. It will serve, but not well, and not for long.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Shield Wall</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Choose one adjacent ally. Until the beginning of your next turn, that ally gains +1 Defense.</p></div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Scorched Pavise</span><span class="item-tags">Imperial · Salvage · Heavy · Deployable</span></div>
+  <div class="item-stats">Tier 1 Heavy Shield (1H, Deployable) · +2 Defense · −1 Initiative · −1 Speed</div>
+  <p class="item-desc"><em>A massive rectangular shield designed to be planted in the ground as a portable barricade. Imperial crossbowmen used these as mobile cover, firing over the top edge while crouched behind its bulk. This one is charred along one side — it absorbed a fire attack that would have killed the soldier behind it.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Deploy Cover</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Plant this shield in your current square. It remains as Blocking Terrain (providing cover against ranged attacks from one direction) until you spend a Minor Action to pick it up. While deployed, you do not gain its Defense bonus, but you and adjacent allies on the shielded side gain +2 Defense against ranged attacks.</p></div>
+</div>
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Dalimyri Targe</span><span class="item-tags">Dalimyri</span></div>
+  <div class="item-stats">Tier 1 Light Shield (1H) · +1 Defense</div>
+  <p class="item-desc"><em>A small round shield of wood and leather, gripped by a single handle behind a central boss. Dalimyri targes are lighter than Imperial scutums — less raw protection, but you can punch someone in the face with one, which counts for something. The central boss is carved bone, shaped like a snarling wolf.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Bash</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Make a Basic Attack against an adjacent enemy using your Might instead of Grace for accuracy. On a hit, deal damage equal to your Might and Push the target 1 square.</p></div>
+</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Utility</summary>
+<div class="collapse-body">
+<div class="item-entry">
+  <div class="item-entry-head"><span class="item-name">Battered Campaign Healer’s Satchel</span><span class="item-tags">Imperial · Medicine</span></div>
+  <div class="item-stats">Tier 1 Utility</div>
+  <p class="item-desc"><em>A legionnaire’s field kit: bandages of clean linen, a bone needle and silk thread for stitching wounds, a tin of astringent salve stamped with the Red Hand Guild’s kiln-mark, and a slim pamphlet of basic wound treatment printed on oiled paper. The pamphlet is written in the clipped, imperative style of imperial field manuals: Apply pressure. Elevate the limb. Do not remove the object. Await the Scholar. Sound advice, assuming there is a Scholar left to await.</em></p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Use Healer’s Satchel</span><span class="ability-cost">Major Action</span></div><p class="ability-desc">Choose yourself or an adjacent ally. The target heals 2d6 Grit and may immediately make a Recovery check with Advantage against a single condition affecting them.</p></div>
+</div>
+</div>
+</details>
+
+<details class="collapse">
+<summary>Tier 2+ Equipment Preview</summary>
+<div class="collapse-body">
+<p>The Tier 2 catalog includes garrison-issue gear from the well-supplied Shan armories — items that reflect the Empire at its functional best, and the resentment that simmers beneath Shan’s obedience. Names include the <b>Garrison Gladius</b>, <b>Warden’s Jian</b>, <b>Shan Garrison Bow</b>, <b>Ironwood Scutum</b>, <b>Syndicate Hand-Crossbow</b>, <b>Garrison Commander’s Glaive</b>, <b>Legionnaire’s Pavise</b>, <b>Garrison Musculata</b>, <b>Mountain Brigandine</b>, <b>Warden’s Lamellar</b>, <b>Auxiliary’s Quilted Coat</b>, <b>Scholar’s Cartographic Case</b>, <b>Templarate Censer</b>, <b>Apothecary’s Field Chest</b>, <b>Signal Mirror</b>, and others.</p>
+<p>Tier 3 (Pathra-Forged Falcata, Painted Knight’s Sabre, Herald’s Voice, Pathran Greataxe, Dragon-Maw Scutum, Scrimshander’s Bone-Staff, Heartland Lorica, Calligrapher’s Silks, Warden-Commander’s Plate, Terra Cotta Warplate, Chorister’s Vestments, Heartland Officer’s Helm, Terra Cotta War-Mask, Master Cartographer’s Folio, Templarate Seal of Office, Censor’s Warrant, Resonance Bell, and others) and beyond expand the catalog into excellent and masterwork tiers.</p>
+<p><span class="concept-badge" style="margin:0">Concept — Statlines Pending</span> The flavor and item names are in place; full mechanical statblocks are being finalized for full release. The Tier 1 catalog above is alpha-complete.</p>
+</div>
+</details>
+
+</section>
+
+    <section class="section" id="conditions" data-spy="conditions">
+<span class="sec-eyebrow">For Players · Player’s Handbook</span>
+<h2 class="sec-title">Conditions Reference</h2>
+<p class="annotatable lede">Conditions caused by an effect with a stated duration (“until the end of your next turn”) end on schedule. Conditions without a stated duration <b>decrement by 1 automatically at the end of the affected creature’s turn</b>; if a condition would decrement to 0, it ends instead. The Recover universal action and many abilities allow you to actively decrement a condition through a check.</p>
+
+<h3 class="sub" id="positional-conditions">Positional &amp; Information Conditions</h3>
+<table class="rules-table">
+  <thead><tr><th>Condition</th><th>Effect</th></tr></thead>
+  <tbody>
+    <tr id="cond-formation"><td><b>Formation</b></td><td>+2 Defense for the character; +1 Defense for each adjacent ally. Lost if the character moves (or is moved).</td></tr>
+    <tr id="cond-identified"><td><b>Identified</b></td><td>Defense, Ward, damage reductions, and any damage resistances/vulnerabilities are displayed. Some abilities can only target Identified enemies.</td></tr>
+    <tr id="cond-analyzed"><td><b>Analyzed X</b></td><td>Successful attacks (not misses) deal an additional 1d4 damage per stack. Cannot be resisted; does not trigger a Saving Throw. Stacks reduce to 0 if the Scholar maintaining them becomes Incapacitated.</td></tr>
+    <tr id="cond-elusive"><td><b>Elusive X</b></td><td>The next attack against this character has Disadvantage. Decrement after every attack on this target. All stacks lost at the beginning of this character’s next turn.</td></tr>
+    <tr id="cond-exposed"><td><b>Exposed</b></td><td>Cannot benefit from stealth or invisibility; cannot hide.</td></tr>
+  </tbody>
+</table>
+
+<h3 class="sub" id="action-conditions">Action &amp; Movement Conditions</h3>
+<table class="rules-table">
+  <thead><tr><th>Condition</th><th>Effect</th></tr></thead>
+  <tbody>
+    <tr id="cond-hastened"><td><b>Hastened X</b></td><td>Next turn, this character gains X additional action points (max 3). At end of turn, decrement Hastened by 1.</td></tr>
+    <tr id="cond-stunned"><td><b>Stunned X</b></td><td>Next turn, this character has X fewer action points. If reduced to 0 actions, the turn is skipped and the condition decrements by the actions skipped.</td></tr>
+    <tr id="cond-quickened"><td><b>Quickened X</b></td><td>Speed is increased by X.</td></tr>
+    <tr id="cond-slowed"><td><b>Slowed X</b></td><td>Speed is reduced by X.</td></tr>
+    <tr id="cond-immobilized"><td><b>Immobilized</b></td><td>Speed is set to 0.</td></tr>
+    <tr id="cond-prone"><td><b>Prone</b></td><td>Melee attacks against a Prone target have Advantage. Melee attacks <em>by</em> a Prone character have Disadvantage. Ranged attacks against a Prone character have Disadvantage. Cannot use two-handed weapons other than crossbows or staves.</td></tr>
+  </tbody>
+</table>
+
+<h3 class="sub" id="emotional-conditions">Emotional, Damage-Type &amp; Health Conditions</h3>
+<table class="rules-table">
+  <thead><tr><th>Condition</th><th>Effect</th></tr></thead>
+  <tbody>
+    <tr id="cond-fear"><td><b>Fear X</b></td><td>−X penalty to accuracy, Defense, and Ward. Fear and Inspired stacks offset each other.</td></tr>
+    <tr id="cond-inspired"><td><b>Inspired X</b></td><td>+X bonus to accuracy, Defense, and Ward. Inspired and Fear offset each other.</td></tr>
+    <tr id="cond-burning"><td><b>Burning X</b></td><td>At the beginning of turn, take Xd6 fire damage.</td></tr>
+    <tr><td><b>Weakened</b></td><td>Weapon damage you deal is halved.</td></tr>
+    <tr><td><b>Poisoned</b></td><td>Disadvantage on attack and skill rolls.</td></tr>
+    <tr><td><b>Dazed X</b></td><td>−X penalty to attack rolls, skill rolls, and Speed.</td></tr>
+    <tr><td><b>Dazzled</b></td><td>Disadvantage on attack rolls that require sight.</td></tr>
+    <tr><td><b>Winded</b></td><td>You are at 0 Grit. The next damage taken hits Body.</td></tr>
+    <tr id="cond-bloodied"><td><b>Bloodied</b></td><td>Your Body has been reduced to 75% or less of its maximum. Some abilities trigger from being Bloodied or attacking a Bloodied target.</td></tr>
+    <tr id="cond-dying"><td><b>Dying</b></td><td>Body has reached 0; you are Incapacitated. Each turn make a Saving Throw vs. DC 15. Three successes stabilize you; three failures end your character. Most Imperial Origins take four failures.</td></tr>
+    <tr><td><b>Incapacitated</b></td><td>Unable to take any actions. The umbrella state covering Dead, Dying, and Sleeping.</td></tr>
+  </tbody>
+</table>
+
+</section>
+
+        <section class="section" id="classes" data-spy="classes">
+<span class="sec-eyebrow">Class Gallery — Concept Survey</span>
 <h2 class="sec-title">Classes</h2>
-<p class="annotatable">Basic Classes v1: Each establishes a core mechanic that defines a mechanical language other classes build on. Characters start here; this is where the game teaches you how to play.</p>
+<p class="annotatable lede">This section is a <b>gallery view</b> of every class in the design — base, advanced, faction-specific, and epic. It exists to show the breadth of the system at full release. For the alpha, the only fully playable classes are the five base classes, whose complete mechanics live in the <a class="rules-link" href="#base-class-rules">Base Class Mechanics</a> section above. Everything below the Basic Classes is tagged <span class="concept-badge" style="margin:0">Concept — Mechanics Pending</span>; the descriptions are the design intent, but the abilities, edges, and statlines are still in development.</p>
+<p class="annotatable">Each class establishes a core mechanic that defines a mechanical language other classes build on. Characters start with a base class; this is where the game teaches you how to play. The faction-specific advanced classes (Orthodox, Dalimyri, Shan, Auric, Taltasquan) shape your character into one of the great traditions of the world; epic classes are the endgame identities a level-19 character can take.</p>
 <div id="basic-classes" data-spy="basic-classes">
   <h3 class="sub">Basic Classes</h3>
+  <p class="annotatable" style="font-size:.92rem;font-style:italic;color:var(--ink-faded);margin-bottom:1rem">Full alpha mechanics live in <a class="rules-link" href="#base-class-rules">Base Class Mechanics</a>. The cards below are the brief class summaries, with portraits.</p>
   <div class="class-card" style="grid-template-columns:160px 1fr">
   <div class="class-portrait"><img src="Legionnaires.png" alt="Legionnaire" loading="lazy"></div>
   <div class="class-body">
@@ -1006,8 +2285,12 @@ figcaption{font-family:var(--font-head);font-size:.58rem;letter-spacing:.12em;te
 </div>
 <div id="advanced-classes" data-spy="advanced-classes">
   <h3 class="sub">Advanced &amp; Epic Classes</h3>
+  <div class="callout">
+    <span class="callout-label">Alpha Scope</span>
+    <p>The advanced classes below — Neutral, Orthodox, Dalimyri, Shan, Auric, Taltasquan, Heterodox, and Epic — are all <b>concept-only at this stage</b>. The descriptions, key hooks, and design intent are present; the abilities, edges, statlines, and dedication mechanics are still in development. Alpha play uses base classes only (see <a class="rules-link" href="#base-class-rules">Base Class Mechanics</a>); at level 3, take a second base class as your dedication.</p>
+  </div>
   <div class="class-group" id="neutral-advanced-classes">
-  <div class="class-group-header"><h3>Neutral Advanced Classes</h3><p>Available to any soldier regardless of faction allegiance. No Heterodoxy impact.</p></div>
+  <div class="class-group-header"><h3>Neutral Advanced Classes <span class="concept-badge">Concept — Mechanics Pending</span></h3><p>Available to any soldier regardless of faction allegiance. No Heterodoxy impact.</p></div>
 <p class="annotatable author-note">Visually, the empire is reminiscient of Song and Jin-dynasty china merged with greco-roman elements; hearkening back to a classical period that feels out of step with more modern auric and taltasquan equivalents. Heavy lamellar armor is the baseline, but with musculata-style chestpieces for officers and elites, heavy Scutum tower shields or smaller round or octagonal shields. Ranged weapons are most often crossbows or recurved shortbows, in melee use short light gladius for close-in fighting, longer and heavier falcata for officers or jian for duelists. Long octagonal studded clubs for heavy mauls or shorter spiked or flanged maces in one hand. The mundane color palette is iron-grey, black, white and scarlet. </p><p class="annotatable author-note">The imperial magic is lexical in nature - spoken, sung or written it appears in warm, glowing golden light, words hanging in the air in sacred mandalas, thai yantra and other geometric forms. the text resembles written Khmer punctuated with more complex ideograms reminisient of classical written Chinese. </p><div class="class-card" style="grid-template-columns:1fr">
   
   <div class="class-body">
@@ -1093,7 +2376,7 @@ figcaption{font-family:var(--font-head);font-size:.58rem;letter-spacing:.12em;te
     <div class="class-text"><p class="annotatable"><b>Cantor </b>[Chorister] - The Chorister who remains a singer, rather than turn to the calligrapher's art of the written word. But unlike the Virtuoso, the Cantor embraces their role as part of something larger than their own voice, however singular their talent. Focuses on low to medium intensity battlefield-wide effects (e.g. all allied characters gain a +X bonus to defense and a +Y bonus to physical damage reduction for one round, etc.).</p></div>
   </div>
 </div></div><hr class="rule"><div class="class-group" id="orthodox-advanced-classes">
-  <div class="class-group-header"><h3>Orthodox Advanced Classes</h3><p>Imperial traditions. Require orthodox standing. Reinforce the Eternal Empire's power structures.</p></div>
+  <div class="class-group-header"><h3>Orthodox Advanced Classes <span class="concept-badge">Concept — Mechanics Pending</span></h3><p>Imperial traditions. Require orthodox standing. Reinforce the Eternal Empire's power structures.</p></div>
 <div class="class-card" style="grid-template-columns:160px 1fr">
   <div class="class-portrait"><img src="Scrimshander_at_work.png" alt="Scrimshander" loading="lazy"></div>
   <div class="class-body">
@@ -1123,7 +2406,7 @@ figcaption{font-family:var(--font-head);font-size:.58rem;letter-spacing:.12em;te
     <div class="class-text"><p class="annotatable">Censor [Scholar, Legionnaire]</p><p class="annotatable entry-child">Imperial inquisitor. The Censor uses secret techniques — some uncomfortably similar to Dalimyri spirit-binding — to hunt dangerous esoteric cults, renegade spirits, and heterodox magic. Boosts allies’ Ward, dispels summons, deals massive bonus damage to non-human non-beast foes, and at higher levels can simply cancel incoming magical attacks as a reaction. The anti-magic specialist. Will not enter battle alongside non-orthodox spellcasters or Knight-Chandlers. The necessary evil that polices the Empire’s own magical establishment. <b>Key Hook:</b> Anti-magic and anti-spirit specialist; dispel summons; bonus damage vs. supernatural foes; Ward buffs for allies; mutual exclusion with Knight-Chandlers.</p></div>
   </div>
 </div></div><hr class="rule"><div class="class-group" id="dalimyri-advanced-classes">
-  <div class="class-group-header"><h3>Dalimyri Advanced Classes</h3><p>Require Dalimyri alliance. Cause Heterodoxy. Spirit-sworn traditions from the wardens of the Labyrinth.</p></div>
+  <div class="class-group-header"><h3>Dalimyri Advanced Classes <span class="concept-badge">Concept — Mechanics Pending</span></h3><p>Require Dalimyri alliance. Cause Heterodoxy. Spirit-sworn traditions from the wardens of the Labyrinth.</p></div>
 <p class="annotatable author-note">Visually, the Dalimyri aesthetic resembles scottish/celtic arms and armor and general lifestyle (lots of ranching, subsistence farming, raiding and continual low-level violence with few outright wars). Everyone is experienced with violence and trained for it, but it is a culture that seldom engages in all-out war, so much as cattle-raiding, feuds, and the continual hunt and defense against the supernatural entities that come from the barrow-mazes. Targe shields, spears, long straight swords or heavy axes, chainmail or leather armor, archers, javelins, and gallowglasses. The most striking element of the Dalimyri is the ubiquity of masks - all Dalimyri wear masks at almost all times; to be seen bare-faced is seen as shameful. Masks are usually of carved and lacquered wood or bone, or occasionally ceramic or porcelain, though this is rare. The masks can cover the eyes and nose, the nose and mouth, just one side (usually the left) of the face, or can cover the full face. Every mask is unique and hand-created; they are individual identities with their own spiritual significance and no two are the same. They often resemble heavily stylized faces, animals or flora, in a style somewhat reminiscient of traditional polynesian masks or native american totem imagery. </p><p class="annotatable author-note">Visually, the magical tradition of Dalimyri spiritbinding is visually distinct from other magical traditions. Power usually appears in the orange-amber-red color of a bonfire, limned in forest green and sky blue. Spirits themselves appear different than physical creatures - they look like paintings on the world, with visible brushstrokes. They are vivid, evocative, and surreal, not naturalistic. They often take the form of animals, plants, or people but with one or more impossible elements - a tiger of black iron stripes inhabited by flickering flame, a wolf of smoke with bonfire eyes, a serpent of flowing, liquid water, a cloud of scales arrayed into shapes vaguely suggestive of a school of fish, etc. </p><div class="class-card" style="grid-template-columns:160px 1fr">
   <div class="class-portrait"><img src="Moonsinger_2.png" alt="Moonsinger" loading="lazy"></div>
   <div class="class-body">
@@ -1154,7 +2437,7 @@ figcaption{font-family:var(--font-head);font-size:.58rem;letter-spacing:.12em;te
   </div>
 </div></div><hr class="rule">
   <div class="class-group" id="shan-classes">
-  <div class="class-group-header"><h3>Shan Classes</h3><p>Require aiding Shan separatists. Cause Heterodoxy. Psyche magic traditions from the conquered prefecture.</p></div>
+  <div class="class-group-header"><h3>Shan Classes <span class="concept-badge">Concept — Mechanics Pending</span></h3><p>Require aiding Shan separatists. Cause Heterodoxy. Psyche magic traditions from the conquered prefecture.</p></div>
 <p class="annotatable author-note">Visually, the Shan aesthetic is inspired by medieval and rennaissance tibetan and nepalese - humble, many items reflective of the material of their larger Imperial neighbor. Typically lightweight, meant to be transported through rough country at high altitudes. Armor is usually light leather or heavier lamellar style; usually armed with shortbows and spears or short hacking blades like kukri or xyphos. Colors are  the off-white and soft brown of homespun cloth, accents in silver. </p><p class="annotatable author-note">Shan magic is surreal, incongruous, and impossible - the magic of dream-logic, not reality. It has visual telltales of panes of stained glass and intricately carved stretches of tarnished silver and mother of pearl, details always changing. Colors are tarnished silver, shimmering opalescence, the soft, cool purplish-blue of dusk and silver-white of moonlight.</p><div class="class-card" style="grid-template-columns:160px 1fr">
   <div class="class-portrait"><img src="Meditant.png" alt="Meditant" loading="lazy"></div>
   <div class="class-body">
@@ -1191,7 +2474,7 @@ figcaption{font-family:var(--font-head);font-size:.58rem;letter-spacing:.12em;te
     <div class="class-text"><p class="annotatable">Mindknight [Scout, Legionnaire]</p><p class="annotatable entry-child">The Ricarian tradition — inward-directed emotional cultivation paired with oneirism to create arms, armor, and servitors from one’s own thoughts and memories. More narrow than other psyche practitioners but far more reliable. A Ricarian who draws a blade of literalized resolve or dons armor of crystallized discipline is exactly as formidable as their emotional self-mastery allows. The disciplined martial counterpart to the Oneiricist’s chaotic dream-sculpting: same raw material (psyche stuff), completely different relationship to it. The bodyguard-knights of the Shan royal family, now unmoored. <b>Key Hook:</b> Self-buff oneirism (conjured weapons and armor); reliability over raw power; emotional state management (cultivate specific internal states for combat bonuses); martial-psyche hybrid.</p></div>
   </div>
 </div></div><hr class="rule"><div class="class-group" id="auric-advanced-classes">
-  <div class="class-group-header"><h3>Auric Advanced Classes</h3><p>Require Auric League alliance. Knowledge-and-engineering magic from the Jewel Cities.</p></div>
+  <div class="class-group-header"><h3>Auric Advanced Classes <span class="concept-badge">Concept — Mechanics Pending</span></h3><p>Require Auric League alliance. Knowledge-and-engineering magic from the Jewel Cities.</p></div>
 <p class="annotatable author-note">Auric characters tend to dress in formal clothing and light-to-medium armor - think colonial-era redcoats and cuirassiers, but with the cloth stitched with lines of arcane circuitry that explode into light when charged with power. Preferred arms are sabers and wands for skirmishers or magical battlestaves for dedicated fire support roles. It is a maritime culture, and elements of shipboard life are still common - stars and constellations are cultural touchstones, and they favor a strategic doctrine of speed, mobility, flexbility, and precision, with their clothes, tools, weapons and vehicles designed with those strengths in mind. Auric magic tends to be predictable, rational, academic, and reliable. The core auric magical insight is what they would call universality but which others would call reductiveness; the ability to break many forms of magic into their constituent forces and energies, and manipulate those energies directly, without the ritual and mysticism of the lexical or shamanic traditions. These energies are stored within and manipulated by tools and devices - wands, rods, arcane circuitry inlaid in metal or ceramic or tattooed into skin. Visually, Auric magic is characterized by brightness, actinic, blue-white light, lines and points of light hanging in the air, echoed by the grids, arcane circuitry and seal-of-solomon sacred geometry embedded within their tools and devices. Often create objects and constructs from this light, which can be used as shields or weapons on the battlefield. Occasionally mimic natural forms but abstracted into low-poly art deco stylized versions of horses or birds or sea creatures. Visual touchstones are art deco, islamic geometric art, and venetian style.</p><div class="class-card" style="grid-template-columns:160px 1fr">
   <div class="class-portrait"><img src="Auric_Arcanist.png" alt="Arcanist" loading="lazy"></div>
   <div class="class-body">
@@ -1221,7 +2504,7 @@ figcaption{font-family:var(--font-head);font-size:.58rem;letter-spacing:.12em;te
     <div class="class-text"><p class="annotatable">Aegis (arcane defender, uses swords+spells) - Auric gish, specializes in combining spell+swords, attacking ward or defense, wherever their foes are weakest. Defender/Striker.</p></div>
   </div>
 </div></div><hr class="rule"><div class="class-group" id="taltasquan-advanced-classes">
-  <div class="class-group-header"><h3>Taltasquan Advanced Classes</h3><p>Require Taltasquan alliance. Alchemical tradition. Some transformations are irreversible.</p></div>
+  <div class="class-group-header"><h3>Taltasquan Advanced Classes <span class="concept-badge">Concept — Mechanics Pending</span></h3><p>Require Taltasquan alliance. Alchemical tradition. Some transformations are irreversible.</p></div>
 <p class="annotatable author-note">Taltasquan characters come from an incredibly wealthy and incredibly violent culture. They are always armed, usually in a way that is visually obvious and also in at least one way that isn't. They come from a scorching desert; aesthetically they borrow from the Ottoman, Aztec and the Khmer empires. Their arms and armor almost always incorporate something harvested from the tarrasque - yatagan swords carved from the dull black bones of the beast, short chopping knives of curved fangs, macahuitl studded with splintered tarrasque-bone rather than obsidian, and scale armor composed of actual scales chipped from the beast-god's hide. Their colors are deeply saturated crimson and cream with gold and steel accents. They employ alchemical munitions of many kinds - incendiaries and explosives, but also airborne deliriants and chemical weapons, and transmutative fogs of liquified tarrasque blood. </p><p class="annotatable author-note">Taltasquan magic is alchemical and biological - blood red, lurid purple, and viridian. Their alchemical reagents have a telltale iridescence, like oil on water, especially transmutative fogs.  </p><div class="class-card" style="grid-template-columns:160px 1fr">
   <div class="class-portrait"><img src="Taltasquan_Alchemist.png" alt="Alchemist" loading="lazy"></div>
   <div class="class-body">
@@ -1252,7 +2535,7 @@ figcaption{font-family:var(--font-head);font-size:.58rem;letter-spacing:.12em;te
   </div>
 </div></div><hr class="rule">
   <div class="class-group" id="heterodox-advanced-classes">
-  <div class="class-group-header"><h3>Heterodox Advanced Classes</h3><p>Require specific narrative choices. Significant Heterodoxy impact.</p></div>
+  <div class="class-group-header"><h3>Heterodox Advanced Classes <span class="concept-badge">Concept — Mechanics Pending</span></h3><p>Require specific narrative choices. Significant Heterodoxy impact.</p></div>
 <div class="class-card" style="grid-template-columns:1fr">
   
   <div class="class-body">
@@ -1275,7 +2558,7 @@ figcaption{font-family:var(--font-head);font-size:.58rem;letter-spacing:.12em;te
     <div class="class-text"><p class="annotatable">Amanuensis [Chorister, Scholar]</p><p class="annotatable entry-child">Scribes for those outside reality. The most heterodox class in the game — Amanuenses use lexical magic in ways totally antithetical to the God-King, serving as scribes for the Unwrought, the speakers in the darkness, those whose words can open reality like a wound. Not necessarily evil — their philosophy is about communing with What Is Not, which is not intrinsically good or bad — but their defiance of the God-King’s Will is reckless in the extreme, and the things they invite into the world don’t always leave when asked. The reality-warper, the summoner of impossibilities, the heretic whose heresy might be the only thing that works against what’s coming. <b>Key Hook:</b> Reality-tearing Lexicon magic; summon Unwrought entities; highest Heterodoxy cost of any class; abilities that break normal game rules in frightening ways.</p></div>
   </div>
 </div></div><hr class="rule"><div class="class-group" id="epic-classes">
-  <div class="class-group-header"><h3>Epic Classes</h3><p>Unlock at level 21. The pinnacle of each tradition. These are the endgame identities.</p></div>
+  <div class="class-group-header"><h3>Epic Classes <span class="concept-badge">Concept — Mechanics Pending</span></h3><p>Unlock at level 21. The pinnacle of each tradition. These are the endgame identities.</p></div>
 <p class="annotatable author-note">Unlock at level 21. The pinnacle of each tradition. These are the endgame identities. <i>[These remain underdeveloped in the notes and may need significant fleshing out. Included here as placeholders with what exists.]</i></p><div class="class-card" style="grid-template-columns:1fr">
   
   <div class="class-body">
@@ -1337,6 +2620,11 @@ figcaption{font-family:var(--font-head);font-size:.58rem;letter-spacing:.12em;te
 </section>
   </div>
 </main>
+<div id="lightbox" role="dialog" aria-label="Image viewer">
+  <button class="lb-close" onclick="closeLightbox()" aria-label="Close">×</button>
+  <img id="lb-img" alt="">
+  <div class="lb-caption" id="lb-caption"></div>
+</div>
 <div id="ann-modal" role="dialog">
   <div class="ann-box">
     <button class="ann-close" onclick="closeAnn()">×</button>
@@ -1381,8 +2669,31 @@ function exportAnns(){const anns=getAnns(),r=getReader();let out=`WF Story Bible
 function toggleGroup(btn){btn.classList.toggle('closed');const items=btn.nextElementSibling;if(items)items.classList.toggle('hidden');}
 function initScrollSpy(){const sections=document.querySelectorAll('[data-spy]');const links=document.querySelectorAll('.nav-link[href^="#"]');const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const id='#'+e.target.dataset.spy;links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')===id));}});},{rootMargin:'-15% 0px -65% 0px'});sections.forEach(s=>obs.observe(s));}
 function initAnnotations(){let n=0;document.querySelectorAll('.annotatable').forEach(el=>{el.dataset.aid=`a${++n}`;const btn=document.createElement('button');btn.className='ann-trigger';btn.title='Add note';btn.textContent='✦';btn.onclick=()=>openAnn(el);el.prepend(btn);});const anns=getAnns();document.querySelectorAll('.annotatable').forEach(el=>{if(anns[el.dataset.aid])el.classList.add('has-ann');});}
+function openLightbox(src,caption){const lb=document.getElementById('lightbox');const img=document.getElementById('lb-img');const cap=document.getElementById('lb-caption');img.src=src;img.alt=caption||'';cap.textContent=caption||'';lb.classList.add('open');document.body.style.overflow='hidden';}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+function initLightbox(){
+  // Wire every image inside content (not nav, not modals) to open the lightbox.
+  const root=document.getElementById('content');
+  if(!root)return;
+  root.querySelectorAll('img').forEach(img=>{
+    if(img.closest('#sidebar')||img.closest('#ann-modal')||img.closest('#ann-panel')||img.closest('#lightbox'))return;
+    img.addEventListener('click',e=>{
+      e.preventDefault();
+      // Caption: nearest figcaption, else alt text minus extension
+      let caption='';
+      const fig=img.closest('figure');
+      if(fig){const fc=fig.querySelector('figcaption');if(fc)caption=fc.textContent.trim();}
+      if(!caption&&img.alt)caption=img.alt.replace(/\.[a-z]+$/i,'').replace(/_/g,' ');
+      openLightbox(img.currentSrc||img.src,caption);
+    });
+  });
+  // Click on backdrop closes
+  document.getElementById('lightbox')?.addEventListener('click',e=>{if(e.target.id==='lightbox')closeLightbox();});
+  // Escape key closes
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('lightbox').classList.contains('open'))closeLightbox();}});
+}
 document.getElementById('mob-toggle')?.addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));
-window.addEventListener('DOMContentLoaded',()=>{if(!localStorage.getItem('wf_reader')){const n=prompt('Welcome! Enter your name for annotations:','Reader');if(n)localStorage.setItem('wf_reader',n.trim());}const u=getUnlocked();u.forEach(a=>revealByAct(a));syncToggles();initAnnotations();initScrollSpy();});
+window.addEventListener('DOMContentLoaded',()=>{if(!localStorage.getItem('wf_reader')){const n=prompt('Welcome! Enter your name for annotations:','Reader');if(n)localStorage.setItem('wf_reader',n.trim());}const u=getUnlocked();u.forEach(a=>revealByAct(a));syncToggles();initAnnotations();initScrollSpy();initLightbox();});
 </script>
 </body>
 </html>
