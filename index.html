@@ -230,6 +230,9 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
   .rules-table{font-size:.82rem}
   .rules-table th,.rules-table td{padding:.4rem .5rem}
 }
+
+.art-prompt{border-left:3px solid #b8860b;background:rgba(184,134,11,0.07);}
+.art-prompt .callout-label{color:#b8860b;}
 </style>
 </head>
 <body>
@@ -303,6 +306,8 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 <button class="nav-group-btn" onclick="toggleGroup(this)">Class Mechanics <span class="nav-arrow">▾</span></button>
 <div class="nav-items">
   <a class="nav-link" href="#base-class-rules">Base Classes (Alpha)</a>
+  <a class="nav-link" href="#hybrid-classes">Hybrid Classes</a>
+  <a class="nav-link" href="#advanced-classes-rules">Advanced Classes</a>
   <a class="nav-sub" href="#class-legionnaire">Legionnaire</a>
   <a class="nav-sub" href="#class-scholar">Scholar</a>
   <a class="nav-sub" href="#class-scout">Scout</a>
@@ -312,7 +317,7 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 <div class="nav-divider"></div>
 <button class="nav-group-btn" onclick="toggleGroup(this)">Skills, Edges, Gear <span class="nav-arrow">▾</span></button>
 <div class="nav-items">
-  <a class="nav-link" href="#skills">Skills</a>
+  <a class="nav-link" href="#skills">Backgrounds &amp; Journeys</a>
   <a class="nav-link" href="#edges">General Edges</a>
   <a class="nav-link" href="#equipment">Equipment</a>
   <a class="nav-sub" href="#equipment-rules">Slots &amp; Readied</a>
@@ -361,11 +366,11 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
     <section class="section" id="quickstart" data-spy="quickstart">
 <span class="sec-eyebrow">For Players</span>
 <h2 class="sec-title">Step-by-Step Character Creation</h2>
-<p class="annotatable lede">A Long Road Home character is a soldier of the Eternal Empire’s Third Legion — a survivor of the Battle of the Drowning, marching home through hostile country with the Chorus silent overhead. The five steps below walk you through a complete Tier&nbsp;1 build (levels 1–6). Each step links to the detailed rules in the Player’s Handbook below — start with <a class="rules-link" href="#core-mechanics">How the Game Works</a> if you want the rules tour first.</p>
+<p class="annotatable lede">A Long Road Home character is a soldier of the Eternal Empire’s Third Legion — a survivor of the Battle of the Drowning, marching home through hostile country with the Chorus silent overhead. The five steps below walk you through a complete Tier&nbsp;1 build (levels 1–18). Each step links to the detailed rules in the Player’s Handbook below — start with <a class="rules-link" href="#core-mechanics">How the Game Works</a> if you want the rules tour first.</p>
 
 <div class="callout">
   <span class="callout-label">Alpha Scope</span>
-  <p>This alpha covers <b>levels 1–6 only</b>. At level 3 you take a <b>Dedication</b>, and for the alpha that Dedication must be a second base class (Legionnaire, Scholar, Scout, Chorister, or Spiritbinder) — advanced and epic dedications are still in design and appear elsewhere in this document tagged <span class="concept-badge" style="margin:0">Concept — Mechanics Pending</span>.</p>
+  <p>This alpha covers <b>levels 1–18 (Epic/Mythic levels 19–20 pending)</b>. At level 3 you take a <b>Dedication</b>, and for the alpha that Dedication must be a second base class (Legionnaire, Scholar, Scout, Chorister, or Spiritbinder) — advanced and epic dedications are still in design and appear elsewhere in this document tagged <span class="concept-badge" style="margin:0">Concept — Mechanics Pending</span>.</p>
 </div>
 
 <div class="steps-grid">
@@ -383,12 +388,13 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
     <div class="step-num">II</div>
     <div class="step-body">
       <h4>Assign Core Statistics</h4>
-      <p>You have four core stats: <b>Might</b>, <b>Grace</b>, <b>Reason</b>, and <b>Will</b>. Each starts at 0. Spend <b>6 points</b> total, with no stat above +3 or below 0 at character creation.</p>
+      <p>You have five core stats: <b>Might</b>, <b>Grace</b>, <b>Reason</b>, <b>Will</b>, and <b>Awareness</b>. Each starts at 0. Spend <b>6 points</b> total, with no stat above +3 or below 0 at character creation.</p>
       <ul>
-        <li><b>Might</b> — weapon damage, Grit, Body, PDR, carrying capacity</li>
-        <li><b>Grace</b> — weapon accuracy, Defense, Initiative, readied items</li>
-        <li><b>Reason</b> — magic accuracy, Initiative, readied abilities</li>
-        <li><b>Will</b> — magic damage, Ward, MDR, saving throws</li>
+        <li><b>Might</b> — melee accuracy &amp; damage, Grit, Body, PDR, Concentration, carrying capacity</li>
+        <li><b>Grace</b> — melee &amp; ranged accuracy, Defense, Initiative, readied items</li>
+        <li><b>Reason</b> — spell accuracy, Ward, readied abilities, knowledge checks</li>
+        <li><b>Will</b> — spell damage, Ward, MDR, Grit, Concentration</li>
+        <li><b>Awareness</b> — ranged &amp; spell accuracy, Defense, Ward, Initiative</li>
       </ul>
       <p>See <a class="rules-link" href="#statistics">Statistics</a> for how secondary stats (Grit, Body, Defense, Ward, Speed, Initiative) are calculated.</p>
     </div>
@@ -398,7 +404,7 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
     <div class="step-num">III</div>
     <div class="step-body">
       <h4>Choose Your Class</h4>
-      <p>Your base class determines your equipment proficiencies, your starting Grit and Body, your <b>Core Mechanic</b>, and your <b>Signature Ability</b>. The five base classes are <a class="rules-link" href="#class-legionnaire">Legionnaire</a>, <a class="rules-link" href="#class-scholar">Scholar</a>, <a class="rules-link" href="#class-scout">Scout</a>, <a class="rules-link" href="#class-chorister">Chorister</a>, and <a class="rules-link" href="#class-spiritbinder">Spiritbinder</a>.</p>
+      <p>Your base class determines your equipment proficiencies, your starting Grit and Body, your <b>Core Mechanic</b>, and your <b>Signature Ability</b>. The base classes are the five Imperial foundations — <a class="rules-link" href="#class-legionnaire">Legionnaire</a>, <a class="rules-link" href="#class-scholar">Scholar</a>, <a class="rules-link" href="#class-scout">Scout</a>, <a class="rules-link" href="#class-chorister">Chorister</a>, and <a class="rules-link" href="#class-calligrapher">Calligrapher</a> — plus the heterodox <a class="rules-link" href="#class-spiritbinder">Spiritbinder</a>.</p>
       <p>At level 1 you also choose <b>one ability</b> from your class’s ability list (or your Origin’s list).</p>
     </div>
   </div>
@@ -406,16 +412,21 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
   <div class="step-block">
     <div class="step-num">IV</div>
     <div class="step-body">
-      <h4>Level Up to Six</h4>
-      <p>Walk your character through levels 2–6 in order. Each level adds an ability or an edge; some levels add both.</p>
+      <h4>Level Up (1&ndash;18)</h4>
+      <p>Walk your character through the levels in order. Each level adds an ability or an edge; Dedication levels add much more.</p>
       <ul>
         <li><b>Level 2:</b> choose 1 ability, choose 1 <a class="rules-link" href="#edges">edge</a></li>
-        <li><b>Level 3:</b> <b>take a Dedication</b> (a second base class — Legionnaire, Scholar, Scout, Chorister, or Spiritbinder; alpha rule). Gain that class’s Signature, Core Mechanic, equipment proficiencies, and stat bonuses. Choose 1 ability. Mastery rises to +2. Add +1 to two different core stats (no stat above +6).</li>
-        <li><b>Level 4:</b> choose 1 ability, choose 1 edge</li>
-        <li><b>Level 5:</b> choose 1 ability, choose 1 edge</li>
-        <li><b>Level 6:</b> choose 1 ability, choose 1 edge</li>
+        <li><b>Level 3:</b> <b>Dedication</b> (base, hybrid, or advanced class — see Dedications). Choose 1 ability. Mastery rises to +2. Add +1 to two different core stats. Gain 2 Background points.</li>
+        <li><b>Levels 4&ndash;6:</b> choose 1 ability and 1 edge each level</li>
+        <li><b>Level 7:</b> <b>Dedication.</b> Choose 1 ability. Mastery +3. +1 to two different core stats. 2 Background points.</li>
+        <li><b>Levels 8&ndash;10:</b> choose 1 ability and 1 edge each level</li>
+        <li><b>Level 11:</b> <b>Dedication.</b> Choose 1 ability. Mastery +4. +1 to two different core stats. 2 Background points.</li>
+        <li><b>Levels 12&ndash;14:</b> choose 1 ability and 1 edge each level</li>
+        <li><b>Level 15:</b> <b>Dedication.</b> Choose 1 ability. Mastery +5. +1 to two different core stats. 2 Background points.</li>
+        <li><b>Levels 16&ndash;18:</b> choose 1 ability and 1 edge each level</li>
       </ul>
-      <p>Abilities can be drawn from your class, your Dedication class, or your Origin. The number of abilities you can keep <b>readied</b> in combat is <b>3 + your Reason</b>; the rest are known but unavailable until you swap them in.</p>
+      <p>(Level 19's Epic Dedication and level 20's epic picks exist in the design but their content is not yet written; this document supports play to level 18.)</p>
+      <p>Abilities can be drawn from your class, any Dedication class, or your Origin. The number of abilities you can keep <b>readied</b> in combat is <b>2 + Tier + Reason</b>; the rest are known but unavailable until you swap them in.</p>
     </div>
   </div>
 
@@ -431,7 +442,7 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 
 </div>
 
-<p class="annotatable">When you are done, your character has: an Origin (skills, ability), four core stats, two classes worth of Signatures and Core Mechanics, five chosen abilities, four edges, and a kit of equipment. You also have a Mastery bonus of +2 (added to attack rolls, damage, and any tagged skills), a Body score of 8 + Might, a Grit pool that grows each level, and a Defense and Ward calculated from Grace, Will, and equipment.</p>
+<p class="annotatable">When you are done, your character has: an Origin (Backgrounds, ability), five core stats, two classes worth of Signatures and Core Mechanics, five chosen abilities, four edges, and a kit of equipment. You also have a Mastery bonus of +2 (added to attack rolls, damage, and any tagged skills), a Body score of 8 + Might + Tier, a Grit pool that grows each level, and a Defense and Ward calculated from Grace, Reason, Awareness, and equipment.</p>
 
 </section>
 
@@ -452,7 +463,7 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 <h4 class="sub">Universal Actions</h4>
 <p>These do not need to be readied — every character can do them, and they can be used multiple times in a round.</p>
 <div class="ability-list">
-  <div class="ability"><div class="ability-head"><span class="ability-name">Basic Attack</span><span class="ability-cost">Major Action</span></div><p class="ability-desc">Roll 1d20 + Grace + weapon’s accuracy bonus + Mastery vs. target’s Defense. On a hit, deal weapon damage + Might + Mastery. <b>On a miss, you still deal damage equal to your Might + Mastery.</b> On a critical hit (beating Defense by 10+), maximize the weapon’s damage dice and roll them again before adding modifiers.</p></div>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Basic Attack</span><span class="ability-cost">Major Action</span></div><p class="ability-desc"><b>Melee:</b> roll 1d20 + Might + Grace + weapon’s accuracy bonus + Mastery vs. target’s Defense. On a hit, deal weapon damage + Might + Mastery; <b>on a miss, you still deal damage equal to your Might + Mastery.</b> <b>Ranged:</b> roll 1d20 + Grace + Awareness + weapon’s accuracy bonus + Mastery vs. Defense. On a hit, deal weapon damage + Mastery (<b>no stat is added</b>); on a miss, a ranged attack deals <b>no damage</b>. On a critical hit (beating Defense by 10+), maximize the weapon’s damage dice and roll them again before adding modifiers.</p></div>
   <div class="ability"><div class="ability-head"><span class="ability-name">Move</span><span class="ability-cost">Minor Action</span></div><p class="ability-desc">Move up to your Speed in squares. You can move through allies but cannot end your turn in their square; you cannot move through enemies.</p></div>
   <div class="ability"><div class="ability-head"><span class="ability-name">Use Item</span><span class="ability-cost">Major or Minor</span></div><p class="ability-desc">Cost depends on the item. Thrown weapons, munitions, and healer’s kits are typically Major; potions and elixirs are typically Minor.</p></div>
   <div class="ability"><div class="ability-head"><span class="ability-name">Recover</span><span class="ability-cost">Minor Action</span></div><p class="ability-desc">Choose one condition affecting you. Make a Recovery check vs. DC 10. On success, decrease that condition by 1; on a critical success, decrease by 2. (When a condition reaches 0, it ends.)</p></div>
@@ -464,17 +475,17 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 <ul style="margin:.5rem 0 1rem 1.4rem;font-size:.95rem">
   <li><b>Critical Success</b> — beating the target number by 10 or more. Maximize damage dice, then roll again before adding modifiers.</li>
   <li><b>Success</b> — meeting or exceeding the target number.</li>
-  <li><b>Failure</b> — below the target number. Even on a failure, attacks still deal damage equal to the attacker’s Might (or Will, for spells), plus Mastery. <b>No turn is wasted.</b></li>
+  <li><b>Failure</b> — below the target number. Even on a failure, <b>melee</b> attacks still deal damage equal to the attacker’s Might (and spells the attacker’s Will), plus Mastery. <b>Ranged weapon attacks deal no damage on a miss</b> — accuracy from cover and distance is their tradeoff. <b>No turn is wasted.</b></li>
 </ul>
 <p>A natural 1 increments the failure side; a natural 20 increments the success side. (A natural 20 turns a Success into a Critical Success.)</p>
 
 <div class="designer-note">Crit failures aren’t that interesting in practice — they punish luck rather than choice. So the system uses three degrees of success rather than four: Critical Success, Success, Failure. The “damage on a miss” rule is meant to keep every action meaningful, especially for low-Grace characters who would otherwise feel useless against high-Defense enemies.</div>
 
 <h3 class="sub" id="spellcasting">Spellcasting</h3>
-<p>Spells follow the same shape as attacks but use different stats. A <b>Spellcasting roll</b> is 1d20 + Reason + Mastery (if applicable). If the spell targets an enemy (a <b>Spellcasting attack</b>), compare to the target’s <b>Ward</b>; otherwise, compare to a static DC. On a critical spellcasting attack, maximize damage dice and roll again. On a failure, the spell still deals damage equal to the caster’s Will + Mastery.</p>
+<p>Spells follow the same shape as attacks but use different stats. A <b>Spellcasting roll</b> is 1d20 + Reason + Awareness + Mastery (if applicable). If the spell targets an enemy (a <b>Spellcasting attack</b>), compare to the target’s <b>Ward</b>; otherwise, compare to a static DC. On a critical spellcasting attack, maximize damage dice and roll again. On a failure, the spell still deals damage equal to the caster’s Will + Mastery.</p>
 
 <h3 class="sub" id="saving-throws">Saving Throws &amp; Conditions</h3>
-<p>Many conditions decrement on their own at the end of the affected creature’s turn. Some, like Burning, you can attempt to shake off with a <b>Saving Throw</b>: choose one condition currently affecting you, roll 1d20 + Recovery, and on 10+ decrement the condition by 1. A Critical Success decrements by 2. When a condition reaches 0, it ends.</p>
+<p>Many conditions decrement on their own at the end of the affected creature’s turn. Some, like Burning, you can attempt to shake off with a <b>Saving Throw</b>: choose one condition currently affecting you, roll 1d20 + the core stat named by that condition (see <a class="rules-link" href="#conditions">Conditions</a>) + your Recovery bonuses, and on 10+ decrement the condition by 1. A Critical Success decrements by 2. When a condition reaches 0, it ends.</p>
 <p>The most important conditions to know in early play are <a class="rules-link" href="#cond-formation">Formation</a>, <a class="rules-link" href="#cond-identified">Identified</a>, <a class="rules-link" href="#cond-analyzed">Analyzed</a>, <a class="rules-link" href="#cond-fear">Fear</a>, <a class="rules-link" href="#cond-inspired">Inspired</a>, <a class="rules-link" href="#cond-burning">Burning</a>, and <a class="rules-link" href="#cond-bloodied">Bloodied</a>. The full reference is at <a class="rules-link" href="#conditions">Conditions</a>.</p>
 
 <h3 class="sub" id="positioning">Positioning</h3>
@@ -499,7 +510,7 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 <p><b>Resistance</b> halves a damage type before reduction is applied. <b>Vulnerability</b> increases damage of a type by 50% before reduction. Resistances and Vulnerabilities apply <em>before</em> PDR/MDR.</p>
 
 <h3 class="sub" id="abilities-and-readied">Abilities, Mastery, &amp; Readied Slots</h3>
-<p>You learn many abilities — from your Origin, your Class, your Dedication, and your equipment. In the heat of combat, only your <b>Readied</b> abilities are available: <b>3 + Reason</b> abilities at any one time. You can swap one Readied ability mid-battle by spending 3 actions clearing your mind, or freely between battles.</p>
+<p>You learn many abilities — from your Origin, your Class, your Dedication, and your equipment. In the heat of combat, only your <b>Readied</b> abilities are available: <b>2 + Tier + Reason</b> abilities at any one time. You can swap one Readied ability mid-battle by spending 3 actions clearing your mind, or freely between battles.</p>
 <p>You also can’t use the same ability twice in the same round (Universal actions are exempt).</p>
 <p><b>Mastery</b> is a flat bonus to attack rolls, damage, and tagged skill checks. It begins at +1 at level 1 and increases by 1 at each Dedication (so +2 at level 3, +3 at level 7, and so on). Mastery is added even on a miss.</p>
 
@@ -1244,46 +1255,102 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 <figure class="img-scene"><img src="Taltasquaalchemicalberserkers.png" alt="Taltasquaalchemicalberserkers.png" loading="lazy"><figcaption>Alchemical Berserkers</figcaption></figure>
 </div>
 <hr class="rule">
-<div id="turathi" data-spy="turathi"><h3 class="sub">The Turathi Isles</h3><p class="annotatable lede">The Turathi Isles: a loose mashup of polynesian and maori influences paired with the medieval norse: black longships with iron-sheathed hulls drawn by chained sea beasts, armed with incendiary hwachas capable of launching a hundred three-foot arrows tipped in burning glass within seconds. Behind them flotillas of narrow, sleek heartwood war canoes carry raiding parties armored in mystic tattoos and armed with weapons of salted iron and volcanic glass. Raiders from the sea - from the fury of the Turathi deliver us, lord.</p><p class="annotatable entry-root">Tropical volcanic islands, swallowed by the sea after a cataclysmic eruption. A land of rainbow-plumed serpents haunting lush jungles dappled in deep shadows, dotted with cities of wrought iron and stained glass in the shadows of the volcano gods. Also practice magic derived from the Lexicon, albeit with nearly a millennium of cultural drift. Masters of pact-making and pyromancy, loved to conjure outsiders to serve or to possess willing or unwilling hosts (empty vessels), sacrificed to the fire spirits of the volcanoes, used pyromancy for divination, ensuring fertility in land and sea, the creation of new materials, and most especially for war. All swirling magical tattoos, long and sleek war-canoes drawn not by oar but by leashed sea-beast;  Terrifying boogie-men sea raiders that function historically like tropical-coded vikings, complete with a Varangian Guard analogue: a company of famous mercenaries employed as elite shock troops by some other nation (perhaps the eternal empire, even? could be part of the tribute they once paid the Godking but have now come to resent).</p>
-<p class="annotatable entry-root">Aesthetic: Polynesian, Norse, with a touch of Gothic stained glass and wrought iron; a seaborne culture (almost) equally happy to raid or trade with all comers. Centered on tropical volcanic islands. A land of rainbow-plumed serpents haunting lush jungles dappled in deep shadows, dotted with cities of iron and basalt, stained-glass-towers rising like blades in the shadows of the volcanos.  </p>
+<div id="turathi" data-spy="turathi"><h3 class="sub">The Turathi Isles</h3>
+<p class="annotatable lede">The Turathi Isles: a loose synthesis of Polynesian and Maori influences paired with the medieval Norse, set in the long shadow of an Atlantis their ancestors actually saw fall. Black longships with iron-sheathed hulls drawn by chained sea-beasts, armed with incendiary hwachas capable of launching a hundred three-foot arrows tipped in burning glass within seconds. Behind them, flotillas of narrow, sleek heartwood war-canoes carry raiding parties armored in mystic tattoos and armed with weapons of salted iron and volcanic glass. Raiders from the sea — <i>from the fury of the Turathi deliver us, lord.</i></p>
+<p class="annotatable entry-root">But the fury is not what they are. The fury is what they do when no other option remains, which has been their general estimate of the situation for nearly a thousand years.</p>
+
+<p class="annotatable entry-root"><b>Aesthetic.</b> Polynesian, Norse, with a touch of Gothic stained glass and wrought iron; a seaborne culture (almost) equally happy to raid or trade with all comers. Centered on tropical volcanic islands. A land of rainbow-plumed serpents haunting lush jungles dappled in deep shadows, dotted with cities of iron and basalt, stained-glass towers rising like blades in the shadows of the volcanoes. Tattoo-work is everywhere — every Turathi adult of any account is patterned from collarbone to ankle, the inscriptions read by the cognoscenti as a complete record of pacts taken, raids survived, children born, and Pilgrimages made.</p>
+
+<p class="annotatable entry-root"><b>The Drowning.</b> A thousand years ago there was no Turathi nation. There was Turath: a single empire of word-magic that ruled an archipelago twice the size of the present-day Empire, kept libraries running for miles beneath stained-glass ceilings, and stood at a level of lexical sophistication no civilization before or since has approached. Turath did everything the Eternal Empire is now doing, four centuries earlier and more thoroughly. They industrialized the Word. They built choirs of ten thousand voices. They wrote a Lexicon so complete and so deeply wired into governance that the empire ran on it the way later civilizations would run on water and grain.</p>
+<p class="annotatable entry-root">Then a Turathi scholar — the First Amanuensis, whose name is no longer recorded and may never have been written — discovered that the Lexicon, used at sufficient depth as a tool of subcreation, addressed things the Lexicon was never meant to address. He was not seduced. He was simply curious, and the Lexicon answered every question he asked it, and the questions kept getting better. By the time he understood what he had begun, the things he had spoken to had begun to speak back: through him, through the libraries he had ordered transcribed, and through every junior scribe in his order.</p>
+<p class="annotatable entry-root">The Bright Ones noticed.</p>
+<p class="annotatable entry-root">What followed is remembered by the Flamespeakers as the Drowning, by surviving fragments of Turathi poetry as <i>the long bright morning</i>, and by the Empire's own ancient annals — buried in the basement of the Imperial Scriptorium and not displayed for guests — as a single line: <i>the southern sea boiled and the sky was full of falling glass.</i> Tectonic force unimaginable to any human war marshalled itself. The archipelago broke. The libraries went under. The choirs drowned mid-song, and the Words they had been singing went down with them, which is the only reason the world still exists. What remained above water were a few volcanic peaks — the active ones, the ones the Bright Ones could still touch — and the people who had clung to them.</p>
+<p class="annotatable entry-root">Those people made a study of what had happened to them. They are still making it.</p>
+
+<p class="annotatable entry-root"><b>The Lexicon and the Doctrine of Description.</b> The Turathi understanding of lexical magic predates the Empire's by six centuries and is, in significant respects, more sophisticated. They know what the Lexicon <i>is</i>, where Imperial scholars only know how to use it. The Lexicon is not a human tradition; it is a substrate, a property of being, a universal grammar perceptible at all scales of consciousness from the human to the geological. Mathematics serves a similar function for any sufficiently rigorous mind; the Lexicon serves the same function for any sufficiently <i>being</i> mind. This is why it works, and why it is dangerous.</p>
+<p class="annotatable entry-root">The Turathi prohibition is not a list of forbidden words. What is forbidden is <b>subcreation</b> — the use of the Lexicon to rewrite what is. When you use the Lexicon to describe a contract, you are performing an act of careful observation: telling the universe what the contracting parties have already agreed to be true. When you use the Lexicon to make a wall fall down, you are telling the universe that something that <i>is</i> should <i>not be</i>. That negation is the wedge the Unwrought slip through. They are non-being; negation is their native register. Every Imperial spell that unmakes something tells the Unwrought a little more clearly: <i>here, here, this is the door, you knock here.</i> Almost everything a Chorister does — Halt, Bind, Slow, Edict-of-Exile — is subcreation. The Imperial mage uses the Lexicon to <i>change what is</i>. The Turathi mage uses the Lexicon to <i>describe what already is, accurately enough that the description binds</i>. These are categorically different acts performed with the same vocabulary, and the Empire has spent four hundred years industrializing the wrong half.</p>
+
+<p class="annotatable entry-root"><b>Pyrlexis.</b> Pact-writing — the signature Turathi art, and the foundation of every other Turathi magical practice. A Flamespeaker (or any sufficiently trained Turathi mage) inscribes a contract in the lexical script, in a medium that requires fire to set: heated obsidian, fire-blackened iron, ash drawn on stone and then sealed with molten glass. The contract describes a relationship between parties — what each will give, what each will receive, what the consequences of breach are. Once spoken aloud over flame and witnessed, the contract is <i>binding on reality itself</i>. It does not create anything; it ratifies what the parties have agreed. But the ratification is enforced by the structure of the world. A Beast-Bearer who breaks pyrlexis terms with a kraken doesn't get attacked by the kraken — the world arranges for the kraken's reach to find them, regardless of where they are or what they're doing. The breach is a metaphysical fact. The consequences follow from facts. Everything is a pact — and no pact can be inherited, only made fresh by each new practitioner.</p>
+
+<p class="annotatable entry-root"><b>Communion.</b> The practice of opening sensory channels to the Bright Ones via pyrlexic contract — the central act of Turathi religion and the source of their famous prophecy. You write a pact with a specific Bright One that grants you, for a defined duration and in exchange for defined service, some portion of their sensory access. You don't become them; you don't host them in the Amanuensis sense; you simply <i>borrow their eyes</i>, on terms. A Flamespeaker performing Long-Sight is not seeing the future — they are temporarily linked to a being that perceives the surface from a thousand miles below, on geological timescales, where the patterns of mortal events are visible the way weather patterns are visible from orbit. A raid that will happen next month is, from that vantage, <i>already visible</i> — not because the future is fixed, but because the conditions producing it are already in motion and the Bright One can see the motion. The Flamespeaker comes back from communion exhausted, partially deafened to ordinary human sense, and able to report only fragments — <i>the harbor is dark, three ships, the man with the iron tooth, ash on the water.</i> Prophecy as it appears to outsiders. Borrowed perception as it actually is.</p>
+<p class="annotatable entry-root">Different Bright Ones offer different sensory modalities — heat, pressure, something analogous to magnetic flow that has no human name. A Flamespeaker who has communed often with one specific Bright One develops, over years, a kind of bilingual perception. This is what makes Speaking-Voices so rare and valuable: the apprenticeship is decades long and most of it is spent learning to <i>survive</i> the perceptual borrowing without coming permanently apart. Every communion is a transaction; the Flamespeaker owes service on the surface — a Word spoken at a particular volcano, a Pilgrimage to a drowned city, a message carried to another Bright One. And prolonged communion changes the practitioner: Speaking-Voices in their seventies tend to be partly somewhere else, speaking slowly, in unusual word orders, sometimes unsure whether something happened to them or to the rock they were last linked with. Not madness, exactly — they have been a slightly different kind of being for so much of their lives that the human form has become an outfit they wear during work hours.</p>
+
+<p class="annotatable entry-root"><b>Pact-Bearing.</b> Political authority via pyrlexis with a power: a Stone-Bearer's pact with a Bright One, a Word-Bearer's pact with one of the working Words, a Beast-Bearer's pact with one of the great sea-creatures. In each case the pact grants the Bearer some capacity in exchange for some service or restraint, and the contract describes the relationship without subcreating anything. The Bright One <i>is</i> lending the Bearer authority. The Word <i>is</i> speaking through the Bearer when they invoke it. Nothing is made or unmade; a relationship is formally ratified. There is no central command in the Isles — there are only Bearers, and the fleets they raise on a season's notice.</p>
+
+<p class="annotatable entry-root"><b>Tattoo-script.</b> Pyrlexic principles applied to living flesh. A Turathi adult's tattoos are not decorative and not, strictly, magical in the Imperial sense. They are pacts the wearer has made with themselves and with their community, inscribed in a medium that cannot be removed without destroying the wearer. <i>I have taken this pact. I have survived this raid. I have made the Pilgrimage. I have lost this child.</i> The tattoos do not <i>do</i> anything the way an Imperial sigil does — but they are seen, by the Bright Ones and the bound and anything else that can read the lexical script, as facts about the wearer that the world will help to enforce. A Turathi's tattoos are their reputation made physical. Forging them is impossible; the script will not take on someone whose life does not actually contain the events being described.</p>
+
+<p class="annotatable entry-root"><b>War-pyromancy.</b> The raiders' famous fire-magic is pyrlexis applied to a temporary military pact. Before battle, a pyromancer-warrior inscribes a brief contract — fire-script on iron, ash on stone — constituting a temporary pact with a lesser fire-spirit or a fragment of attention loaned by a Bright One: the spirit lends fire, the warrior owes a defined service afterward. When the warrior throws fire in battle, they are not subcreating fire — they are channeling fire that <i>is being lent</i>, on contract, by a being to whom fire is native. A Turathi war-mage cannot incinerate something the way an Imperial Chorister can; their power is bounded by what they can negotiate. A great Bearer-mage brings extraordinary fire to a battle; a junior raider manages candle-flames and cooking-coals. The variation in apparent power is variation in the depth and prestige of the contracts the practitioner can make — which is also why the art cannot be learned abroad. Pyrlexis isn't a technique; it's a relationship, and the relationships are ones the Turathi have spent a thousand years cultivating.</p>
+
+<p class="annotatable entry-root"><b>The sea-beasts.</b> Turathi beast-pacts are categorically different from Dalimyri spirit-binding, and deliberately so. Dalimyri spirits have personalities — the Flame-Brother is <i>someone</i>, with moods, who can be insulted or charmed. A Turathi Beast-Bearer's relationship is with a <i>natural force that has been contractually instructed to notice them</i>. No charm. No insult. No mood. Just the cold legibility of a pact the world will help enforce. The spectrum runs from the great pelagic processes — krakens, leviathans, storm-sharks, whose Bearers are rare and prestigious — down through the brine-djinn and salt-sprites, unusually self-organized concentrations of salt-magic that almost every captain holds at least a minor navigational pact with; through the plumed serpents, the mid-tier, possessed of something like animal intelligence and bound only with caution (plumed-serpent Bearers are unusual figures, often half-mad, frequently Flamespeakers — the binding sits at the edge of what pyrlexis can hold without slipping into the Dalimyri register); to the volcanoes, which are not bound at all. You do not bear a pact with a volcano. You bear a pact with a Bright One <i>via</i> a volcano. The volcano is the threshold, not the party. The Turathi have actively avoided developing a magical practice that treats sea-beasts as persons, because a people who got too comfortable bargaining with intelligences would, sooner or later, bargain with the wrong one. Better to deal with forces. Forces don't tempt you with secrets.</p>
+
+<p class="annotatable entry-root"><b>The held pact.</b> The most intimate Turathi magic is Communion between humans: a warband, a marriage, a pair of apprentices or twins may forge a <b>held pact</b> — a pyrlexic communion in which each party carries some part of the others. Co-pacted warriors fight as something more than a unit; they know where their brothers stand without looking. The price is absolute. Co-pacted warriors whose brother is captured and tortured to death may experience some attenuated form of that torture themselves, in real time, miles away. Some go mad. Some die from sympathetic trauma. Every raid that sets out as a co-pacted band is gambling that they will all come home or none of them will, and co-pacting in war is regarded with a particular kind of fatalism. There is a solemn Flamespeaker practice of going to a survivor of catastrophic release and formally offering a gentle dissolution — releasing the broken pieces of pact still resident in the survivor, and, if they wish it, being present at a clean death. It is regarded as one of the heaviest duties a Flamespeaker can be asked to perform.</p>
+<p class="annotatable entry-root">And sometimes a survivor does not break in any recognizable way. Sometimes the configuration of selves inside them — pieces of dead brothers, fragments of their own nature returned damaged, the residue of someone else's terminal moment — composts into something that is no longer the original person and no longer <i>one</i> person at all: a small army wearing a single body. The Flamespeakers call this state <b>chal-a-vasht</b>, <i>the inhabited one</i>, and they do not have a treatment for it. The chal-a-vasht retain the skills, sometimes the memories, of every brother whose pieces they carry, and the concentrated rage of every personality that survived a friend's terrible death. A chal-a-vasht willing to be aimed is one of the most effective single weapons the Turathi possess; they are short-lived, they know it, and they die well, by Turathi reckoning. The ones who cannot be aimed are killed by Flamespeaker tribunals, after due process, and their pieces are buried with full honors at one of the Drowned Cities. <i>They were our brothers. They are still our brothers, in part. We owe them better than they were given.</i></p>
+
+<p class="annotatable entry-root"><b>Why no one else does this.</b> Four reasons the rest of the world buys Choristers instead. First, the education: Turathi children learn the Lexicon from age four, and drafting a pyrlexic contract that binds takes fifteen to twenty years of training — a skill base that does not transfer from any other tradition. Second, the practice requires willing counterparties, and most of the world doesn't have them: the Isles are unusually rich in spirits and forces, while the Imperial heartland is spiritually thin after four centuries of lexical industrialization. A Flamespeaker in the heartland is a fisherman in a desert; the technology requires the ecosystem. Third — the load-bearing one — the Turathi consider it dangerous to teach. The Lexicon at pyrlexic depth is the same Lexicon that, used for subcreation, drowns civilizations. Foreign students are not accepted; expatriates who try to teach abroad are recalled, and if they refuse, they tend to suffer accidents. This is doctrine, not paranoia: every additional civilization with deep lexical facility is another civilization that might decide, in some future generation, to start subcreating. And fourth, honestly — the cost is high and the product bounded. A governor who needs a battle won next month does not need a forty-year project. They need Choristers, today, and Choristers exist.</p>
+
+<p class="annotatable entry-root"><b>The raids.</b> Imperial naval doctrine has spent four centuries failing to come to terms with the Isles. The Empire keeps trying to find the <i>capital</i> of Turath, the <i>fleet headquarters</i>, the <i>throne</i> one could capture or burn. There is no such place. The seventh Imperial Navigator, a brilliant theorist whose memoirs are required reading at the Academy, eventually concluded that the only way to defeat the Turathi was to render the entire archipelago uninhabitable. He was reprimanded for this conclusion, but no one has yet refuted it. What the Empire reads as the rising frequency of Turathi raids over the past forty years is not, from the Turathi side, a strategic shift. It is a desperate distributed attempt to weaken the Empire enough that its lexical industrialization stalls — to break the choirs, burn the Codex foundries, assassinate Heralds, force enough institutional damage that the Empire has to slow down. The Flamespeakers have been requesting these raids for forty years, in delicately worded petitions to the Bearers' Council. The Bearers, who do not necessarily understand or believe the Flamespeakers' theology, comply because the raids are profitable, because the doctrine of opposing centralization is reflexive at this point, and because a generation of Bearers has come up with the Empire as the explicit enemy. It is not enough. The Flamespeakers know this. The raids are buying time, and time is running out faster than the Bearers realize.</p>
+
+<p class="annotatable entry-root"><b>The Mercenary Companies.</b> Some Turathi fleets do not raid. They sell. The mercenary companies — the <b>Tide-Reckoners</b>, the <b>Black Glass Brotherhood</b>, the <b>Marrow Fleets</b>, and a half-dozen smaller outfits — hire themselves out to foreign powers as elite shock troops, marines, and naval auxiliaries. They have served, at various points, every major nation on the continent including the Eternal Empire, which once paid them as part of the tribute it took from the Isles. (That arrangement ended four generations ago, in circumstances about which the Empire and the Tide-Reckoners disagree.) Currently the Auric League is the largest single employer of Turathi mercenary service, particularly the Black Glass Brotherhood, favored as ship's marines on the long Auric trade routes for their willingness to serve under non-Turathi command.</p>
+<p class="annotatable entry-root">A Turathi mercenary captain is still a Pact-Bearer. Their pact does not dissolve when they take foreign coin. The bound — sea-beast, fire-spirit, salt-sprite — does not particularly care whose flag flies above the deck so long as the pact's terms are kept. This produces, from outside, the disorienting impression that the Turathi will fight for absolutely anyone, and from inside, the sober understanding that one's contractual obligations to a foreign employer do not displace the deeper obligations of one's pact, and may at any moment be subordinated to them. A Turathi marine in Auric service will fight loyally and effectively for years, until the day his Flamespeaker confessor sends word that the Bearers' Council has concluded the Auric League is now the greater threat to the membrane — at which point he will, with regret and proper notice, change sides. The companies vary in character: the Tide-Reckoners are the oldest and proudest, bound by tradition and professional honor, and the most likely to act on Flamespeaker guidance without question; the Black Glass Brotherhood are brisk professionals, in it for the money and the work; the Marrow Fleets are something else — Beast-Bearer ships almost exclusively, crewed by men and women who have made deep pacts with the older sea-creatures, and whose employer relationships are subject to disturbing volatilities when their bound take an interest in the contract.</p>
+
+<p class="annotatable entry-root"><b>Daily Life.</b> The interior of Turathi society, where outsiders rarely look, is surprisingly warm. The longhouses of a typical island village hold three or four extended kin-groups living more or less openly together; meals are communal, children roam between households, and the only doors that close are on the small workshops where a craftsman is concentrating. Music is constant. Most Turathi can carry a tune; many can play one. Tattooing is an evening pastime, done collaboratively in firelight. Marriage is matter-of-fact and revisable. Children are raised by the village. Houses pass through the female line, weapons through the male, and pacts through neither — pacts cannot be inherited, only made fresh. Inheritance fights, common in other cultures, are largely absent here; there is not enough heritable property to fight over.</p>
+<p class="annotatable entry-root">The Turathi laugh easily. They drink heavily. They sing in close harmony, in scales the Empire finds sour and the Auric League finds primitive but elegant. They are, on close acquaintance, friendlier than their reputation, though most outsiders never get past the reputation. They will tell you, if you ask, that they are a people of a great destiny. They will not, unless you have earned considerable trust, tell you what the destiny is. If you press, and they like you, they will say something like: <i>we remember what no one else remembers, and we will remember it as long as we have to.</i></p>
+
+<p class="annotatable entry-root"><b>The Empress in Yellow, to Turathi eyes.</b> The Empress is something newer and more disturbing than the God-King. She is not an Amanuensis the way he is; she has discovered that pyrlexis itself — the Turathi's own foundational art, the art of binding through accurate description — can be used to write a pact with the Uncreated. She is not subcreating. She is <i>contracting</i>. The horror is not that this is a different kind of magic; the horror is that it is exactly the same magic the village brewer is doing, applied to the wrong counterparty. A culture that knows what Communion is knows, viscerally, what it means to commune with the Unwrought. A Flamespeaker meeting the Empress would not need any further information to understand the situation. They would only need to look at her once.</p>
+
+<div class="callout art-prompt"><span class="callout-label">Art Prompt</span><p>An elderly Turathi Speaking-Voice seated cross-legged at the lip of a volcanic vent inside a stained-glass shrine of wrought iron, fully tattooed from collarbone to ankle, eyes reflecting light that comes from below rather than above, one ear visibly attending to something no one else can hear; Polynesian-Norse fusion aesthetic, obsidian blacks and molten golds, painterly fantasy illustration.</p></div>
+<div class="callout art-prompt"><span class="callout-label">Art Prompt</span><p>Turathi black longships under storm light, iron-sheathed hulls drawn by chained sea-beasts breaching the surf, hwacha racks of burning-glass arrows igniting on the foredecks while war-canoes fan out behind; tropical volcanic coastline in the background, dramatic seaborne raid composition, painterly fantasy illustration.</p></div>
+
 </div>
 </section>
 <section class="section" id="statistics" data-spy="statistics">
 <span class="sec-eyebrow">For Players</span>
 <h2 class="sec-title">Statistics</h2>
-<p class="annotatable lede">Four core stats — Might, Grace, Reason, Will — anchor everything else. Six secondary stats are derived from them. Together they describe what your character can do in nine numbers, and they are the spine of the character sheet.</p>
+<p class="annotatable lede">Five core stats — Might, Grace, Reason, Will, and Awareness — anchor everything else. Every secondary stat is derived from them. Together they describe what your character can do, and they are the spine of the character sheet.</p>
 
 <h3 class="sub">Core Statistics</h3>
-<p>You start with all four core stats at 0 and spend <b>6 points</b> at character creation to raise them. No stat may exceed +3 at character creation, and no stat may exceed +6 over the entire campaign (excepting the Epic Dedication at level 19, which lets you push one stat above +6).</p>
+<p>You start with all five core stats at 0 and spend <b>6 points</b> at character creation to raise them. No stat may exceed +3 at character creation, and no stat may exceed +6 over the entire campaign (excepting the Epic Dedication at level 19, which lets you push one stat above +6). At each Dedication (levels 3, 7, 11, and 15) you also gain <b>+1 to two different core statistics</b> of your choice.</p>
 
 <table class="rules-table">
   <thead><tr><th>Stat</th><th>What it does</th></tr></thead>
   <tbody>
-    <tr><td><b>Might</b></td><td>Adds to weapon damage, Grit, Body, PDR, and carrying capacity. The stat for hitting hard and absorbing punishment.</td></tr>
-    <tr><td><b>Grace</b></td><td>Adds to weapon accuracy, Defense, Initiative, and the number of items you can keep Readied. The stat for going first and not getting hit.</td></tr>
-    <tr><td><b>Reason</b></td><td>Adds to magical accuracy, Initiative, and the number of abilities you can keep Readied. The stat for casting and for tactical flexibility.</td></tr>
-    <tr><td><b>Will</b></td><td>Adds to magical damage, Ward, MDR, and saving throws. The stat for resisting magic and for spell power.</td></tr>
+    <tr><td><b>Might</b></td><td>Melee accuracy and damage, PDR, Grit, Body, Concentration, and carrying capacity. The warrior's stat — hitting hard and absorbing punishment.</td></tr>
+    <tr><td><b>Grace</b></td><td>Melee and ranged accuracy, Defense, Initiative, and the number of items you can keep Readied. The body in motion.</td></tr>
+    <tr><td><b>Reason</b></td><td>Spell accuracy, Ward, spell range, and the number of abilities you can keep Readied. The trained mind — slim in raw numbers, vital in what it gates, and the default stat for knowledge checks.</td></tr>
+    <tr><td><b>Will</b></td><td>Spell damage, MDR, Ward, Grit, and Concentration. The animating force behind both magic and stubbornness.</td></tr>
+    <tr><td><b>Awareness</b></td><td>Ranged and spell accuracy, Defense, Ward, and Initiative. The perceptive edge — a universal investment that touches the most tactically valuable numbers in the game.</td></tr>
   </tbody>
 </table>
 
-<div class="designer-note">A typical pre-Epic build will end up looking like one of these stat lines: 6/4/2/2, 6/3/3/2, or 4/4/3/3. Outliers might push 6/6/1/1 for extreme specialization. The intent is that almost every character has at least one stat at +5 or +6 (a real strength) and at least one stat at +1 or +2 (a real weakness), with interesting choices at every Dedication.</div>
+<div class="designer-note">Design intent: <b>no dump stats</b>. A melee fighter who dumps Awareness pays in Defense and Initiative; a caster who dumps Might pays in Grit, Body, PDR, and Concentration. A typical pre-Epic build looks like 4/4/3/2/1 or 5/3/3/2/1 — at least one real strength and at least one real weakness, with interesting choices at every Dedication. <i>Open dial: the 6-point creation budget was set for the four-stat array. With five stats it may want raising to 7; watch whether level-1 characters feel spread too thin.</i></div>
 
 <h3 class="sub">Secondary Statistics</h3>
 <table class="rules-table">
-  <thead><tr><th>Stat</th><th>How it’s calculated</th></tr></thead>
+  <thead><tr><th>Stat</th><th>How it's calculated</th></tr></thead>
   <tbody>
-    <tr><td><b>Grit</b></td><td>Class-dependent base + Might. Grows each level by class’s per-level amount + Might. Damage hits Grit first; recovers fully out of combat.</td></tr>
-    <tr><td><b>Body</b></td><td>8 + Might. Damage that exceeds Grit reduces Body. Heals 1 per day. At 0 Body you are Dying.</td></tr>
-    <tr><td><b>Defense</b></td><td>8 + Grace + equipment + miscellaneous. The target number for physical attacks against you.</td></tr>
-    <tr><td><b>Ward</b></td><td>8 + Will + equipment + miscellaneous. The target number for spell attacks against you.</td></tr>
-    <tr><td><b>Initiative</b></td><td>Grace + Reason + equipment. Determines turn order.</td></tr>
-    <tr><td><b>Speed</b></td><td>Class-dependent base, modified by armor weight and conditions. The number of squares you can move on a Move action.</td></tr>
+    <tr><td><b>Melee Accuracy</b></td><td>1d20 + Might + Grace + Mastery vs. Defense.</td></tr>
+    <tr><td><b>Melee Damage</b></td><td>Weapon dice + Might. On a <b>miss</b>, a melee attack still deals damage equal to your Might.</td></tr>
+    <tr><td><b>Ranged Accuracy</b></td><td>1d20 + Grace + Awareness + Mastery vs. Defense.</td></tr>
+    <tr><td><b>Ranged Damage</b></td><td>Weapon dice only — <b>no stat is added</b>, and ranged attacks deal <b>no damage on a miss</b>. This is the deliberate price of attacking from positional safety.</td></tr>
+    <tr><td><b>Spell Accuracy</b></td><td>1d20 + Reason + Awareness + Mastery vs. Ward (unless an ability says otherwise).</td></tr>
+    <tr><td><b>Spell Damage</b></td><td>Ability dice + Will, where the ability adds a stat.</td></tr>
+    <tr><td><b>Defense</b></td><td>8 + Grace + Awareness + equipment + miscellaneous. The target number for physical attacks against you.</td></tr>
+    <tr><td><b>Ward</b></td><td>8 + Reason + Awareness + equipment + miscellaneous. The target number for spell attacks against you.</td></tr>
     <tr><td><b>PDR</b></td><td>Half Might (round up) + armor. Subtracted from each instance of physical damage taken (minimum 1).</td></tr>
     <tr><td><b>MDR</b></td><td>Half Will (round up) + equipment. Subtracted from each instance of magical damage taken (minimum 1).</td></tr>
-    <tr><td><b>Recovery</b></td><td>Origin- and class-dependent. Bonus to Saving Throws and to Grit recovered between combats.</td></tr>
-    <tr><td><b>Mastery</b></td><td>+1 at level 1; +1 at each Dedication. Added to attacks (incl. damage on a miss), spell attacks, and tagged skill checks.</td></tr>
+    <tr><td><b>Grit</b></td><td>Class-dependent base + Might + Will at level 1. Grows each level by your class's per-level amount + Might + Will. Damage hits Grit first; recovers fully out of combat.</td></tr>
+    <tr><td><b>Body</b></td><td>8 + Might + Tier. Damage that exceeds Grit reduces Body. Heals 1 per day. At 0 Body you are Dying.</td></tr>
+    <tr><td><b>Initiative</b></td><td>2d6 + Awareness + Grace + equipment. Determines turn order.</td></tr>
+    <tr><td><b>Speed</b></td><td>5, modified by class, armor weight, and conditions. The number of squares you can move on a Move action.</td></tr>
+    <tr><td><b>Readied Items</b></td><td>3 + Grace. (See Carrying &amp; Readied Items below.)</td></tr>
+    <tr><td><b>Readied Abilities</b></td><td>2 + Tier + Reason. The number of abilities you can have prepared for use in combat.</td></tr>
+    <tr><td><b>Concentration</b></td><td>1d20 + Might + Will vs. a DC set by the source (see Concentration below).</td></tr>
+    <tr><td><b>Recovery</b></td><td><b>Condition-keyed.</b> Each condition names the stat used to shake it off — escape Burning with Grace, clamp a Bleeding wound with Might, clear your head of Dazed with Awareness, master Fear with Will. Roll 1d20 + the named stat + Recovery bonuses vs. the condition's DC.</td></tr>
+    <tr><td><b>Mastery</b></td><td>+1 at level 1; +1 at each Dedication (maximum +5 at level 15; +6 with the Epic Dedication). Added to attacks, spell attacks, and Background checks.</td></tr>
   </tbody>
 </table>
+
+<div class="designer-note"><b>What changed and why (for returning playtesters).</b> Awareness is new — it exists so that perception, reflexes, and battlefield instinct stop being free riders on Grace and Reason, and so that no archetype can dump-stat its way to safety. Ranged weapons lost their stat bonus to damage and their damage-on-miss: shooting from safety now buys consistency of position, not free damage parity with the front line. Grit now also grows with Will (toughness of spirit counts), Body scales modestly with Tier (so high-level characters aren't one bad round from the injury table), Initiative is now a 2d6 roll keyed to Awareness + Grace, and Recovery is condition-keyed instead of a single stat — a frontline veteran is now genuinely better at gritting through blood loss than at out-thinking a curse, and vice versa.</div>
 
 <h3 class="sub">Carrying &amp; Readied Items</h3>
 <p>You can carry <b>10 + Might</b> slots of equipment. Of those, <b>3 + Grace</b> can be <b>Readied</b> — accessible without spending in-combat actions to dig through your pack. Heavy armor is 4 slots, a shield is 2, a weapon is 1, a single small item is typically 0–1.</p>
@@ -1291,7 +1358,7 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 
 <h3 class="sub">Concentration</h3>
 <p>Some abilities — sustained spells, martial stances, Stealth — require <b>Concentration</b>. Each turn you must spend a Sustain (Minor Action) for each Concentration effect you maintain; a character who is sustaining two effects must Sustain twice in the same turn.</p>
-<p>If you take damage while Concentrating, you make a Recovery check. The DC is whichever is greater: <b>5 or half the damage</b> if it was Grit damage; <b>15 or half the damage</b> if it reached Body. Failure ends all your Concentration effects.</p>
+<p>If you take damage while Concentrating, make a <b>Concentration check</b>: 1d20 + Might + Will. The DC is whichever is greater: <b>5 or half the damage</b> if it was Grit damage; <b>15 or half the damage</b> if it reached Body. Failure ends all your Concentration effects.</p>
 
 </section>
 
@@ -1301,13 +1368,13 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 <p class="annotatable lede">Origin is who you were before you were a soldier. Each Origin gives you a stat or secondary-stat bonus, one or more tagged skills, sometimes a language, and an Origin Ability you can ready in combat. Your Origin can also be invoked in skill checks where its background would matter — “I’m a child of the Third Legion, so I have advantage on this Military Strategy roll.”</p>
 
 <h3 class="sub" id="origins-imperial">Imperial Origins</h3>
-<p class="annotatable">Imperial characters gain <b>one tagged skill</b> and <b>+1 Recovery</b> in addition to anything specific to their Origin. The peace and wealth of the Empire created a healthy, broadly-talented population.</p>
+<p class="annotatable">Imperial characters gain <b>+1 Background point</b> and <b>+1 Recovery</b> in addition to anything specific to their Origin. The peace and wealth of the Empire created a healthy, broadly-talented population.</p>
 
 <div class="origin-card" id="origin-child-of-the-legion">
   <h4>Child of the Legion</h4>
   <div class="origin-tags">Imperial</div>
   <p>Grew up in military camps, born to a legionnaire and a camp follower. The Empire’s standard professional-soldier upbringing — your mother’s songs were marching cadences and your earliest games were with wooden gladii.</p>
-  <p class="origin-bonus"><b>Bonus:</b> +2 Grit. (Plus the standard Imperial tagged skill and +1 Recovery.)</p>
+  <p class="origin-bonus"><b>Bonus:</b> +2 Grit. (Plus the standard Imperial Background point and +1 Recovery.)</p>
   <div class="ability"><div class="ability-head"><span class="ability-name">I Can Do This All Day</span><span class="ability-cost">Reaction · Encounter</span></div><p class="ability-desc">When you take damage, you may use your Reaction to roll 1d6, add your Might, and reduce the damage taken by that amount.</p></div>
 </div>
 
@@ -1315,7 +1382,7 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
   <h4>10,000 League Syndicate Trader</h4>
   <div class="origin-tags">Imperial</div>
   <p>Grew up on the road; spent your youth running cargo from the Auric ports through the Empire’s heartland to the Taltasquan elixir markets. Familiar with foreign ways, foreign tongues, and foreign customs duties.</p>
-  <p class="origin-bonus"><b>Bonus:</b> Tag one skill of your choice; gain fluency in one language. (Plus the standard Imperial tagged skill and +1 Recovery.)</p>
+  <p class="origin-bonus"><b>Bonus:</b> Tag one skill of your choice; gain fluency in one language. (Plus the standard Imperial Background point and +1 Recovery.)</p>
   <div class="ability"><div class="ability-head"><span class="ability-name">Rituals of Purification</span><span class="ability-cost">Minor Action · Encounter</span></div><p class="ability-desc">These are drilled into you each time you re-enter Imperial lands. Gain +2 Ward until the beginning of your next turn, and immediately make a Recovery check against one condition of your choice.</p></div>
 </div>
 
@@ -1331,7 +1398,7 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
   <h4>Scriptorium</h4>
   <div class="origin-tags">Imperial · Scholar</div>
   <p>You spent time in a scholar-monastery — one of the great cloistered universities where boys are taught to copy the Words of the God-King by hand and girls (rarely, in the older houses) to read between them. You did not become a Chorister, but you saw the work being done.</p>
-  <p class="origin-bonus"><b>Bonus:</b> Gain one language and 2 tagged Lore skills (in addition to the standard Imperial tagged skill and +1 Recovery).</p>
+  <p class="origin-bonus"><b>Bonus:</b> Gain one language and 2 tagged Lore skills (in addition to the standard Imperial Background point and +1 Recovery).</p>
   <div class="ability"><div class="ability-head"><span class="ability-name">Minor Word of Power</span><span class="ability-cost">Reaction · Encounter · Lexicon</span></div><p class="ability-desc">You may not be a full Chorister, but years immersed in study have afforded you the faintest inkling of the Lexicon. When a creature within 6 squares rolls a die, you may use this power to roll that die again, and add half the current Resonance as a bonus or penalty (your choice).</p></div>
 </div>
 
@@ -1347,15 +1414,23 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
   <h4>Censorate Foundling</h4>
   <div class="origin-tags">Imperial · Censorate</div>
   <p>Raised by the Censorate itself from a very young age. Your parents were probably executed. The Censorate schools are not gentle places — you have learned to be always aware of possible threats, and to be useful to your handlers.</p>
-  <p class="origin-bonus"><b>Bonus:</b> +1 Initiative, +2 Grit (in addition to the standard Imperial tagged skill and +1 Recovery).</p>
+  <p class="origin-bonus"><b>Bonus:</b> +1 Initiative, +2 Grit (in addition to the standard Imperial Background point and +1 Recovery).</p>
   <div class="ability"><div class="ability-head"><span class="ability-name">Censorate Schooling</span><span class="ability-cost">Passive</span></div><p class="ability-desc">Those raised by the Censorate are trained to perform the dirty work of empire to atone for the treasons of their parents. The first time you are reduced to 0 or fewer Grit in an encounter, any spillover damage to Body is ignored and your Grit is set to 1 instead.</p></div>
+</div>
+
+<div class="origin-card" id="origin-common-levy">
+  <h4>Common Levy</h4>
+  <div class="origin-tags">Imperial</div>
+  <p>A farmer, a porter, a fisher, a mason. The Empire counts millions like you, and forgets your name the moment your conscription papers are signed.</p>
+  <p class="origin-bonus"><b>Bonus:</b> +1 Grit; +1 Background point that must be spent on rural life or manual labor. (Plus the standard Imperial Background point and +1 Recovery.)</p>
+  <div class="ability"><div class="ability-head"><span class="ability-name">Stubborn as a Mule</span><span class="ability-cost">Reaction · Encounter</span></div><p class="ability-desc">When you would be moved by a forced movement effect, reduce the distance by your Might (minimum 0). If forced movement is reduced to 0, you also do not lose Formation or Stealth from this trigger. <i>"Lords come and go. Empires come and go. The work, gods help you, is forever."</i></p></div>
 </div>
 
 <div class="origin-card" id="origin-foreign-blooded">
   <h4>Foreign-blooded</h4>
   <div class="origin-tags">Imperial Citizen · Suspect</div>
   <p>You could be Shan, Dalimyri, Turathi, even Auric or Taltasquan in heritage — and therefore suspicious — but you grew up a citizen of the Eternal Empire. The Empire’s officers will speak to your face about loyalty and behind your back about parentage.</p>
-  <p class="origin-bonus"><b>Bonus:</b> Gain 1 tagged skill and a language (in addition to the standard Imperial tagged skill and +1 Recovery).</p>
+  <p class="origin-bonus"><b>Bonus:</b> Gain 1 tagged skill and a language (in addition to the standard Imperial Background point and +1 Recovery).</p>
   <p class="origin-bonus"><b>Origin Ability:</b> Choose one Origin Ability from the appropriate culture’s <em>general</em> ability list (not court- or sub-origin-specific). For example, a Dalimyri-blooded character may choose <a class="rules-link" href="#dalimyri-abilities">Awaken Spirit</a> from the Dalimyri general list, but not Inspiring Touch from the Spring Court.</p>
 </div>
 
@@ -1374,6 +1449,8 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 
 <h3 class="sub" id="origins-dalimyri">Dalimyri Origins</h3>
 <p class="annotatable">The Dalimyri are the wardens of the Labyrinth — the Barrowlands’ ancient spirit-knot. They are organized into Four Courts (Spring, Summer, Autumn, Winter), each with its own temperament, magic, and obligations. A Dalimyri Origin gives you the temperament of one Court and access to the Dalimyri general ability list. Foreign-blooded Imperial characters may take a general Dalimyri ability without committing to a Court.</p>
+<div class="callout"><span class="callout-label">Cultural Bonus (proposed — confirm)</span><p>Dalimyri characters gain <b>+1 Ward</b> and <b>+2 to Background checks using Will</b>. Raised in the shadow of the barrow-mazes and bound to a Court (or to a Greater Spirit) from adulthood, the Dalimyri grow up with a constant low-level awareness of the spirit world. They are spiritually exposed and spiritually hardened in equal measure. <i>(Foreign-Blooded Dalimyri raised in the Empire get the Imperial bonus instead — they grew up Imperial.)</i></p></div>
+
 
 <div class="designer-note">Most Dalimyri Origin abilities below are still being ported from earlier edition mechanics — phrases like “proficiency bonus” and “Wisdom saving throw” will become Mastery and Recovery checks in the final v3 text. Treat the descriptions as the design intent and use the closest v3 equivalent at the table for now.</div>
 
@@ -1453,11 +1530,11 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
     <section class="section" id="base-class-rules" data-spy="base-class-rules">
 <span class="sec-eyebrow">For Players · Player’s Handbook</span>
 <h2 class="sec-title">Base Class Mechanics</h2>
-<p class="annotatable lede">The five base classes — <a class="rules-link" href="#class-legionnaire">Legionnaire</a>, <a class="rules-link" href="#class-scholar">Scholar</a>, <a class="rules-link" href="#class-scout">Scout</a>, <a class="rules-link" href="#class-chorister">Chorister</a>, and <a class="rules-link" href="#class-spiritbinder">Spiritbinder</a> — are the structural backbone of every character. Each establishes a Core Mechanic that becomes a vocabulary the rest of the game builds on (Formation, Identified/Analyzed, Momentum, Resonance, Favor). Every full class entry below shows the starting proficiencies, starting statistics, Grit progression, Core Mechanic, Signature Ability, the full menu of Class Abilities you choose from as you level, and the Class Edges available as Edge picks at levels 2/4/5/6.</p>
+<p class="annotatable lede">The five Imperial base classes — <a class="rules-link" href="#class-legionnaire">Legionnaire</a>, <a class="rules-link" href="#class-scholar">Scholar</a>, <a class="rules-link" href="#class-scout">Scout</a>, <a class="rules-link" href="#class-chorister">Chorister</a>, and <a class="rules-link" href="#class-calligrapher">Calligrapher</a> — plus the heterodox <a class="rules-link" href="#class-spiritbinder">Spiritbinder</a> (Dalimyri tradition) are the structural backbone of every character. Each establishes a Core Mechanic that becomes a vocabulary the rest of the game builds on (Formation, Identified/Analyzed, Momentum, Resonance, Favor). Every full class entry below shows the starting proficiencies, starting statistics, Grit progression, Core Mechanic, Signature Ability, the full menu of Class Abilities you choose from as you level, and the Class Edges available as Edge picks at levels 2/4/5/6.</p>
 
 <div class="callout">
-  <span class="callout-label">Cross-Class Dedication (Alpha Rule)</span>
-  <p>At level 3, every character takes a Dedication. In the alpha, that Dedication must be a <b>second base class</b> — Legionnaire, Scholar, Scout, Chorister, or Spiritbinder (and not the same one you started with). Each base class entry below ends with a “<b>If you Dedicate Into This Class</b>” block that summarizes what you gain. Once dedicated, you may choose abilities and edges from that second class’s menus on subsequent levels, in addition to your original class’s menus and your Origin’s.</p>
+  <span class="callout-label">Dedications</span>
+  <p>At <b>levels 3, 7, 11, and 15</b>, every character takes a <b>Dedication</b>, gaining the chosen class's Core Mechanic, Signature Ability, equipment proficiencies, and stat bonuses, and opening that class's ability and edge menus for all subsequent picks. A Dedication may be: a <b>second base class</b> (any of the six above you don't already have); a <a class="rules-link" href="#hybrid-classes"><b>Hybrid class</b></a> (requires at least one of its two parent classes); or an <a class="rules-link" href="#advanced-classes-rules"><b>Advanced class</b></a> (requires its parent class as listed). The <b>Epic Dedication</b> at level 19 and Epic/Mythic content are not yet written — this document supports play through <b>level 18</b>.</p>
 </div>
 
 <hr class="rule-heavy">
@@ -1471,7 +1548,7 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 <dl class="stat-grid">
   <dt>Proficiencies</dt><dd>All armor, all shields, all weapons, medicine, munitions</dd>
   <dt>Starting Stats</dt><dd>+4 Body, +1 Recovery</dd>
-  <dt>Grit</dt><dd>10 + Might at level 1; +4 + Might per level thereafter</dd>
+  <dt>Grit</dt><dd>10 + Might + Will at level 1; +4 + Might + Will per level thereafter</dd>
 </dl>
 
 <h4 class="sub">Core Mechanic — Formation</h4>
@@ -1520,7 +1597,7 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 <dl class="stat-grid">
   <dt>Proficiencies</dt><dd>Light and medium armor, shields, knives, swords, spears, maces, crossbows, medicine, munitions, Auric staves, Implements (no codices, no spiritmasks)</dd>
   <dt>Starting Stats</dt><dd>Tag an additional 3 skills, +2 Initiative</dd>
-  <dt>Grit</dt><dd>8 + Might at level 1; +3 + Might per level thereafter</dd>
+  <dt>Grit</dt><dd>8 + Might + Will at level 1; +3 + Might + Will per level thereafter</dd>
 </dl>
 
 <h4 class="sub">Core Mechanic — Observe</h4>
@@ -1569,7 +1646,7 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 <dl class="stat-grid">
   <dt>Proficiencies</dt><dd>Light and medium armor, all weapons, healer’s kits, traps</dd>
   <dt>Starting Stats</dt><dd>+2 Initiative, +1 Speed, tag an additional skill</dd>
-  <dt>Grit</dt><dd>8 + Might at level 1; +3 + Might per level thereafter</dd>
+  <dt>Grit</dt><dd>8 + Might + Will at level 1; +3 + Might + Will per level thereafter</dd>
 </dl>
 
 <h4 class="sub">Core Mechanic — Running Battle</h4>
@@ -1615,11 +1692,11 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 <dl class="stat-grid">
   <dt>Proficiencies</dt><dd>Light armor, implements, codices</dd>
   <dt>Starting Stats</dt><dd>+2 Ward, +1 MDR</dd>
-  <dt>Grit</dt><dd>6 + Might at level 1; +2 + Might per level thereafter</dd>
+  <dt>Grit</dt><dd>6 + Might + Will at level 1; +2 + Might + Will per level thereafter</dd>
 </dl>
 
 <div class="callout">
-  <span class="callout-label">Resonance — Battlefield-Wide Resource</span>
+  <span class="callout-label" id="resonance-sidebar">Resonance — Battlefield-Wide Resource</span>
   <p>Resonance is generated whenever any character uses a <b>Lexicon</b> ability — Chorister abilities, codex spells, certain Orthodox advanced classes. By default it generates <b>1 Resonance per action point</b> the ability cost (a Minor Action Lexicon ability adds 1; a Major Action adds 2). Lexicon abilities that deal damage or heal add the current Resonance value to that damage or healing.</p>
   <p><b>Resonance is dangerous.</b> If Resonance is at 5 or above, every Lexicon ability used inflicts <b>Feedback</b>: 1d4 + current Resonance magical damage to the caster (subject to MDR). Imperial-vs-Imperial battles get spicy because Resonance is shared across the battlefield — generate too much and your enemy’s choristers can use it against you.</p>
 </div>
@@ -1658,6 +1735,50 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 
 <hr class="rule-heavy">
 
+<!-- CALLIGRAPHER -->
+<div class="stat-block" id="class-calligrapher">
+<figure class="img-inline"><img src="Calligrapher.png" alt="Calligrapher" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Calligrapher</h3><span class="stat-block-tag">Base Class · Imperial Foundation</span></div>
+<p>The Calligrapher paints holy verses in magical ink on the earth itself, creating short-lived but flexible zones that buff allies, debuff enemies, heal, or damage anything standing in them. Each zone lasts only a few turns, so the Calligrapher is constantly deciding where to place the next one — battlefield control through temporary terrain modification rather than direct combat. With the Chorister, the Calligrapher is the second half of the Imperial Lexicon tradition: where the Chorister speaks the Word, the Calligrapher inscribes it. Contributes to Resonance and can leech Resonance to sustain zones — a support caster who reshapes the battlefield.</p>
+
+<dl class="stat-grid">
+  <dt>Proficiencies</dt><dd>Light armor, implements, codices</dd>
+  <dt>Starting Stats</dt><dd><i>To be confirmed — the design doc leaves this blank; the alpha-2 placeholder is +1 Ward, +1 Recovery</i></dd>
+  <dt>Grit</dt><dd>6 + Might + Will at level 1; +2 + Might + Will per level thereafter</dd>
+</dl>
+
+<h4 class="sub">Core Mechanic — Resonant Constructions</h4>
+<p>At the beginning of their turn, the Calligrapher may reduce the battlefield's <a class="rules-link" href="#resonance-sidebar">Resonance</a> by an amount up to their Tier, and Sustain one Calligraphic ability for each point so spent — holding zones open by drinking the ambient hum of the Lexicon rather than spending their own actions.</p>
+<div class="designer-note">This creates a natural tension with Choristers and other Lexicon users. High Resonance is dangerous but empowering for a Chorister; a Calligrapher can safely leech Resonance to keep it at survivable levels — at the cost of the Chorister's ability to Crescendo. In heavy-Lexicon parties, a Calligrapher can maintain multiple zones across the battlefield without giving up actions to do so, but never gets the Chorister's dramatic burst.</div>
+<p><b>Basic Calligraphy rule:</b> any given space can only be affected by one Calligraphic effect at a time — no stacking zones.</p>
+
+<h4 class="sub">Signature Ability — Consecrated Bastion</h4>
+<div class="ability-list"><div class="ability"><div class="ability-head"><span class="ability-name">Consecrated Bastion</span><span class="ability-cost">Major Action · At-Will · Lexicon · Calligraphy · Sustained</span></div><p class="ability-desc">Inscribe a sacred lexical glyph in your space. All spaces within three squares of the rune are Consecrated. Allies in a Consecrated space regain Grit equal to your Will plus half the battlefield Resonance at the beginning of their turn.</p></div></div>
+
+<h4 class="sub">Class Abilities</h4>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Rune of Binding</span><span class="ability-cost">Major Action · At-Will · Lexicon</span></div><p class="ability-desc">Choose a creature standing within the area of a Calligraphic ability. That creature takes arcane damage equal to your Will and is Immobilized 1. The next attack against the target while Immobilized deals additional damage equal to your Will.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Runic Disruption</span><span class="ability-cost">Major Action · Recharge 2 · Lexicon</span></div><p class="ability-desc">Choose one active Calligraphic ability within 10 squares. The ability immediately ceases, and any creatures in its area take 1d6 damage for every two points of Resonance.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Glyph of Diminishment</span><span class="ability-cost">Major Action · At-Will · Lexicon · Calligraphic · Sustained</span></div><p class="ability-desc">Inscribe sigils of weakness upon a 3×3 area adjacent to you. While within the area, enemies take a penalty to damage rolls equal to your Will.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Glyph of Reciprocity</span><span class="ability-cost">Major Action · At-Will · Lexicon · Calligraphic · Sustained</span></div><p class="ability-desc">Inscribe thorned ideograms of reciprocal exchange upon yourself or an adjacent ally. If the target takes damage from an enemy attack, make a spell attack against the attacker. Miss: the attacker takes equal damage, to a maximum of your Will. Hit: the attacker takes damage equal to what it dealt with the attack (no cap). Crit: as a hit, plus extra damage equal to your Will, and the attacker gains Dazed 1.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Radiant Sigil</span><span class="ability-cost">Major Action · At-Will · Lexicon · Calligraphic · Sustained</span></div><p class="ability-desc">Inscribe a sigil in a 2×2 area adjacent to you; the area erupts into a searingly bright beam of light, providing illumination within ten squares but blocking line of sight through the zone. Creatures are Blinded while within the zone, and creatures that enter or begin their turn in the zone take 1d6 fire damage for every two tiers (round up, as always).</p></div>
+</div>
+<div class="designer-note">The Calligrapher menu is deliberately the thinnest of the five Imperial classes in this build — the doc flags a missing Minor Action, and an expanded ability/edge set (mobility, self-protection, forced movement) was drafted in a design session on 26 May but has not yet been committed to the main doc. Treat this class as alpha-incomplete and expect its menu to grow.</div>
+
+<h4 class="sub">Class Edges</h4>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Resonant Defense</span><span class="ability-cost">Edge</span></div><p class="ability-desc">By carefully maintaining the intricate sigils inked, carved, and woven into your gear, you can use the ambient hum of the Lexicon to defend yourself. Gain a bonus to Ward equal to half the current Resonance.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Sigil-Hunter's Ink</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Your attacks against foes inside a Calligraphic area of effect gain +1 damage for every point of Resonance.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Protective Ink</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Attacks against you from creatures inside a Calligraphic zone have Disadvantage. <i>(Designer's note in the source doc: possibly too powerful — playtest.)</i></p></div>
+</div>
+
+<h4 class="sub">If You Dedicate Into Calligrapher</h4>
+<p>Gain proficiency with codices and implements; gain the Calligrapher's Core Mechanic and Signature Ability; gain access to Calligrapher abilities, edges, and dedications. <i>(The doc leaves the Calligrapher's dedication stat bonus unresolved; the alpha-2 placeholder is +1 Ward, paralleling the Chorister.)</i></p>
+</div>
+
+<hr class="rule-heavy">
+
+
 <!-- SPIRITBINDER -->
 <div class="stat-block" id="class-spiritbinder">
 <figure class="img-inline"><img src="Spiritbinder.png" alt="Spiritbinder" loading="lazy"></figure>
@@ -1669,7 +1790,7 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 <dl class="stat-grid">
   <dt>Proficiencies</dt><dd>Light armor, knives, spears, bows, medicine, spirit-masks</dd>
   <dt>Starting Stats</dt><dd>+2 Ward, +2 Recovery</dd>
-  <dt>Grit</dt><dd>6 + Might at level 1; +2 + Might per level thereafter</dd>
+  <dt>Grit</dt><dd>6 + Might + Will at level 1; +2 + Might + Will per level thereafter</dd>
 </dl>
 
 <h4 class="sub">Core Mechanic — Propitiation</h4>
@@ -1706,43 +1827,588 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
 
 </section>
 
-    <section class="section" id="skills" data-spy="skills">
-<span class="sec-eyebrow">For Players · Player’s Handbook</span>
-<h2 class="sec-title">Skills</h2>
-<p class="annotatable lede">Every skill check is, at base, an ability check — 1d20 + the relevant core stat (Reason for knowledge, Grace for delicate physical work, Might for force, Will for resistance) vs. a target number. Your Origin, Class, and Dedications let you <b>tag</b> certain skills for a +2 bonus. Tagged skills also receive your Mastery bonus, which begins at +1 and grows by 1 per Dedication.</p>
+    <section class="section" id="hybrid-classes" data-spy="hybrid-classes">
+<span class="sec-eyebrow">For Players · Player&rsquo;s Handbook</span>
+<h2 class="sec-title">Hybrid Classes</h2>
+<p class="annotatable lede">Ten Hybrid classes, one for each pairing of the five Imperial base classes — Legionnaire, Scholar, Scout, Chorister, Calligrapher. A Hybrid is a <b>thin dedication layer</b> that stacks on top of your full existing menu: your origin, your base class (or classes), your items. The layer contains only what neither parent provides — the fusion itself. Each entry follows the standard template: <b>Dedication</b> (secondary-stat bonuses + proficiency/tag; dedications never raise core stats), a unique <b>Core Mechanic</b>, a <b>Signature Ability</b>, two Abilities, and two Edges.</p>
 
-<div class="callout">
-  <span class="callout-label">Example</span>
-  <p>“What can I tell from the Dalimyri line of battle?” — “Roll a Reason check.” — “Well, I’m a Child of the Legion — does that help?” — “Yeah, you’re very familiar with reading a battlefield.” — “Great, and my Legionnaire class lets me tag Military Strategy, so I roll 1d20 + Reason + 2 (tag) + 1 (Mastery), with advantage from my Origin.”</p>
+<table class="rules-table">
+<thead><tr><th></th><th>Formation (Legionnaire)</th><th>Momentum (Scout)</th><th>Analyzed (Scholar)</th><th>Resonance (Chorister)</th></tr></thead>
+<tbody>
+<tr><td><b>Momentum (Scout)</b></td><td>Duelist*</td><td>—</td><td></td><td></td></tr>
+<tr><td><b>Analyzed (Scholar)</b></td><td>Centurion</td><td>Vivisectionist</td><td>—</td><td></td></tr>
+<tr><td><b>Resonance (Chorister)</b></td><td>Thane</td><td>Censor</td><td>Cipher</td><td>—</td></tr>
+<tr><td><b>Glyph (Calligrapher)</b></td><td>Runecarver</td><td>Painted Knight*</td><td>Sculptor / Golemist</td><td>Origamist</td></tr>
+</tbody>
+</table>
+<p><i>*Duelist is Momentum-only; the Painted Knight runs on Zeal/Resonance. Both are role pairings rather than primitive fusions.</i></p>
+
+<div class="callout"><span class="callout-label">Conventions</span><p>Mastery = Tier. Partial-success abilities resolve Miss / Hit / Crit. Lexicon abilities generate Resonance (1 per action point) and benefit from it (bonus damage/healing equal to the current pool), per the base rules. "The danger zone" means Resonance 5+. Prerequisites are written <b>[Requires A or B]</b> — either parent opens the door; whether to <i>require</i> both parents, or merely reward having both, remains an open design question (these entries assume loose prerequisites).</p></div>
+
+<hr class="rule-heavy">
+
+<!-- CENTURION -->
+<div class="stat-block" id="hy-centurion">
+<div class="stat-block-head"><h3 class="stat-block-name">Centurion</h3><span class="stat-block-tag">Hybrid · Requires Legionnaire or Scholar</span></div>
+<div class="callout art-prompt"><span class="callout-label">Art Prompt</span><p>A weathered Imperial officer in lacquered medium armor with a crested helm under one arm, standing in the second rank of a shieldwall, one hand on a soldier's shoulder, the other pointing past the line toward an unseen enemy; late Qing-inspired military aesthetic, brushed-ink and gold-leaf palette, painterly fantasy illustration.</p></div>
+<p><i>The commander who fights through others — Hector, not Achilles. Modest personally; enormous in aggregate.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+2 Defense, +2 Initiative, medium armor proficiency, tag Command</dd></dl>
+<h4 class="sub">Core Mechanic — Synchronized Strike</h4>
+<p>When you end your turn, choose one adjacent ally; they gain Formation. If that ally is already in Formation, they may instead immediately make a basic attack against an enemy in range as a free reaction. Separately, whenever you hit an enemy with a weapon attack it becomes Identified.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Coordinated Advance</span><span class="ability-cost">Major Action · Recharge 2 · Signature</span></div><p class="ability-desc">Up to two allies who can see you each move up to their Speed without provoking and make a basic attack; any who end the move in Formation add your Mastery to that attack.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Tactical Reposition</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">You and each ally within 2 squares shift 1 square without provoking and without leaving Formation; any who end adjacent to an Identified enemy gain +Mastery to their next attack.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Spot the Gap</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Identify an enemy within 8 squares; one ally who can see it adds your Reason to their next attack against it.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Frontline Officer</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Forced movement of 1 square does not break your Formation, and allies adjacent to you while you are in Formation gain +Mastery to Defense.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Drillmaster</span><span class="ability-cost">Edge</span></div><p class="ability-desc">An ally affected by Synchronized Strike may also shed one condition.</p></div>
+</div>
+<div class="designer-note">The Centurion's damage should come from other people's dice. If it ever tops the party's personal damage charts, the lever is its weapon dice, not the grant effects. (Cut to the thin layer: Rally and Veteran's Eye returned to the base menus.)</div>
 </div>
 
-<h3 class="sub" id="skill-list">Skill List</h3>
-<table class="rules-table">
-  <thead><tr><th>Skill</th><th>Notes</th></tr></thead>
-  <tbody>
-    <tr><td><b>Stealth</b></td><td>Hiding, moving silently, evading observation. Often Grace-based.</td></tr>
-    <tr><td><b>Athletics</b></td><td>Climbing, swimming, jumping, raw physical effort. Might- or Grace-based depending on the task.</td></tr>
-    <tr><td><b>Charm</b></td><td>Persuasion, social grace, bargaining. Note: applications of Charm to specific subjects (e.g. lying about politics, lying about spiritualism) may use a more specialized skill.</td></tr>
-    <tr><td><b>Command</b></td><td>Issuing orders to soldiers, projecting authority. Reason- or Will-based.</td></tr>
-    <tr><td><b>Medicine</b></td><td>Dedicated medical knowledge — herbal medicines, acupuncture, delivering babies, identifying and treating a plague. <em>Not</em> battlefield first aid (that is a tool proficiency: Healer’s Kits).</td></tr>
-    <tr><td><b>Strategy</b></td><td>Reading a battlefield, planning maneuvers, anticipating enemy moves.</td></tr>
-    <tr><td><b>Bureaucracy</b></td><td>Navigating Imperial administrative systems, finding the right forms, knowing the right protocols.</td></tr>
-    <tr><td><b>Tracking</b></td><td>Following spoor, reading sign, judging the age of a trail.</td></tr>
-    <tr><td><b>Politics</b></td><td>Court intrigue, faction reading, recognizing allegiances.</td></tr>
-    <tr><td><b>Magic — Lexicon</b></td><td>Academic familiarity with lexical magic. Each magical tradition is a separate skill.</td></tr>
-    <tr><td><b>Magic — Spirit Lore</b></td><td>Knowledge of spirits and Dalimyri shamanism.</td></tr>
-    <tr><td><b>Magic — Auric Wizardry</b></td><td>Auric scholarly magic.</td></tr>
-    <tr><td><b>Magic — Alchemy</b></td><td>Taltasquan alchemical principles.</td></tr>
-    <tr><td><b>Lore — Dalimyri / Imperial / Auric / Taltasquan / Shan</b></td><td>Cultural knowledge of each people. Each is a separate Lore skill.</td></tr>
-    <tr><td><b>Investigation</b></td><td>The Sherlock Holmes thing — “there are scratches on the back-left corner of the cupboard, suggesting a sliding panel.”</td></tr>
-    <tr><td><b>Discern Intentions</b></td><td>Not a lie detector but a less specialized, more broadly useful “how does this person feel right now” detector.</td></tr>
-  </tbody>
-</table>
-<div class="designer-note">Magic skills represent academic familiarity with the principles and characteristics of these traditions, not your ability to perform them — that comes from being a Chorister, Spiritbinder, etc. A scholarly Imperial character can be expert at Lexicon theory without being able to cast a single Word.</div>
+<hr class="rule-heavy">
+
+<!-- DUELIST -->
+<div class="stat-block" id="hy-duelist">
+<figure class="img-inline"><img src="Duelist.png" alt="Duelist" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Duelist</h3><span class="stat-block-tag">Hybrid · Requires Legionnaire or Scout</span></div>
+<p><i>Relentless single-target pressure — Achilles, Lancelot. Locks onto one powerful enemy and tears them apart through ripostes and flurries. Builds Momentum by trading blows, not by moving.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+2 Initiative, +1 Speed, +1 Defense, light/medium armor and dueling-blade proficiency, tag Dueling</dd></dl>
+<h4 class="sub">Core Mechanic — Duelist's Edge</h4>
+<p>As a free action, <b>Mark</b> one enemy (you may re-Mark a new target on any turn). Gain 1 Momentum each time you attack your Marked target <i>or</i> are targeted by an attack from it. Your Momentum is not halved after attacking the Marked target. If you end a turn having attacked no creature, your Momentum resets to 0. <i>(Unlike the base Scout, you gain no Momentum from movement — the Duelist's Momentum is earned by trading blows. That inversion is the class.)</i></p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Flurry of Blows</span><span class="ability-cost">Major Action · Recharge 2 · Signature</span></div><p class="ability-desc">Make a number of basic attacks against your Marked target equal to your Mastery, each at −2 accuracy. Each hit adds your current Momentum to its damage, and Momentum gained mid-flurry applies to the later attacks in the same flurry.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Riposte</span><span class="ability-cost">Reaction · At-Will</span></div><p class="ability-desc">When your Marked target misses you with a melee attack, make a basic attack against it and gain 2 Momentum.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Lunge</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">Move up to your Speed toward your Marked target; your next attack against it this turn ignores cover and gains Advantage.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Perfect Form</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Your Momentum cap increases by your Mastery, and your Momentum is never halved after an attack against your Marked target.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Lancelot's Focus</span><span class="ability-cost">Edge (spare)</span></div><p class="ability-desc">Gain +Mastery to Defense against attacks from your Marked target — the Legionnaire's durability turned toward a single foe. <i>(Parked spare for builds whose base layer lacks a defensive answer.)</i></p></div>
+</div>
+<div class="designer-note">Reset-on-no-attack is the engine that enforces sustained aggression — the Duelist is deliberately bad at turtling. <i>Compilation note: the v3 file's exact ability/edge trim for this class could not be fully recovered; Riposte + Lunge / Perfect Form is the reconstruction (Parry was the named cut — defensive reactions live on the base menus). Diff against your saved v3 before locking.</i></div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- THANE -->
+<div class="stat-block" id="hy-thane">
+<figure class="img-inline"><img src="Thane.png" alt="Thane" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Thane</h3><span class="stat-block-tag">Hybrid · Requires Legionnaire or Chorister</span></div>
+<p><i>The front-line lexical warlord — battlecries that break enemy morale and rattle the air itself. The Chorister inverted: the Voice carried into the shieldwall.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+2 Grit, +2 Ward, heavy armor and codex/implement proficiency, tag Performance</dd></dl>
+<h4 class="sub">Core Mechanic — Battlecry</h4>
+<p>Your battlecry abilities are <b>Lexicon</b> — they generate Resonance as normal and their effects <b>scale with the current pool</b>, hitting harder still against enemies that are already Feared. The Thane layer gives you <b>no way to reduce Resonance</b> — by design. <i>(A Chorister-base Thane brings Hushed Stillness and Crescendo from the base menu; a Legionnaire-base Thane leans on the party's pool management.)</i></p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Cry Havoc</span><span class="ability-cost">Major Action · Recharge 2 · Lexicon · Signature</span></div><p class="ability-desc">Burst 2 within 6 squares: enemies gain Fear 1 and Shaken (−Mastery to attacks). While you are in the danger zone (Resonance 5+), they instead gain Fear 2 and Demoralized (−Mastery to attacks <i>and</i> Defense), and the radius grows by 1 per full 5 Resonance.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Dirge</span><span class="ability-cost">Minor Action · Recharge 1 · Lexicon</span></div><p class="ability-desc">One enemy within 6 squares gains Fear 1 and Slowed 2; if already Feared, it is also Dazed 2.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Last Roar</span><span class="ability-cost">Reaction · Recharge 3 · Lexicon</span></div><p class="ability-desc">The first time each encounter you drop to 0 Grit, deliver Cry Havoc for free before the damage carries to Body.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Terrible Presence</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Enemies that begin their turn Feared and within 4 squares of you are also Slowed 1.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Wrathful Resonance</span><span class="ability-cost">Edge</span></div><p class="ability-desc">For how your battlecries scale, treat your current Resonance as 5 higher — more payoff, deeper into the danger zone.</p></div>
+</div>
+<div class="designer-note">Wrathful Resonance is an explicitly risk-increasing edge, which only makes sense under the scaling-Feedback model. The no-relief-valve design is intended tension, not oversight; the case to playtest is a Legionnaire-base Thane in a party with no other Resonance manager (though that build also generates little Resonance). <i>Compilation note: the Core Mechanic prose here is reconstructed from the v3 changelog; confirm against your saved file.</i></div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- RUNECARVER -->
+<div class="stat-block" id="hy-runecarver">
+<figure class="img-inline"><img src="Runecarver.png" alt="Runecarver" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Runecarver</h3><span class="stat-block-tag">Hybrid · Requires Legionnaire or Calligrapher</span></div>
+<p><i>Living inscription — the medic who operates without anesthesia. Battle-long carved buffs paid for in blood.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+3 Grit, +1 PDR, codex/stylus proficiency, tag Geomancy</dd></dl>
+<h4 class="sub">Core Mechanic — Graven Flesh</h4>
+<p>Your Glyphs are carved onto creatures, not squares; they require no concentration and last the whole encounter (until carved over). <b>Carving costs you 5 Grit</b> — sacred ink is paid in blood. Keep active carved Glyphs up to your Mastery. Carve as a Minor action onto yourself or an adjacent creature; carving is Lexicon and generates Resonance. Glyph menu — <b>Wrath</b> (bearer's attacks deal +1d6 fire), <b>Iron</b> (+Mastery PDR and MDR), <b>Vigor</b> (bearer adds Will to Recovery checks), <b>Alacrity</b> (+1 Speed, +Mastery Initiative); or the curse <b>Binding</b> (enemy is Slowed 1, or Slowed 2 if carved while you are in Formation).</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Carve the Word of Ruin</span><span class="ability-cost">Major Action · Recharge 2 · Glyph · Lexicon · Signature</span></div><p class="ability-desc">Spend 5 Grit; spell attack vs. the Ward of an adjacent enemy. Miss: Will damage and Binding. Hit: 1d6 per tier + Will damage; the rune detonates at the start of your next turn for 3d6 to it and adjacent creatures. Crit: critical damage, and the detonation applies Burning equal to half your Will.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Brand the Line</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">Pay the 5 Grit once and carve one Glyph onto every ally adjacent to you simultaneously.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Sunder Sigil</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Erase one Glyph or hostile zone within reach; if hostile, deal Will damage to its bearer or to an enemy standing in it.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Scarification</span><span class="ability-cost">Edge</span></div><p class="ability-desc">When a creature bearing one of your Glyphs takes damage, you regain Grit equal to half your Mastery (round up), once per round.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Permanent Ink</span><span class="ability-cost">Edge</span></div><p class="ability-desc">One Glyph on yourself becomes permanent — it persists between encounters and does not count against your cap.</p></div>
+</div>
+<div class="designer-note">Scarification keeps the HP-cost loop and makes the damage-hungry-ally synergy literal — carve the tank (a Painted Knight, a Briar Knight), recoup the blood as they soak hits.</div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- VIVISECTIONIST -->
+<div class="stat-block" id="hy-vivisectionist">
+<figure class="img-inline"><img src="Vivisectionist.png" alt="Vivisectionist" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Vivisectionist</h3><span class="stat-block-tag">Hybrid · Requires Scholar or Scout</span></div>
+<p><i>Anatomical knowledge as a weapon — the Scholar who learns by opening things up. A clinical attrition specialist.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+2 Initiative, +2 Recovery, healer's-kit and blade proficiency, tag Medicine</dd></dl>
+<h4 class="sub">Core Mechanic — Field Dissection</h4>
+<p>When you reduce an enemy to 0 Grit or Body, every other enemy of the same type you can see gains 1 Analyzed (Identifying them if needed). Your damage-over-time conditions deal +Mastery per tick against Analyzed enemies, and your debuffs are one step stronger against them.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Exsanguinate</span><span class="ability-cost">Major Action · Recharge 2 · Signature</span></div><p class="ability-desc">Requires an Analyzed target. Weapon attack with accuracy bonus equal to your Momentum. Hit: weapon + 1d6 per tier; then all of the target's damage-over-time stacks resolve at once as immediate damage, and it regains half (round down) as fresh stacks. Crit: the immediate damage is dealt twice.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Sever Artery</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">Hit a creature: it gains Bleeding equal to your Mastery and is Slowed 1; if it is Analyzed and already Bleeding, it is also Weakened 1.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Clinical Eye</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">Analyze an enemy within 8 squares; until your next turn, your damage-over-time damage against it cannot be reduced or removed by Recovery.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Surgeon's Momentum</span><span class="ability-cost">Edge</span></div><p class="ability-desc">When you hit an Analyzed enemy, you may spend any Momentum to inflict that many stacks of Bleeding instead of adding it as flat damage.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Hemophilia</span><span class="ability-cost">Edge</span></div><p class="ability-desc">When you hit a Bleeding creature, it loses no Bleeding to Recovery until your next turn, and you gain 1 Momentum.</p></div>
+</div>
+<div class="designer-note">Ramps hard against same-type swarms, weakest against a lone elite — the deliberate inverse of the Duelist. Exsanguinate's detonate-and-reseed loop is the engine; the half-reseed degrades over repeated use so it cannot two-turn a boss. Keep the flavor clinical, not gratuitous.</div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- CIPHER -->
+<div class="stat-block" id="hy-cipher">
+<div class="stat-block-head"><h3 class="stat-block-name">Cipher</h3><span class="stat-block-tag">Hybrid · Requires Scholar or Chorister</span></div>
+<div class="callout art-prompt"><span class="callout-label">Art Prompt</span><p>An Imperial auditor in austere grey-and-jade robes seated amid towers of confiscated codices, one gloved hand pressed to their temple, faint lexical script crawling up the veins of their neck and glowing behind their eyes; oppressive scriptorium lighting, ink-wash and gold detail, unsettling psyker-inquisitor mood, painterly fantasy illustration.</p></div>
+<p><i>Auditors of dangerous knowledge — the Empire's psyker-inquisitors. The more they know, the more it hurts.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+2 Ward, +2 Initiative, codex proficiency, tag Investigation</dd></dl>
+<h4 class="sub">Core Mechanic — Forbidden Ledger</h4>
+<p>You generate Resonance by knowing — whenever you Identify or apply a stack of Analyzed to an enemy, generate 1 Resonance. Your Lexicon (psychic) abilities target Ward and deal bonus damage/effect equal to twice the target's current Analyzed stacks, on top of the normal Resonance bonus.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Interrogate the Flesh</span><span class="ability-cost">Major Action · Recharge 2 · Lexicon · Psyche · Signature</span></div><p class="ability-desc">Spell attack vs. the Ward of an Analyzed enemy within 8 squares. Miss: Will damage and +1 Analyzed. Hit: 1d6 per tier + (twice its Analyzed stacks) psychic damage, and you learn one of its abilities; it cannot use that ability until your next turn. Crit: critical damage and Stunned 2.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Audit</span><span class="ability-cost">Minor Action · At-Will · Lexicon</span></div><p class="ability-desc">Apply 1 Analyzed to an enemy within 8 squares. If it now has 3+ Analyzed, it is also Dazed 1.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Redact</span><span class="ability-cost">Reaction · Recharge 3 · Lexicon</span></div><p class="ability-desc">When an enemy within 10 squares uses an ability, spend 6 Resonance to make it fail and be unmade.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Eidetic Threat</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Analyzed never expires for you, and at the start of each encounter the most dangerous enemy you can see begins with 1 Analyzed.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Burden of Knowing</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Treat the battlefield Resonance as 3 lower when determining Feedback damage to <i>you</i> (you have learned to carry it) — but not for your bonus damage.</p></div>
+</div>
+<div class="designer-note">The one fully-invented class — the design doc gives "Cipher (Scholar/Ch)" no concept, so scrutinize this one as Claude's rather than yours. The Analyzed→Resonance→psychic-damage loop is the engine; the heavy Lexicon use means the Cipher eats Feedback in the danger zone unless the party brakes.</div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- SCULPTOR -->
+<div class="stat-block" id="hy-sculptor">
+<div class="stat-block-head"><h3 class="stat-block-name">Sculptor / Golemist</h3><span class="stat-block-tag">Hybrid · Requires Scholar or Calligrapher</span></div>
+<div class="callout art-prompt"><span class="callout-label">Art Prompt</span><p>A scholar in ink-stained robes standing in the shadow of a towering terra cotta golem inscribed shoulder-to-ankle with glowing command-glyphs, the scholar re-painting one sigil on its forearm mid-battle while arrows shatter against its chest; warm clay tones against cold battlefield grey, painterly fantasy illustration in an Imperial Chinese register.</p></div>
+<p><i>Everything poured into one great work — a terra cotta golem that is frontliner, weapon, and mobile fortress.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+3 Grit, +2 Ward, codex proficiency, tag Engineering</dd></dl>
+<h4 class="sub">Core Mechanic — The Construct</h4>
+<p>Begin each encounter with a terra cotta golem — a controllable ally that takes no turn of its own. Grit = 10 × Tier; it uses your Defense and Ward; its slam uses your Might or Reason for accuracy and deals 1d6 per tier + Reason. It gives full cover to allies directly behind it. As a Minor action you command it (move up to its Speed and/or slam); at the start of your turn it makes one free slam against any adjacent Analyzed enemy. Inscribe up to Mastery Command-Glyphs, changing one as a Minor action: <b>Bulwark</b> (adjacent allies +Mastery PDR), <b>Battering</b> (slam pushes 2, Prone), <b>Sentinel</b> (free slam vs. enemies entering its reach), <b>Kiln</b> (slam deals fire, Burning 2).</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Animate Fury</span><span class="ability-cost">Major Action · Recharge 2 · Glyph · Lexicon · Signature</span></div><p class="ability-desc">Your golem slams every adjacent enemy; for each Analyzed enemy it hits, shift the golem 2 squares and it slams again (once per Analyzed enemy).</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Reinscribe</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">The golem regains 5 × Tier Grit and sheds one condition; or, if destroyed, rebuild it at half Grit in an adjacent square.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Detonate Idol</span><span class="ability-cost">Major Action · Recharge 3 · Glyph · Lexicon</span></div><p class="ability-desc">Sacrifice the golem: spell attack vs. every creature within 2 squares of it for Will + 1d6 per tier, doubled against Analyzed targets. Rebuild next turn with Reinscribe.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Master Sculptor</span><span class="ability-cost">Edge</span></div><p class="ability-desc">While the golem is adjacent to an Analyzed enemy, it may both move and slam on your single command.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Bulwark of Clay</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Allies adjacent to your golem treat it as full cover and gain +Mastery PDR.</p></div>
+</div>
+<div class="designer-note">The golem-acts-free-against-Analyzed clause is load-bearing for action economy — the Scholar's information layer literally drives the construct.</div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- CENSOR -->
+<div class="stat-block" id="hy-censor">
+<figure class="img-inline"><img src="Censor.png" alt="Censor" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Censor</h3><span class="stat-block-tag">Hybrid · Requires Scout or Chorister</span></div>
+<p><i>The Empire's witch-hunter — fast, stealthy, brutal. The premier brake in the game: a mobile drain on the Voice itself, throttling the shared Resonance pool while running down renegade casters and the Unwrought. Will not take the field beside a non-orthodox spellcaster or a Knight-Chandler.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+1 Speed, +2 Initiative, light armor and stealth-gear proficiency, tag Stealth</dd></dl>
+<h4 class="sub">Core Mechanic — Silence</h4>
+<p>You generate <b>Silence</b> (a personal meter), 1 per 2 squares you move, maximum 10, emptying at the end of the encounter. As a free action, spend Silence to <b>reduce the battlefield Resonance by that many points</b>, or to impose −1 per point on a target's next Lexicon or spell attack. While you hold 5+ Silence, you and adjacent allies take no Feedback and no damage from enemy Lexicon zones.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">The Gag</span><span class="ability-cost">Major Action · Recharge 2 · Signature</span></div><p class="ability-desc">Move up to your Speed (gaining Silence) and make a weapon attack against a creature you ended adjacent to. Hit: weapon + 1d6 per tier; spend any Silence to deal +Will per point and to Silence the target (it cannot use Lexicon or spell abilities) for that many rounds. Crit: critical damage, and it cannot take Reactions.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Dispel</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">Spend 4 Silence: one spell, zone, summon, or conjuration within 8 squares is unmade, and its controller takes Will psychic damage.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Heretic's Bane</span><span class="ability-cost">Reaction · At-Will</span></div><p class="ability-desc">When a creature within 6 squares uses a Lexicon or spell ability, spend Silence equal to its tier to impose Disadvantage; if it Misses as a result, make a basic attack against it.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Sanctioned Killer</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Your attacks against any creature that has used a Lexicon or spell ability this encounter score a Critical Hit on a Success.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Hunter of the Unnatural</span><span class="ability-cost">Edge</span></div><p class="ability-desc">You deal +Mastery damage to spirits, constructs, and the Unwrought, and your attacks against them ignore MDR.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Warding Word</span><span class="ability-cost">Edge</span></div><p class="ability-desc">While you hold 5+ Silence, allies adjacent to you gain +Mastery to Ward.</p></div>
+</div>
+<div class="designer-note">Silence is a deliberate parallel-but-opposite to Resonance, and the movement-to-Silence conversion inverts the Scout's movement-to-damage — the Censor is doubly an inversion. Against a caster-light enemy lineup the kit thins out; the spend-for-+Will clause and Hunter of the Unnatural are the hedges. The exclusion rule (no non-orthodox casters, no Knight-Chandlers) is a roleplay constraint to carry into party composition. <i>(This entry carries three edges where the v3 template is two — the ally-Ward feature survived the trim as Warding Word; cut one if you want strict uniformity.)</i></div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- PAINTED KNIGHT -->
+<div class="stat-block" id="hy-painted-knight">
+<figure class="img-inline"><img src="Painted_Zealot.png" alt="Painted Knight" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Painted Knight</h3><span class="stat-block-tag">Hybrid · Requires Scout or Calligrapher</span></div>
+<p><i>Dervish and holy warrior — woad-inked and prayer-scarred, fighting unarmored, trusting sacred geometric tattoos and sheer fanaticism for protection. The more you hit one, the more dangerous it becomes — and the more it feeds the whole party's Voice.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+2 Defense, +1 Speed, +2 Recovery, <b>no armor</b> (Unarmored Defense: while you wear no armor, add your Mastery to Defense), sacred-tattoo (implement) proficiency, tag Religion</dd></dl>
+<h4 class="sub">Core Mechanic — Zeal</h4>
+<p>You generate Resonance only by suffering — each time you take damage from an enemy (no more than once per enemy per turn), the battlefield Resonance rises by 2. You have no Crescendo; your Words of Power <b>spend</b> Resonance, which is your only way to keep the pool below the danger zone. Because the pool is shared, every hit you eat also feeds your allies' Lexicon bonus damage — you are a Resonance battery as much as a tank.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Word of the God-King</span><span class="ability-cost">Major Action · Recharge 2 · Lexicon · Signature</span></div><p class="ability-desc">Spend any amount of Resonance, then make a melee attack against an adjacent enemy. Hit: weapon damage + 1d6 per tier + the Resonance spent (as damage). Riders by spend: 4+ Push 2; 8+ also knocked Prone; 12+ also Burning equal to half the Resonance spent.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Whirling Dervish</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Move up to your Speed without provoking. If you end adjacent to two or more enemies, gain 2 Resonance — you invite their blows.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Cry of Release</span><span class="ability-cost">Major Action or Reaction · Recharge 3 · Lexicon</span></div><p class="ability-desc">Spell attack against every adjacent enemy for damage equal to the current Resonance, then reduce the battlefield Resonance to 0. (Usable as a Reaction when you would take Feedback — your safety valve, and the spike-dump that empties the pool your casters were riding.)</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Sacred Geometry</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Once per round when you are hit, your tattoos flare: reduce the damage by your Mastery and gain 2 Resonance.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Martyr's Fervor</span><span class="ability-cost">Edge</span></div><p class="ability-desc">While Bloodied, you gain double Resonance from taking damage.</p></div>
+</div>
+<div class="designer-note">Zeal and Cry of Release explicitly move the <i>shared</i> pool, which makes both the battery role and the cost of the Cry real — dumping the pool saves you and starves your Virtuoso in the same breath. <i>Compilation note: Sacred Geometry is recovered as an ability in one draft and listed here as an edge to fit the 2+2 template; confirm against your saved v3.</i></div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- ORIGAMIST -->
+<div class="stat-block" id="hy-origamist">
+<div class="stat-block-head"><h3 class="stat-block-name">Origamist</h3><span class="stat-block-tag">Hybrid · Requires Chorister or Calligrapher</span></div>
+<div class="callout art-prompt"><span class="callout-label">Art Prompt</span><p>A serene Imperial singer mid-verse, surrounded by a spiraling murmuration of hundreds of folded-paper cranes and serpents, each inked with a single glowing character, some unfolding into blades mid-flight; rice-paper whites and vermillion ink against a twilight battlefield, painterly fantasy illustration.</p></div>
+<p><i>Prepares sacred scrolls, then sings life into them — a swarm of folded-paper servitors too simple to take turns, commanded as one by a single sung Score.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+2 Ward, +2 Initiative, codex/implement proficiency, tag Performance</dd></dl>
+<h4 class="sub">Core Mechanic — The Flock</h4>
+<p>You field a swarm of <b>Origami</b> — paper constructs with 1 Grit each, your Defense and Ward, that are destroyed by any hit. The Flock takes no turns; instead it follows a single standing <b>Score</b> (an order such as Strike, Screen, or Harry) that you set, and when a Score resolves, every Origami acts on it identically and algorithmically. An Origami's Strike deals modest damage that <b>scales continuously with the current Resonance</b>. Deploying Origami is a Minor action (deploy up to your Reason at once) and is Lexicon, generating 2 Resonance. You may field up to Reason × 2 Origami.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Thousandfold Crane</span><span class="ability-cost">Major Action · Recharge 2 · Lexicon · Signature</span></div><p class="ability-desc">Deploy up to your Reason Origami at once and immediately resolve the Strike Score for every Origami on the field. Any enemy struck by two or more Origami also gains Bleeding equal to your Mastery. Generates 4 Resonance.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Change the Score</span><span class="ability-cost">Minor Action · At-Will · Lexicon</span></div><p class="ability-desc">Set a new Score and immediately resolve it once for all Origami (an extra activation this turn). Generates 1 Resonance.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Crescendo of Wings</span><span class="ability-cost">Reaction · Recharge 3 · Lexicon</span></div><p class="ability-desc">When you would take Resonance Feedback, instead every Origami on the field makes an immediate Strike and you reduce the battlefield Resonance by 5.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Self-Folding</span><span class="ability-cost">Edge</span></div><p class="ability-desc">At the start of each of your turns, recover one destroyed Origami for free.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Living Manuscript</span><span class="ability-cost">Edge</span></div><p class="ability-desc">While 3 or more Origami are within 2 squares of you, treat the battlefield Resonance as 5 lower for the purpose of Feedback against you — the Flock sings part of the dissonance away.</p></div>
+</div>
+<div class="designer-note">The single-Score-for-the-whole-swarm rule is the load-bearing anti-micromanagement decision — resist any per-Origami control or this class eats the table's clock. Watch the field cap (Reason × 2) against Self-Folding for board-flooding. <i>Compilation notes: Living Manuscript originally read "immune to Feedback," which has been re-pegged here to the treat-as-lower idiom consistent with the scaling model; and Paper Bulwark (fold Origami into a wall) was trimmed to fit the 2+2 template — restore it if your saved v3 kept it instead.</i></div>
+</div>
+
+<div class="designer-note"><b>Resonance economy, party-level.</b> Five of the ten hybrids touch the shared Resonance pool, each with a different verb — the Thane shouts it up, the Painted Knight bleeds it up, the Cipher knows it up, the Censor drains it, the Origamist spends it through paper. The unit of balance is therefore the <i>party's</i> net Resonance (generation minus leech), not any single class: a Virtuoso wants the pool high while a Geomancer passively bleeds it, and a Painted Knight's Cry of Release dumps the very Resonance the casters were riding. The open question to settle in play: with Hushed Stillness at-will and Calligrapher zone-leech free, are brakes so cheap that the danger zone never bites? If "ride the Resonance" classes never actually feel the heat, the lever is brake cost, not class numbers.</div>
 
 </section>
 
-<section class="section" id="edges" data-spy="edges">
+
+<section class="section" id="advanced-classes-rules" data-spy="advanced-classes-rules">
+<span class="sec-eyebrow">For Players · Player&rsquo;s Handbook</span>
+<h2 class="sec-title">Advanced Classes</h2>
+<p class="annotatable lede">Ten advanced classes, two per Imperial base class. Where a Hybrid bridges two traditions, an advanced class <b>deepens one</b> — the Legionnaire who became the wall, the Chorister whose voice rose above the chorus. Each entry follows the standard template: <b>Dedication</b> (secondary-stat bonuses + proficiency/tag; dedications never raise core stats), a unique <b>Core Mechanic</b>, a <b>Signature Ability</b>, two Abilities, and two Edges. Mastery = Tier; Miss / Hit / Crit on partial successes; "X per tier" scales with Tier.</p>
+<div class="callout"><span class="callout-label">v5 Re-Peg</span><p>This printing re-pegs the Chorister pair to the canonical Resonance model (shared battlefield pool; Feedback from 5+ scaling as 1d4 + current Resonance, MDR applies; Lexicon bonus equal to the current pool; Crescendo −10). One convention this surfaces, proposed but awaiting a ruling: <b>a cast's own Resonance generation does not count toward its own Feedback check</b> — read the pool once, and the cast that crosses into the danger zone is itself free. Advanced classes from foreign traditions (Spiritbinder, Meditant, Arcanist, Alchemist paths such as the Marrowsworn) are concepted in the Classes gallery but not yet drafted at this level of detail.</p></div>
+
+<hr class="rule-heavy">
+
+<!-- JUGGERNAUT -->
+<div class="stat-block" id="ad-juggernaut">
+<figure class="img-inline"><img src="Juggernaut.png" alt="Juggernaut" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Juggernaut</h3><span class="stat-block-tag">Advanced · Requires Legionnaire or Scout</span></div>
+<p><i>The unstoppable battering ram. Turns the weight of its armor into a weapon and shrugs off anything meant to stop it.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+2 Body, +1 Speed, +2 Recovery, heavy armor proficiency</dd></dl>
+<h4 class="sub">Core Mechanic — Irresistible</h4>
+<p>While in Formation, the distance of forced movement applied <i>to</i> you is reduced by half your Might (min 0), and forced movement <i>you</i> apply to others is increased by the same amount.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Crushing Charge</span><span class="ability-cost">Major Action · Recharge 2 · Requires Formation · Signature</span></div><p class="ability-desc">Move your Speed in a straight line, ignoring difficult terrain, occupied squares, and obstacles less resilient than solid stone (destroying them). Make a basic attack against every creature whose space you passed through. Miss: Push 1, 1d6 + Might damage. Hit: Push 2, knocked Prone, 3d6 + Might damage. Crit: critical damage, Push 4, Prone.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Relentless</span><span class="ability-cost">Reaction · Recharge 1</span></div><p class="ability-desc">Cancel an effect that would Immobilize or Slow you. Damage and other conditions from the trigger still apply.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Battering Ram</span><span class="ability-cost">Minor Action · At-Will</span></div><p class="ability-desc">Your next attack this turn deals triple damage to objects and, if it would destroy an obstacle, you may continue moving through it.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Toppling Blows</span><span class="ability-cost">Edge</span></div><p class="ability-desc">When you push a creature three or more squares in a turn, it falls Prone.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Unstoppable</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Difficult and hazardous terrain cost no extra movement, and you take half damage from hazardous terrain.</p></div>
+</div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- STALWART -->
+<div class="stat-block" id="ad-stalwart">
+<div class="stat-block-head"><h3 class="stat-block-name">Stalwart</h3><span class="stat-block-tag">Advanced · Requires Legionnaire</span></div>
+<div class="callout art-prompt"><span class="callout-label">Art Prompt</span><p>A massive Imperial soldier braced behind a tower shield taller than themselves, three battered comrades sheltering in its lee as arrows and spellfire break around them like surf on a rock; lacquered crimson-and-bronze armor, low heroic camera angle, painterly fantasy illustration.</p></div>
+<p><i>The immovable shieldwall. Where the Legionnaire anchors a point, the Stalwart shelters a zone and drags allies into the safety of Formation.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+3 Grit, +1 PDR, +1 Defense, tower shield proficiency</dd></dl>
+<h4 class="sub">Core Mechanic — Shieldwall</h4>
+<p>Your Formation bonus extends to all allies within 2 squares, not just adjacent ones. Additionally, the first time each turn an ally inside that aura would take damage, reduce it by your Mastery.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Hold the Line</span><span class="ability-cost">Minor Action · Recharge 2 · Signature</span></div><p class="ability-desc">You and each ally within 2 squares immediately gain Formation (even if they moved this turn). Until the start of your next turn, any of those creatures may reduce forced movement applied to them by your Might (min 0).</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Interpose</span><span class="ability-cost">Reaction · Recharge 1</span></div><p class="ability-desc">When an ally within 2 squares is hit, you become the target instead and take the damage. If you are adjacent to the attacker, make a Defensive Strike against it.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Anchor</span><span class="ability-cost">Major Action · At-Will · Requires Formation</span></div><p class="ability-desc">Make a weapon attack. Until the start of your next turn you cannot be moved, knocked Prone, or removed from Formation by enemy effects. On Hit, one adjacent enemy is also Immobilized until the start of your next turn.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Planted</span><span class="ability-cost">Edge</span></div><p class="ability-desc">You enter combat already in Formation before the first turn, and forced movement of 1 square does not break your Formation.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Shield-Brother</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Allies who begin their turn inside your Formation aura add your Mastery to their next Recovery check.</p></div>
+</div>
+<div class="designer-note">The Stalwart is deliberately the only class that hands out the <b>full</b> Formation bonus at range — its reason to exist over a plain Legionnaire.</div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- STRATEGOS -->
+<div class="stat-block" id="ad-strategos">
+<div class="stat-block-head"><h3 class="stat-block-name">Strategos</h3><span class="stat-block-tag">Advanced · Requires Scholar</span></div>
+<div class="callout art-prompt"><span class="callout-label">Art Prompt</span><p>A severe Imperial strategist on a low rise behind the battle line, ink-brush in hand over a living battle-map whose painted figures move in time with the real soldiers below, faint lines of light connecting the map to three distant allies mid-strike; cool jade and slate palette, painterly fantasy illustration.</p></div>
+<p><i>The mind that turns information into orders. Buffs allies and breaks enemies from the second line by weaponizing Analyzed.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+2 Initiative, +2 Ward, tag Military Strategy</dd></dl>
+<h4 class="sub">Core Mechanic — Exploit Analysis</h4>
+<p>Whenever an ally damages an Analyzed creature, that ally deals additional damage equal to your Mastery (on top of the Analyzed bonus). Your abilities may apply Analyzed to creatures that are not yet Identified — you Identify and Analyze in one step.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Coordinated Assault</span><span class="ability-cost">Major Action · Recharge 2 · Signature</span></div><p class="ability-desc">Choose an Analyzed enemy within 8 squares. Up to two allies who can see it each make a basic attack against it as a free reaction, each with a bonus to accuracy equal to your Reason.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Pinpoint Weakness</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">Choose an Analyzed enemy within 8 squares. Until the start of your next turn, attacks against it ignore PDR and MDR.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Tactical Reposition</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">An ally within 8 squares moves up to half their Speed without provoking. If they end adjacent to an Analyzed enemy, their next attack gains Advantage.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Field Notes</span><span class="ability-cost">Edge</span></div><p class="ability-desc">At the start of each encounter, one enemy you can see begins Identified.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Constant Vigilance</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Once per turn, you may apply one stack of Analyzed to an Identified enemy within 8 squares as a free action.</p></div>
+</div>
+<div class="designer-note">Analyzed persists for the whole battle, so the Strategos's job is to keep stacking it; Constant Vigilance turns that into a guaranteed per-turn drip the rest of the party exploits. Coordinated Assault's accuracy bonus deliberately remains keyed to Reason alone (tactical direction), even though spell accuracy is now Reason + Awareness — it boosts <i>ally weapon attacks</i>, not a spell.</div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- HOSPITALER -->
+<div class="stat-block" id="ad-hospitaler">
+<div class="stat-block-head"><h3 class="stat-block-name">Hospitaler</h3><span class="stat-block-tag">Advanced · Requires Scholar</span></div>
+<div class="callout art-prompt"><span class="callout-label">Art Prompt</span><p>A blood-spattered field surgeon kneeling inside a chalk-drawn triage square amid a raging battle, hands steady over a wounded legionnaire, surgical tools and herb satchels arrayed with ritual precision while chaos blurs beyond the square's edge; candle-warm light against cold steel, painterly fantasy illustration.</p></div>
+<p><i>The battlefield surgeon. Non-magical medicine taken to its limit — the only character who can knit closed the wound pool itself mid-fight.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+3 Grit, +2 Recovery, tag Medicine, medical kit proficiency</dd></dl>
+<h4 class="sub">Core Mechanic — Surgeon's Hands</h4>
+<p>When you heal an ally already at full Grit, the healing restores <b>Body</b> instead (half value, round up). You may also use the Recover universal action on an adjacent ally instead of on yourself.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Field Hospital</span><span class="ability-cost">Major Action · Recharge 3 · Sustained · Signature</span></div><p class="ability-desc">Inscribe a 2×2 triage station within 6 squares. Allies who begin their turn inside regain Grit equal to your Will and may make a free Recovery check. While you sustain it, you may spend a Minor action to heal one ally inside for 1d6 + Will.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Stabilize</span><span class="ability-cost">Reaction · Recharge 2</span></div><p class="ability-desc">When an ally within 6 squares drops to 0 Grit or begins Dying, they instead stabilize at Grit equal to your Mastery, stop Dying, and shed one condition.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Adrenaline Shot</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">An ally you touch (or yourself) gains temporary Grit equal to your Reason + Will and Quickened 2 until the end of their next turn, then takes your Mastery in damage as the effect ends.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Combat Medic</span><span class="ability-cost">Edge</span></div><p class="ability-desc">When you heal an ally, you may also grant them PDR or MDR equal to half your Mastery (round up) until the start of your next turn.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Triage Discipline</span><span class="ability-cost">Edge</span></div><p class="ability-desc">You and adjacent allies gain +2 to Recovery checks.</p></div>
+</div>
+<div class="designer-note">Surgeon's Hands is intentionally powerful and intentionally scarce — Body is the campaign's slow-healing resource, so mid-combat Body restoration stays rate-limited (full-Grit condition, half value, action cost). Open item: this may still need a per-encounter cap; watch it closely in play.</div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- ASSASSIN -->
+<div class="stat-block" id="ad-assassin">
+<figure class="img-inline"><img src="Assassin.png" alt="Assassin" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Assassin</h3><span class="stat-block-tag">Advanced · Requires Scout</span></div>
+<p><i>Stealth as a complete combat philosophy. Slower rhythm than the Scout, but each strike from the dark lands like a guillotine.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+1 Speed, +2 Initiative, tag Stealth, stealth-gear proficiency</dd></dl>
+<h4 class="sub">Core Mechanic — Assassinate</h4>
+<p>Your attacks against a creature that cannot see you score a Critical Hit on a Success (not only on beating Defense by 10). On such an attack you may spend all Momentum to deal bonus damage at <b>double</b> the normal Momentum value.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Vanish</span><span class="ability-cost">Minor Action · Recharge 2 · Signature</span></div><p class="ability-desc">Recharge 1 if you reduced a creature to 0 Grit or Body this turn. You become Invisible until you attack or until the start of your next turn, and may move your full Speed without breaking it.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Mark for Death</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">Choose a creature within 8 squares. Until it dies or the encounter ends, your attacks against it from concealment deal +1d6 per tier. Only one creature may be Marked at a time.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Shadowstep</span><span class="ability-cost">Reaction · Recharge 3</span></div><p class="ability-desc">When an enemy ends its turn within 8 squares while you are Invisible, teleport adjacent to it; your next attack against it this turn gains Advantage.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Silent Kill</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Reducing a creature to 0 Grit or Body with an attack from concealment does not break your concealment.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Predator's Eye</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Your attacks against targets that have not yet acted this combat gain Advantage.</p></div>
+</div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- MARKSMAN -->
+<div class="stat-block" id="ad-marksman">
+<figure class="img-inline"><img src="Sniper.png" alt="Marksman" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Marksman</h3><span class="stat-block-tag">Advanced · Requires Scout</span></div>
+<p><i>The Scout inverted: stillness instead of motion. Builds Momentum by Aiming and rains it down at range.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+2 Initiative, +1 Speed, bow &amp; crossbow proficiency, tag Perception</dd></dl>
+<h4 class="sub">Core Mechanic — Marksman's Focus</h4>
+<p>You gain the <b>Aim</b> action (Minor Action): gain 2 Momentum. On any turn you Aimed, your Momentum is <b>not</b> halved after your next attack and does not drop to 0 at end of turn. Your Momentum damage bonus applies at range with no falloff.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Called Shot</span><span class="ability-cost">Major Action · Recharge 2 · Signature</span></div><p class="ability-desc">Make a ranged attack with a bonus to accuracy equal to your current Momentum. Hit: weapon damage + 1d6 per tier, and choose Slowed 2, Dazed 2, or Bleeding (1d6 per tier). Crit: critical damage and apply two of those conditions.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Suppressing Fire</span><span class="ability-cost">Major Action · Recharge 1</span></div><p class="ability-desc">Designate a 3×3 zone within weapon range; it is threatened until the start of your next turn. Enemies that enter or begin their turn there take Grace + Mastery damage and are Slowed 1.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Steady Breath</span><span class="ability-cost">Reaction · At-Will</span></div><p class="ability-desc">Requires that you did not move this turn. When you make a ranged attack, reroll the attack roll once and keep the better result.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">High Vantage</span><span class="ability-cost">Edge</span></div><p class="ability-desc">On a turn you did not move, your ranged attacks gain +2 accuracy and ignore cover.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Point-Blank Discipline</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Adjacent enemies do not impose Disadvantage on your ranged attacks, and shooting does not provoke.</p></div>
+</div>
+<div class="designer-note">Note for the new statistics model: ranged weapons no longer add a stat to damage — the Marksman's Momentum bonus is now the <i>only</i> reliable flat-damage rider on ranged attacks, which is the class's reason to exist. Suppressing Fire's "Grace + Mastery damage" survives as ability damage (not weapon damage); flag it if that reads as an end-run around the no-stat-on-ranged rule.</div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- CANTOR -->
+<div class="stat-block" id="ad-cantor">
+<div class="stat-block-head"><h3 class="stat-block-name">Cantor</h3><span class="stat-block-tag">Advanced · Requires Chorister</span></div>
+<div class="callout art-prompt"><span class="callout-label">Art Prompt</span><p>A calm Imperial singer at the heart of a battle-choir, arms spread low, visible rings of dampened sound spreading from them like ripples in still water, shielding crouched allies while jagged shards of wild resonance shatter harmlessly against the rings; gold and deep-blue palette, painterly fantasy illustration.</p></div>
+<p><i>The singer who never stopped being part of the chorus. Spreads steady, battlefield-wide effects and keeps the whole party functional inside Resonance's danger zone.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+2 Ward, +2 Recovery, tag Performance</dd></dl>
+<h4 class="sub">Core Mechanic — Diffusion <span class="stat-block-tag">v5</span></h4>
+<p>When you Crescendo, you reduce Resonance by only 5 instead of 10. Additionally, you and all allies within 4 squares treat the battlefield Resonance as <b>your Mastery lower</b> for the purpose of <b>Feedback only</b> — bonus damage and healing still use the full pool. The choir keeps its power and sheds part of the pain.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Chorus Eternal</span><span class="ability-cost">Major Action · At-Will · Lexicon · Signature</span></div><p class="ability-desc">Generates 2 Resonance. Choose one until the start of your next turn: all allies within 6 squares gain +Mastery to Defense and PDR; <b>or</b> all allies within 6 squares regain Grit equal to the current Resonance.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Harmonize</span><span class="ability-cost">Minor Action · Recharge 1 · Lexicon</span></div><p class="ability-desc">Reduce Resonance by up to 4. For each point reduced, one ally within 8 squares regains Grit equal to your Will.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Steady the Choir</span><span class="ability-cost">Reaction · Recharge 1 · Lexicon · v5</span></div><p class="ability-desc">When an ally within 6 squares would take Resonance Feedback or gain Fear, negate it. Generates 1 Resonance.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Resonant Anchor</span><span class="ability-cost">Edge · v5 re-peg</span></div><p class="ability-desc">While you are conscious, every ally on the field — not only those in your Diffusion aura — treats the battlefield Resonance as 2 lower for Feedback.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Sustaining Voice</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Allies within 6 squares add your Mastery to their Recovery checks.</p></div>
+</div>
+<div class="designer-note"><b>v5 changes.</b> Diffusion's old flat Feedback immunity at Resonance 10+ was incoherent under the scaling model (pain from 5–9, none above 10), so it is now an aura form of the Chorister's Resonance Baffle — asymmetric on purpose, easing Feedback while keeping the full bonus. Steady the Choir moved from At-Will to Recharge 1: an at-will Feedback eraser plus the aura would have deleted the danger zone outright (an unrequested nerf — flagged). Resonant Anchor's old threshold-raise (10→14) no longer has a threshold to raise and is re-pegged to the treat-as-lower idiom. Cantor and Virtuoso remain a deliberate pair: the Cantor exists to make a heavy-Lexicon team survivable.</div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- VIRTUOSO -->
+<div class="stat-block" id="ad-virtuoso">
+<figure class="img-inline"><img src="Virtuoso.png" alt="Virtuoso" loading="lazy"></figure>
+<div class="stat-block-head"><h3 class="stat-block-name">Virtuoso</h3><span class="stat-block-tag">Advanced · Requires Chorister</span></div>
+<p><i>The soloist whose voice rose above the chorus — and who can no longer be reined in by it. Spikes Resonance to lethal heights for devastating spells, with no safety valve.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+2 Ward, +2 Grit, tag Performance</dd></dl>
+<h4 class="sub">Core Mechanic — Soloist <span class="stat-block-tag">v5</span></h4>
+<p>You cannot Crescendo. Your Lexicon abilities generate <b>double</b> the normal Resonance, and deal bonus damage/healing equal to <b>twice</b> the current Resonance instead of the normal amount. You take Resonance Feedback as normal.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Aria of Ruin</span><span class="ability-cost">Major Action · Recharge 2 · Lexicon · Signature</span></div><p class="ability-desc">Spell attack against every enemy within 4 squares. Miss: Will damage. Hit: 1d6 per tier + the Resonance bonus (×2). Crit: critical damage and Burning equal to half the current Resonance.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Crescendoing Solo</span><span class="ability-cost">Minor Action · At-Will · Lexicon</span></div><p class="ability-desc">Increase Resonance by 3 (you may push deliberately into the danger zone). Your next Lexicon ability this turn automatically Succeeds (it does not auto-Crit).</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Drown the Discord</span><span class="ability-cost">Reaction · Recharge 3</span></div><p class="ability-desc">When you would take Resonance Feedback damage, instead deal that damage to an enemy within 10 squares as sonic damage and reduce Resonance by 5.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Perfect Pitch</span><span class="ability-cost">Edge</span></div><p class="ability-desc">While Resonance is 10 or higher, your Lexicon abilities Crit on a Success (beating Ward, not only by 10).</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Swan Song</span><span class="ability-cost">Edge</span></div><p class="ability-desc">The first time you drop to 0 Grit in an encounter, you may immediately cast one Lexicon ability as a free action before the damage carries to Body.</p></div>
+</div>
+<div class="designer-note"><b>v5 change &amp; flagged decision.</b> The multiplier is re-pegged from ×3 to ×2: v4 silently assumed a ×2 baseline, but the main doc says the baseline Lexicon bonus equals the current Resonance (×1), and the main doc takes precedence. The genuine balance fork: at Resonance 10, a ×2 Virtuoso adds +20 to an Aria while eating 1d4+10 Feedback per cast; ×3 would add +30 for the same risk, which paper math suggests outpaces every other striker's spike. Start at ×2 and raise only if the Virtuoso's risk isn't paying. Perfect Pitch's 10+ gate survives the re-peg deliberately — under the scaling model it is a depth reward, not a safety wall.</div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- AUGUR -->
+<div class="stat-block" id="ad-augur">
+<div class="stat-block-head"><h3 class="stat-block-name">Augur</h3><span class="stat-block-tag">Advanced · Requires Calligrapher</span></div>
+<div class="callout art-prompt"><span class="callout-label">Art Prompt</span><p>A hooded Imperial diviner crouched over a battlefield's mud, casting carved yarrow-sticks and bone runes that hang frozen mid-air above a chalk hexagram, threads of golden probability visibly bending around nearby soldiers; I Ching-inspired iconography, smoke and ember palette, painterly fantasy illustration.</p></div>
+<p><i>The diviner who throws runes and reads the signs. Where other Calligraphers paint zones of force, the Augur paints zones of fate and bends the dice themselves.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+2 Initiative, +2 Ward, tag Divination, implement/codex proficiency</dd></dl>
+<h4 class="sub">Core Mechanic — Omens</h4>
+<p>At the start of each of your turns, roll 1d6 and store the result as an <b>Omen</b> (you may hold one at a time; a new roll replaces the old). As a Reaction, spend your Omen to add or subtract its value from any attack roll, save, or skill check made by a creature within 8 squares.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Hexagram</span><span class="ability-cost">Major Action · Recharge 2 · Glyph · Sustained · Signature</span></div><p class="ability-desc">Inscribe a 2×2 hexagram within 6 squares. While sustained, you roll two Omens at the start of your turn (holding up to two). Enemies that begin their turn inside have Disadvantage on their next roll; allies inside have Advantage.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Read the Threads</span><span class="ability-cost">Minor Action · Recharge 1</span></div><p class="ability-desc">Choose a creature within 8 squares. Until the start of your next turn, you and your allies learn whether its next attack would Hit before it commits, and the first attack against it this round gains Advantage.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Inevitable Outcome</span><span class="ability-cost">Reaction · Recharge 3</span></div><p class="ability-desc">When a creature within 8 squares makes an attack roll or save, force it to reroll and take the worse result (enemy) or the better result (ally).</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Favorable Winds</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Roll your first Omen before initiative is rolled, and you may apply it to any creature's initiative.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Two Readings</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Once per encounter, when you roll your Omen, roll twice and keep both as separate stored Omens.</p></div>
+</div>
+<div class="designer-note">The Augur leans into the game's information layer from the magical side — a probability-controller rather than a damage-zone painter, deliberately avoiding the Scholar's turf by manipulating dice rather than revealing stats. Open item from the Awareness re-key pass: the Augur is the one advanced class whose fate-reading fiction arguably wants an Awareness key somewhere in its kit; deliberately not applied yet — rule on it before locking.</div>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- GEOMANCER -->
+<div class="stat-block" id="ad-geomancer">
+<div class="stat-block-head"><h3 class="stat-block-name">Geomancer</h3><span class="stat-block-tag">Advanced · Requires Calligrapher</span></div>
+<div class="callout art-prompt"><span class="callout-label">Art Prompt</span><p>An Imperial geomancer dragging a brush the size of a spear across a battlefield, the earth rising behind each stroke into a rampart of inscribed stone, enemy cavalry breaking against terrain that did not exist a heartbeat ago; monumental scale, ochre stone and black ink palette, painterly fantasy illustration.</p></div>
+<p><i>The Calligrapher who paints the earth in large-form sigils. The terrain-control specialist: bigger zones, more of them, and the power to move them.</i></p>
+<dl class="stat-grid"><dt>Dedication</dt><dd>+3 Grit, +2 Ward, tag Geomancy, codex proficiency</dd></dl>
+<h4 class="sub">Core Mechanic — Living Sigil</h4>
+<p>Your zone (Glyph) abilities last one additional round before expiring, and you may sustain up to <b>two</b> zones simultaneously. Whenever you create a zone, you may shift one existing zone of yours up to your Reason in squares.</p>
+<div class="ability-list">
+<div class="ability"><div class="ability-head"><span class="ability-name">Reshape the Field</span><span class="ability-cost">Major Action · Recharge 2 · Glyph · Sustained · Signature</span></div><p class="ability-desc">Choose up to Reason contiguous squares within 8. They become your choice of difficult terrain, hazardous terrain (Mastery × d6 on enter/start), or sanctified ground (allies inside gain +2 Defense and Ward). While sustained, a Minor action changes which effect is active.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Wall of Word</span><span class="ability-cost">Major Action · Recharge 2 · Glyph</span></div><p class="ability-desc">Raise an inscribed wall up to Reason squares long within 6. It blocks movement and line of sight, has Grit equal to 10 × Tier, and lasts until destroyed or the start of your next turn unless sustained.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Binding Glyph</span><span class="ability-cost">Minor Action · Recharge 1 · Glyph</span></div><p class="ability-desc">Inscribe a glyph on a square within 8. The first creature to enter or begin its turn there saves vs. your spell DC or is Immobilized until the start of your next turn (Slowed 2 on a successful save).</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Deep Roots</span><span class="ability-cost">Edge</span></div><p class="ability-desc">Your zones cannot be moved or dispelled by enemy effects. When you are forced to drop concentration on a zone, it lingers one additional round before fading rather than ending immediately.</p></div>
+<div class="ability"><div class="ability-head"><span class="ability-name">Sympathetic Terrain</span><span class="ability-cost">Edge</span></div><p class="ability-desc">While standing in one of your own zones, you gain +Mastery to spell accuracy and Ward.</p></div>
+</div>
+<div class="designer-note">Glyph abilities that deal damage or heal carry the Lexicon tag, generating and benefiting from Resonance like the base Calligrapher. Per the generous-terrain decision, the balancing counterplay is "attack the concentrating caster" — so Deep Roots deliberately does <b>not</b> protect concentration. The case to watch is the turtle: Wall of Word plus sanctified Reshape the Field walling the Geomancer out of reach entirely. If that shows up, the lever is making your own walls block your line of effect too, not nerfing the zones.</div>
+</div>
+
+</section>
+
+
+    <section class="section" id="skills" data-spy="skills">
+<span class="sec-eyebrow">For Players · Player&rsquo;s Handbook</span>
+<h2 class="sec-title">Backgrounds, Journeys &amp; Vows</h2>
+<p class="annotatable lede">This section replaces the old tagged-skills system. Three systems hang off the road home: who you were (<b>Backgrounds</b>), what you've sworn (<b>Vows</b>), and the toll the march takes on a column of survivors (the <b>Journey</b>, measured in Hope and Despair).</p>
+
+<h3 class="sub" id="backgrounds">Backgrounds</h3>
+<p>Every character carries a history. You were someone before you were a soldier of the broken Legion — a smuggler's daughter, a disgraced magistrate, a Shan monastery's wandering student, a veteran of a war nobody won. <b>Backgrounds</b> are how that history reaches into the present and helps you do things.</p>
+<p>A Background is a short phrase, written in your own words, paired with a rating from <b>+1 to +3</b>:</p>
+<ul>
+<li><i>Raised in the Legion's camps +2</i></li>
+<li><i>Smuggled Auric contraband through the river ports +3</i></li>
+<li><i>Studied poisons at the Scriptorium before they expelled me +1</i></li>
+<li><i>Survived the Third's last stand at the Iron Ford +2</i></li>
+</ul>
+<p>There is no skill list. There is no master inventory of competencies to check yourself against. You write what your character has actually done and lived, and the table reads the phrase to decide whether it bears on the moment.</p>
+
+<h4 class="sub">Making a Background check</h4>
+<p>When you attempt something uncertain, the GM names a core statistic — Might, Grace, Reason, Will, or Awareness — and a difficulty. You roll:</p>
+<div class="callout"><span class="callout-label">Resolution</span><p><b>1d20 + the named statistic + (an applicable Background's rating) + your Mastery bonus</b> vs. the difficulty (DC 10 is the baseline; see the Journey section for region difficulties).</p></div>
+<p>A Background applies when its phrase plausibly bears on what you're doing. <i>Smuggled Auric contraband through the river ports</i> helps you talk past a customs sergeant, find a fence in a port city, or guess how a smuggling ring routes its goods. It does nothing to help you set a broken bone or read a Shan sutra. If no Background applies, you simply roll <b>1d20 + the named statistic</b>. You can still try almost anything — you're just trying it cold, without the weight of experience behind you.</p>
+<div class="callout"><span class="callout-label">Example</span><p>The party needs to read a Dalimyri line of battle before it forms. "Roll Reason," says the GM. Draedan's player: "I was <i>Raised in the Legion's camps +2</i> — I've watched a hundred battle-lines take shape." The GM agrees that bears on it. Draedan is level 7 (Mastery 3), so he rolls 1d20 + Reason + 2 + 3. A second character, the Scriptorium scholar, has nothing about battlefields on her sheet; she rolls 1d20 + Reason only.</p></div>
+<p>This is the entire resolution layer. Its honesty depends on the table: a Background should be specific enough that everyone immediately understands when it helps and when it doesn't. <i>Soldier</i> is too broad. <i>Held the left flank for the Third through three campaigns</i> tells everyone exactly what you can and can't lean on.</p>
+<div class="designer-note"><b>Conversion note.</b> Wherever older text in this document grants a "tagged skill" or a class dedication says "tag X" (tag Medicine, tag Stealth, and so on), read it as <b>+1 Background point that must be spent on a Background related to X</b>. The exchange rate (one old tag = one Background point) is an alpha placeholder — old tags gave a flat +2 where a Background point gives +1 rating, so if dedication tags feel undervalued in play, raise the conversion to 2 points.</div>
+
+
+<h4 class="sub">Building your Backgrounds at character creation</h4>
+<p>Your Origin, class, and dedications still give you everything they give you now — abilities, edges, statistic bonuses, signature powers. Those are unchanged. Backgrounds are a separate layer that sits on top.</p>
+<p>At creation you have <b>6 Background points</b>. Spend them across as many Backgrounds as you like, to a maximum rating of <b>+3</b> on any single Background. A character might take one deep Background and two shallow ones (+3, +2, +1), or spread wide (six +1s), or anything between. You're encouraged — not required — to anchor at least one Background in your Origin, since that's who you were.</p>
+<div class="designer-note">The parallel to statistics is deliberate: you assign 6 points to core stats, capped at 3, and 6 points to Backgrounds, capped at +3. Depth or breadth — the same choice, twice.</div>
+
+<h4 class="sub">Faction Ties</h4>
+<p>The empire is coming apart, and its pieces have names: the Ministry of Harmony, the scholar-monasteries, the Auric League, the Taltasqua Hegemony, the Dalimyri spirit-courts, the great Houses of the Concordat. A <b>Faction Tie</b> is a Background that names one of these powers and describes your standing with it:</p>
+<ul>
+<li><i>Carry a Monastery letter of introduction +2</i></li>
+<li><i>Sworn debt to House Veradan of the Concordat +1</i></li>
+</ul>
+<p>A Faction Tie is spent and rated exactly like any other Background, out of the same 6 points, and it applies whenever your relationship with that faction bears on the roll — calling in the debt, trading on the letter, knowing how the Ministry's censors think.</p>
+<p>You may also take a <b>negative Faction Tie</b>: someone wants you dead, exiled, or worse. A negative Tie is rated <b>−1 to −2</b>, and instead of costing points, it <i>gives points back</i> (a −1 Tie returns 1 point; a −2 returns 2, to a limit of 2 refunded points total). A negative Tie never helps you on a roll — but the GM holds it, and the faction's reach will find you on the road. The Ministry remembers the magistrate who fled. The wronged House does not forget.</p>
+<div class="designer-note">A negative Tie is a bargain: more competence elsewhere now, in exchange for the world reaching for you later. That's a fair trade for a character who's already burned a bridge — and good fuel for the Despair track. <i>Open decision: Faction Ties are written here as pure Backgrounds. An alternative variant — roll 1d6 per point of Faction Tie at the start of each act; on a 5–6 that faction's interests surface this act, for good or ill — can be bolted on later without re-architecting anything. If factions feel inert in playtest, pull that lever.</i></div>
+
+<h4 class="sub">Backgrounds over a campaign</h4>
+<p>At each <b>Dedication</b> (levels 3, 7, 11, 15, 19) you gain <b>2 Background points</b> to spend on new Backgrounds or to raise existing ones. Your Mastery bonus also rises at each Dedication, so every Background you hold quietly scales with you — a +2 Background is worth more to a Tier 4 veteran than to a recruit, because Mastery rides on top of it.</p>
+<p>No single Background rises above <b>+5</b> by any route. As completed Vows convert into Backgrounds (below), your sheet will gather history; if it grows unwieldy, you may <b>consolidate</b> two related Backgrounds into one of the higher rating + 1 (to the +5 ceiling), folding two chapters of your life into a single, larger truth about who you've become. <i>Survived the Iron Ford +2</i> and <i>Hunted the man who broke the Third +3</i> become <i>The last soldier of the Third Legion +4</i>.</p>
+
+<hr class="rule-heavy">
+
+<h3 class="sub" id="journeys">The Journey</h3>
+<p>Combat is one engine of this game. The road is the other. Between the places where you fight, the column moves — wounded, hungry, hunted, hundreds of leagues from anywhere safe — and the march itself is played out, not narrated away.</p>
+<p>A <b>Journey</b> is any significant stretch of travel the GM frames as more than a transition: crossing a contested border, threading a cursed waste, descending out of the Shan peaks before the passes close. The GM divides it into <b>Legs</b> — usually one Leg per region or major obstacle crossed.</p>
+
+<h4 class="sub">Roles</h4>
+<p>Before a Journey, the party assigns four roles. One character may hold more than one if you're short-handed (a broken Legion often is), and an unfilled role simply means that aspect of the march goes unwatched.</p>
+<ul>
+<li><b>Guide</b> — sets the route and reads the land. Usually <b>Reason</b>. Backgrounds about a specific region, prior campaigns, cartography, or scouting apply.</li>
+<li><b>Outrider</b> — ranges ahead, finds the ambush before it finds you. Usually <b>Grace</b> or <b>Awareness</b>. Stealth, hunting, and reconnaissance Backgrounds apply.</li>
+<li><b>Quartermaster</b> — supply, forage, the health of the column. Usually <b>Reason</b> or <b>Might</b>. Logistics, medicine, survival, and "kept the Third's supply train moving" Backgrounds apply.</li>
+<li><b>Standard-Bearer</b> — holds the column's spirit. Usually <b>Will</b>. Command, faith, oratory, and bonds of personal loyalty apply. This role touches Hope and Despair most directly.</li>
+</ul>
+<p>Assignment matters precisely because Backgrounds aren't universal. The veteran who is a superb Guide in the Imperial heartland has nothing on his sheet for the Shan peaks, and his roll there is bare. Cover your weak ground deliberately, or feel it on the road.</p>
+
+<h4 class="sub">Running a Leg</h4>
+<p>Each Leg, the GM frames the dominant challenge and calls for <b>one role's test</b> (occasionally two, if the Leg presents two dangers). The assigned character rolls <b>1d20 + the role's statistic + (an applicable Background or Faction Tie) + Mastery</b> against the <b>region difficulty</b>:</p>
+<table class="rules-table">
+<thead><tr><th>Region</th><th>DC</th></tr></thead>
+<tbody>
+<tr><td>Settled land, Imperial roads, friendly territory</td><td>8</td></tr>
+<tr><td>Wild borderlands, untamed country</td><td>12</td></tr>
+<tr><td>Hostile or contested ground, enemy reach</td><td>16</td></tr>
+<tr><td>Cursed, broken, or unmade land</td><td>20</td></tr>
+</tbody>
+</table>
+<p><b>Outcomes:</b></p>
+<ul>
+<li><b>Critical success</b> (beat the DC by 10+): the Leg is crossed cleanly <i>and</i> the party gains <b>1 Hope</b>. A door opens — a safe camp, a useful contact, a stroke of fortune.</li>
+<li><b>Success:</b> the Leg is crossed. No toll.</li>
+<li><b>Failure:</b> the party gains <b>1 Despair</b>, and the GM introduces a complication — a hazard, a hostile encounter, lost supplies, or simply the grinding cost of a hard road.</li>
+<li><b>Critical failure</b> (miss by 10+): <b>1 Despair</b> and a serious complication, often one that follows the party into the next place they stop.</li>
+</ul>
+<p>A Faction Tie can light up a Leg whether or not it's the role's named Background: cross the Ministry's territory and a negative Ministry Tie may be what the GM reaches for to build the failure. Cross land where you hold a positive Tie and that letter of introduction may be exactly what carries you through.</p>
+
+<h4 class="sub">Arrival</h4>
+<p>When the last Leg is crossed, the Journey ends. Reaching a place of genuine safety — a walled town that will take you in, an allied court, home ground — lets the party <b>clear all Despair</b> and take the rest they've earned. The whole point of the road is that its end is worth reaching.</p>
+
+<hr class="rule-heavy">
+
+<h3 class="sub" id="hope-despair">Hope &amp; Despair</h3>
+<p>The column's morale is a shared thing, and the game tracks it as two small pools the whole party holds in common. <b>Hope</b> is the party's reserve of faith — in the Commander, in each other, in the idea that there is a home to reach. Players spend it. <b>Despair</b> is the weight of the road — the dead left behind, the leagues still to go. The GM spends it. Each pool runs from <b>0 to 5</b>.</p>
+
+<h4 class="sub">Earning Hope</h4>
+<ul>
+<li>Crossing a Journey Leg on a critical success (+1)</li>
+<li>Fulfilling a Vow (+1; see below)</li>
+<li>Reaching a place of safety, winning a hard-fought victory, or an act of faith or loyalty that the GM judges genuinely lifts the column (+1)</li>
+</ul>
+<h4 class="sub">Earning Despair (the GM adds it)</h4>
+<ul>
+<li>Failing a Journey Leg (+1)</li>
+<li>Abandoning a Vow (+1)</li>
+<li>A defeat, a betrayal, an atrocity witnessed, a comrade lost (+1)</li>
+</ul>
+<h4 class="sub">Spending Hope</h4>
+<p>Any player may spend Hope, narrating how the column's faith shows in the moment:</p>
+<ul>
+<li><b>1 Hope</b> — gain advantage on any one roll (yours, or an ally's you can plausibly aid)</li>
+<li><b>1 Hope</b> — reroll a roll you just failed; take the new result</li>
+<li><b>1 Hope</b> (out of combat) — make an immediate Recovery check against one condition, or heal Body equal to your Will</li>
+<li><b>1 Hope</b> — mark one additional progress on a Vow</li>
+<li><b>2 Hope</b> — steady the column: remove 1 Despair</li>
+</ul>
+<h4 class="sub">Spending Despair (the GM)</h4>
+<ul>
+<li><b>1 Despair</b> — harden a Journey Leg (+4 to its DC) or introduce an extra hazard</li>
+<li><b>1 Despair</b> — the party begins their next encounter exhausted: each character is <b>Dazed 1</b> for the first round</li>
+<li><b>1 Despair</b> — a negative Faction Tie acts up: the faction's reach intrudes here, now</li>
+</ul>
+<p><b>Crisis.</b> When Despair reaches <b>5</b>, it breaks. The GM frames a morale crisis born from the march — desertion, a comrade's collapse, a bitter argument that fractures the party, a temptation to abandon the road or break a Vow. The table plays it out. However it resolves, Despair then resets to <b>1</b>: the immediate weight lifts, but the scar stays.</p>
+<p>Between major chapters — when the story reaches a natural rest — both pools reset to 0. A new act begins with the column's morale its own to win or lose again.</p>
+
+<hr class="rule-heavy">
+
+<h3 class="sub" id="vows">Vows</h3>
+<p>A <b>Vow</b> is a promise a character makes and the game agrees to hold them to. <i>Find my sister, last seen in Iridassa. Bring the Third home. Put a blade in the censor who burned the Scriptorium.</i> You declare a Vow in play, the table agrees on its weight, and from then on the road bends around it.</p>
+
+<h4 class="sub">Rank</h4>
+<p>Every Vow takes a rank, which sets both how hard it is to fulfill and what it's worth when you do:</p>
+<table class="rules-table">
+<thead><tr><th>Rank</th><th>Worth on fulfillment</th></tr></thead>
+<tbody>
+<tr><td>Troublesome</td><td>+1</td></tr>
+<tr><td>Dangerous</td><td>+2</td></tr>
+<tr><td>Formidable</td><td>+3</td></tr>
+<tr><td>Extreme</td><td>+4</td></tr>
+<tr><td>Epic</td><td>+5</td></tr>
+</tbody>
+</table>
+<p>A personal grudge against a single man might be Dangerous. Bringing the shattered Legion home across a collapsing empire is Epic, and probably the spine of the whole campaign.</p>
+
+<h4 class="sub">Progress</h4>
+<p>A Vow is tracked by <b>progress</b> — meaningful steps toward its end. When the party does something that genuinely advances a Vow (crossing a Journey Leg toward its goal, uncovering a true lead, overcoming an obstacle that stood squarely in its way), the GM awards progress. Higher-rank Vows take far more progress to fill than low ones; an Epic Vow is the work of a campaign, a Troublesome one the work of an evening. (You may also spend <b>1 Hope</b> to mark one extra progress, when the column's faith carries the work forward.)</p>
+<p>When a Vow's progress is full, it can be <b>fulfilled</b> — the sister found, the censor dead, the Legion's standard planted on home soil.</p>
+<div class="designer-note"><i>Open item: exact progress-track quantities by rank are still to be drafted; for the alpha, the GM sets a track of roughly 3 / 5 / 8 / 12 / 20 boxes for Troublesome through Epic and adjusts by feel.</i></div>
+
+<h4 class="sub">Fulfillment and abandonment</h4>
+<p>When you <b>fulfill</b> a Vow: the Vow leaves your sheet and becomes a <b>new Background</b>, rated at the Vow's rank (Troublesome → +1, up through Epic → +5). <i>Find my sister in Iridassa (Formidable)</i> fulfilled becomes the Background <i>Crossed an empire to find my sister +3</i> — a permanent truth about who you are, usable from then on. The party also gains <b>1 Hope</b>.</p>
+<p>When you <b>abandon</b> a Vow — walk away from it, let it die, choose another road — the party gains <b>1 Despair</b>. Some Vows are worth breaking. None are free to break.</p>
+
+<div class="designer-note"><b>Why Backgrounds replaced tagged skills.</b> The old tag system had a failure mode written into the doc itself: taggables become a de facto skill list, and adjudicating them turns into "Mother May I." Player-written Backgrounds solve this the way 13th Age has for over a decade — applicability is read off a specific phrase rather than argued against a hidden list. Mastery still rides on top of every Background, so the existing scaling math is preserved; the Background rating simply replaces the old flat +2-per-tag. <i>Numbers to tune in playtest, not trust: the 6-point budget and +3 cap; the region DCs (watch failure frequency — if a four-Leg crossing reliably ends in 3+ Despair, the DCs are high or the Legs too many); and the 0–5 pool caps with Crisis-at-5.</i></div>
+
+</section>
+
+    <section class="section" id="edges" data-spy="edges">
 <span class="sec-eyebrow">For Players · Player’s Handbook</span>
 <h2 class="sec-title">General Edges</h2>
 <p class="annotatable lede">Edges are small passive abilities — character-sheet updates you can largely forget about. You pick one at levels 2, 4, 5, and 6 (in addition to those granted by your class’s Edge list). Each edge can be taken only once.</p>
@@ -2211,11 +2877,16 @@ img.zoomable,figure.img-scene img,figure.img-inline img,figure img,.char-portrai
   </tbody>
 </table>
 
+
+<h3 class="sub">Recovery Stats by Condition</h3>
+<p>Recovery is now <b>condition-keyed</b>: each condition names the core stat used to shake it off, and you roll 1d20 + that stat + your Recovery bonuses against the condition's DC. Defaults for the alpha: <b>Burning &rarr; Grace</b> (smother it, get clear), <b>Bleeding &rarr; Might</b> (clamp the wound), <b>Dazed / Dazzled &rarr; Awareness</b> (shake your head clear), <b>Fear &rarr; Will</b> (master it), <b>Poisoned &rarr; Might</b>, <b>Immobilized &rarr; Might or Grace</b> (break or slip the hold &mdash; your choice), <b>Slowed &rarr; Grace</b>, <b>Weakened &rarr; Will</b>. Where an ability or condition writes its own Recovery stat, that text wins.</p>
+<div class="designer-note">These per-condition keys distribute the old all-Will Recovery asymmetry across the whole array &mdash; a frontline veteran is genuinely better at gritting through blood loss than out-thinking a curse. The specific assignments above are alpha defaults chosen by feel, not yet playtested; flag any that read wrong at the table. <b>Also pending:</b> a fully drafted semi-permanent injury and revised death/dying system exists (Severity-based 1d20 table) but carries open design decisions (trigger thresholds, Body scaling interaction, death-save stat) and is deliberately <i>not</i> included in this alpha document &mdash; the simpler Body-threshold and DC 15 dying rules below remain in force until those decisions are made.</div>
 </section>
 
         <section class="section" id="classes" data-spy="classes">
 <span class="sec-eyebrow">Class Gallery — Concept Survey</span>
 <h2 class="sec-title">Classes</h2>
+<div class="callout"><span class="callout-label">Now Playable</span><p>The gallery below is the concept overview. Full mechanics now exist for the five Imperial base classes and the Spiritbinder (<a class="rules-link" href="#base-class-rules">Base Class Mechanics</a>), all ten <a class="rules-link" href="#hybrid-classes">Hybrid classes</a>, and all ten Imperial <a class="rules-link" href="#advanced-classes-rules">Advanced classes</a>. Foreign-tradition advanced classes (Meditant, Arcanist, Alchemist, Spiritbinder paths) and Epic classes remain concept-only.</p></div>
 <p class="annotatable lede">This section is a <b>gallery view</b> of every class in the design — base, advanced, faction-specific, and epic. It exists to show the breadth of the system at full release. For the alpha, the only fully playable classes are the five base classes, whose complete mechanics live in the <a class="rules-link" href="#base-class-rules">Base Class Mechanics</a> section above. Everything below the Basic Classes is tagged <span class="concept-badge" style="margin:0">Concept — Mechanics Pending</span>; the descriptions are the design intent, but the abilities, edges, and statlines are still in development.</p>
 <p class="annotatable">Each class establishes a core mechanic that defines a mechanical language other classes build on. Characters start with a base class; this is where the game teaches you how to play. The faction-specific advanced classes (Orthodox, Dalimyri, Shan, Auric, Taltasquan) shape your character into one of the great traditions of the world; epic classes are the endgame identities a level-19 character can take.</p>
 <div id="basic-classes" data-spy="basic-classes">
